@@ -1,0 +1,11 @@
+api_platform:
+  eager_loading:
+    max_joins: 100
+  defaults:
+    pagination_client_items_per_page: true
+    collection:
+      pagination:
+        items_per_page_parameter_name: itemsPerPage # Default value
+
+
+

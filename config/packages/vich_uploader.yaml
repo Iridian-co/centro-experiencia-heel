@@ -1,0 +1,11 @@
+vich_uploader:
+    db_driver: orm
+
+    #storage: gaufrette
+    mappings:
+        icons_symfony:
+            inject_on_load: true
+            upload_destination: icons_symfony
+            delete_on_update: false
+            delete_on_remove: false
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header img {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+
+@media print {
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    header img {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    header {
+        display: table-header-group;
+
+        /* Muestra el encabezado en todas las páginas impresas */
+    }
+
+    main {
+        page-break-before: always;
+        margin-top: 200px;
+        /* Asegura que el contenido comience en una nueva página */
+        /* Elimina el margen superior para evitar solapamiento */
+    }
+
+
+    .titles {
+        background-color: rgb(67, 67, 253);
+        color: white;
+        position: relative;
+        padding: 10px 5px 3px 5px;
+        font-size: 14px;
+    }
+
+    .h2 {
+        color: #0097CE;
+    }
+
+    .celda {
+        width: 60%;
+    }
+
+    .ul {
+        margin: 0;
+    }
+
+    .container {
+        width: 0%;
+        margin: 0;
+    }
+
+    .parrafo {
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    .sinline {
+        border: none;
+        padding: 8px;
+    }
+
+    .bg-th {
+        background-color: rgb(67, 67, 253);
+    }
+
+    .color-th {
+        color: white;
+    }
+
+    .bg-tr {
+        background-color: rgb(172, 172, 204);
+    }
+
+    .bg-tr2 {
+        background-color: rgba(232, 232, 238, 0.966);
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .hojafin {
+        background-color: #5587DA;
+    }
+
+
+}
+
+.hojafin {
+    background-color: #5587DA;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.ul li {
+    margin: 0%;
+}
+
+.bg-tr2 {
+    background-color: rgba(232, 232, 238, 0.966);
+}
+
+.bg-tr {
+    background-color: rgb(172, 172, 204);
+}
+
+.color-th {
+    color: white;
+}
+
+.bg-th {
+    background-color: rgb(67, 67, 253);
+}
+
+.sinline {
+    border: none;
+    padding: 8px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th,
+td {
+    border-top: 1px solid #dddddd;
+    /* Línea horizontal superior */
+    border-bottom: 1px solid #dddddd;
+    /* Línea horizontal inferior */
+    padding: 8px;
+    text-align: left;
+    font-size: 11px;
+}
+
+.titles {
+    background-color: rgb(67, 67, 253);
+    color: white;
+    position: relative;
+    padding: 10px 5px 3px 5px;
+    font-size: 14px;
+}
+
+.h2 {
+    color: #0097CE;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+.pie-pagina {
+    border-top: 1px solid #b1adad;
+    border-bottom: 1px solid #b1adad;
+    padding-bottom: 25px;
+    font-size: 11px;
+}

@@ -1,0 +1,20 @@
+.container-estados{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.link-estado{
+  color: #5c70d6!important;
+}
+.link-estado-active{
+  color: #000000!important;
+}
+.alert-error {
+  background-color: #ff000091;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #1ea471;
+  color: #fff;
+}
