@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 col-lg-6">
+				<img src="img/banner_login.jpg" class="d-block w-100" alt="Bootstrap Themes" loading="lazy">
+				<span class="img_login"></span>
+			</div>
+			<div class="col-12 col-lg-6">
+				<form class="form d-flex justify-content-center flex-column align-items-center vh-100 " action="" id="form" method="post" autocomplete="off" novalidate>
+					<span class="line_fz"></span>
+					<div class="m-0 pdd_w">
+						<h1 class="fz_h1 fw_700 color_azul_1 text-center px-3 px-lg-5 mb-1">Calendario de agendamiento</h1>
+						<h3 class="fz_h3 fw_700 color_azul_1 text-center my-2">Ingreso</h3>
+						<div class="px-3 px-lg-5 mt-5">
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" class="color_gris_2" id="lname" name="lname" placeholder="Ingresar número de acceso" required>
+								</div>
+								<!-- Mensaje para validación -->
+								<div class="ms-2 error colors-red asap-regular" style="display: none" role="alert" id="err_regis_name"></div>
+							</div>
+						</div>
+					</div>
+
+					<!--parrafo-->
+					<div class="mt-4 px-3">
+						<div class="row justify-content-center">
+							<div class="pdd_w">
+								<div class="px-3 px-lg-4">
+									<div class="text-center mt-5">
+										<div class="d-flex alig-items-center justify-content-center">
+										<input id="checkbox" name="checkbox" type="checkbox" class="me-2" required>
+										<label for="checkbox"
+											class="color_gris_1 fz_p fw_400">
+											Acepto Hábeas Data Heel Colombia.
+											<a href="#"target="_blank" class="color_azul_3">
+											{# {{ qi.texto('texto_autorizacion_datos') }} #}
+											Consulte aquí</a>
+										</label>
+									</div>
+
+										<button type="button" class="btn btn_mediun fw_700 bg_azul_3 my-5" form="form1" value="Submit">Ingresar</button>
+
+										<label class="color_gris_1 fz_p fw_400" for="leido">
+											Si no está registrado:
+												<a href="#" target="_blank" class="color_azul_3">
+													{# {{ qi.texto('texto_autorizacion_datos') }} #}
+													Regístrese aquí
+												</a>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<script></script>
+{% endblock %}

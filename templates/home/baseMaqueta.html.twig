@@ -1,0 +1,383 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<section>
+		<div class="d-flex mt-5">
+			<div class="mx-5 bx_shdw_1 px-4 py-4 brd_rds_20">
+				<h1 class="fz_h1 my-auto">Tipograf&iacute;a</h1>
+				<h1 class="fz_h1">H1</h1>
+				<h2 class="fz_h2">H2</h2>
+				<h3 class="fz_h3">H3</h3>
+				<p class="fz_p">CUERPO</p>
+			</div>
+			<div class="mx-5 bx_shdw_1 px-4 py-4 brd_rds_20">
+				<h1 class="fz_h1 my-auto">Colores</h1>
+				<div class="d-flex">
+					<div class="mx-2">
+						<h3 class="fz_h3">background</h3>
+						<div class="box bg_azul_1"></div>
+						<div class="box bg_azul_2"></div>
+						<div class="box bg_azul_3"></div>
+						<div class="box bg_verde_1"></div>
+						<div class="box bg_verde_2"></div>
+						<div class="box bg_verde_3"></div>
+						<div class="box bg_gris_1"></div>
+						<div class="box bg_gris_2"></div>
+						<div class="box bg_gris_3"></div>
+						<div class="box bg_lila"></div>
+						<div class="box bg_blanco"></div>
+						<div class="box bg_beige"></div>
+					</div>
+					<div class="mx-2">
+						<h3 class="fz_h3">Linear-gradient</h3>
+						<div class="box_2 bg_gradient_home"></div>
+						<div class="box_2 bg_degradado_box_1"></div>
+						<div class="box_2 bg_degradado_verde"></div>
+					</div>
+					<div class="mx-2">
+						<h3 class="fz_h3">box-shadow</h3>
+						<div class="box_2 bx_shdw_1"></div>
+						<div class="box_2 bx_shdw_2"></div>
+					</div>
+				</div>
+			</div>
+			<div></section>
+
+			<section>
+				<div class="container-fluid  mt-5">
+					<div class="row">
+						<div class="col-12 col-lg-4">
+							<!-- Botones-->
+							<div class="bx_shdw_1 px-5 py-4 brd_rds_20 bg_gradient_home box_3">
+								<h1 class="fz_h1 my-auto text-center">Botones</h1>
+								{# <button type="submit" class="btn btn_big fw_700 bg_azul_3" form="form1" value="Submit">
+								<img class="icon" id="play_animation" src="img/icon/calendario_transparente.svg" alt="calendario"/>
+									Ingresar
+									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+								</button> #}
+								<button type="button" class="btn btn_mediun fw_700 bg_azul_3" form="form1" value="Submit">Ingresar</button>
+								<button type="button" class="btn_dark fw_700" 
+									form="form1" value="Submit" onclick="cambiarApariencia(this)">Detalles del evento</button>
+
+								<button type="button" class="btn btn_small fw_700 bg_azul_3" form="form1" value="Submit">Agendar curso</button>
+
+								<button type="submit" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this)">
+									<img class="icon" src="img/icon/calendario.svg" alt="calendario"/>
+									<span class="texto">Calendario</span>
+									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+								</button>
+
+								<button type="submit" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this)">
+									<img class="icon" src="img/icon/cursos.svg" alt="Cursos"/>
+									<span class="texto">Cursos</span>
+									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+								</button>
+
+								<button type="submit" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this)">
+									<img class="icon" src="img/icon/cubo.svg" alt="cubo"/>
+									<span class="texto">Centro de Experiencia HEEL</span>
+									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+								</button>
+
+								<button type="submit" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this)">
+									<img class="icon" src="img/icon/pizza.svg" alt="pizza"/>
+									<span class="texto">Encuesta</span>
+									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+								</button>
+
+								<button type="submit" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this)">
+									<img class="icon" src="img/icon/chulo.svg" alt="chulo"/>
+									<span class="texto">Certificado</span>
+									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+								</button>
+							</div>
+						</div>
+						<div
+							class="col-12 col-lg-4">
+							<!-- Calendario-->
+							<div class="bx_shdw_1 px-4 py-4 brd_rds_20">
+								<form class="form" action="" id="form" method="post" autocomplete="off" novalidate>
+									<div class="d-flex justify-content-center flex-column align-items-center">
+										<span class="line_fz"></span>
+										<div class="m-0 pdd_w">
+											<h1 class="fz_h1 fw_700 color_azul_1 text-center px-3 px-lg-5 mb-1">Calendario de agendamiento</h1>
+											<h3 class="fz_h3 fw_700 color_azul_1 text-center my-2">Ingreso</h3>
+											<div class="px-3 px-lg-5 mt-5">
+												<div class="form-group">
+													<div class="input-group">
+														<input type="text" class="color_gris_2" id="lname" name="lname" placeholder="Ingresar número de acceso" required>
+													</div>
+													<!-- Mensaje para validación -->
+													<div class="ms-2 error colors-red asap-regular" style="display: none" role="alert" id="err_regis_name"></div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+									<!--parrafo-->
+									<div class="mt-4 px-3">
+										<div class="row justify-content-center">
+											<div class="pdd_w">
+												<div class="px-3 px-lg-4">
+													<div class="text-center mt-5">
+														<div class="d-flex alig-items-center justify-content-center">
+															<input id="checkbox" name="checkbox" type="checkbox" class="me-2" required>
+															<label for="checkbox" class="color-gris fz_p">
+																Acepto Hábeas Data Heel Colombia.
+																<a href="#" target="_blank" class="color_azul_3">
+																	{# {{ qi.texto('texto_autorizacion_datos') }} #}
+																	Consulte aquí</a>
+															</label>
+														</div>
+
+														<button type="button" class="btn btn_mediun fw_700 bg_azul_3 my-5" form="form1" value="Submit">Ingresar</button>
+
+														<label class="form-check-label color-gris font-roboto fz_p" for="leido">
+															Si no está registrado:
+															<span class="color-blanco">
+																<a
+																	href="#" target="_blank" class="color_azul_3">
+																	{# {{ qi.texto('texto_autorizacion_datos') }} #}
+																	Regístrese aquí
+																</a>
+															</span>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-12 col-lg-3">
+							<!-- Notificaciones-->
+							<div class="px-1">
+								<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4 mb-3">
+									<div class="mx-2 px-2">
+										<h2 class="fz_h2 fw_600 color_azul_1 letter_spacing mb-4 ms-3">Jueves, 23 de Octubre</h2>
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between w-100">
+											<hr class="linea_vertical my-0">
+											<div class="pe-3 py-2 w-100">
+												<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+												<div class="d-flex justify-content-start align-items-center ps-3">
+													<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+													<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+													<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between w-100">
+											<hr class="linea_vertical my-0">
+											<div class="pe-3 py-2 w-100">
+												<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+												<div class="d-flex justify-content-start align-items-center ps-3">
+													<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+													<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+													<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between w-100">
+											<hr class="linea_vertical my-0">
+											<div class="pe-3 py-2 w-100">
+												<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+												<div class="d-flex justify-content-start align-items-center ps-3">
+													<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+													<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+													<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4">
+									<div class="mx-2 px-2">
+										<h2 class="fz_h2 fw_600 color_azul_1 letter_spacing mb-4 ms-3">Próximos eventos</h2>
+										<p class="fz_p fw_400 color_azul_1 ps-3 my-2">Viernes,24 de Octubre</p>
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between w-100">
+											<hr class="linea_vertical my-0">
+											<div class="pe-3 py-2 w-100">
+												<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+												<div class="d-flex justify-content-start align-items-center ps-3">
+													<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+													<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+													<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between w-100">
+											<hr class="linea_vertical my-0">
+											<div class="pe-3 py-2 w-100">
+												<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+												<div class="d-flex justify-content-start align-items-center ps-3">
+													<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+													<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+													<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between w-100">
+											<hr class="linea_vertical my-0">
+											<div class="pe-3 py-2 w-100">
+												<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+												<div class="d-flex justify-content-start align-items-center ps-3">
+													<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+													<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+													<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="container-fluid">
+					<div class="row">
+					<div class="col-12 col-lg-4">
+						<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4">
+							<!-- Titulo -->
+							<div class="d-flex justify-content-between px-2 pb-3">
+								<h2 class="fz_h2 fw_600 color_azul_1 letter_spacing my-auto">Encuestas disponibles</h2>
+								<div class="d-flex justify-content-between bx_shdw_3 bg_blanco brd_rds_10 p-2 my-0">
+									<h3 class="fz_h3 fw_700 color_azul_1 ms-2 my-0">Octubre</h3>
+									<h3 class="fz_h3 fw_700 color_azul_1 ms-3 my-0">2023 </h3>
+									<img class="icon_clock ms-4 me-2" src="img/icon/calendary.svg" alt="clock"/>
+								</div>
+							</div>
+							<div class="px-2 scroll_style">
+								
+								<hr class="brd_gris_3 mt-3 mb-5">
+
+								<!-- Contexto -->
+								<div class="grupo">
+									<h3 class="fz_h3 fw_700 color_verde_2 ps-3 my-3">Viernes,24 de Octubre</h3>
+									<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 bx_shdw_3 mb-3 d-flex justify-content-between w-100">
+										<hr class="linea_vertical lv_secondary">
+										<div class="pe-3 py-2 w-100">
+											<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación - Patología OM. Médicos de ...</p>
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+												<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/point.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">Centro de Entrenamiento Heel</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/dress.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">Tr 56 #105-37 Piso 3</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/cupos.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">8 Cupos disponibles</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Contexto -->
+								<div class="grupo">
+									<h3 class="fz_h3 fw_700 color_verde_2 ps-3 my-3">Viernes,24 de Octubre</h3>
+									<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 bx_shdw_3 mb-3 d-flex justify-content-between w-100">
+										<hr class="linea_vertical lv_secondary">
+										<div class="pe-3 py-2 w-100">
+											<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación - Patología OM. Médicos de ...</p>
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+												<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/point.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">Centro de Entrenamiento Heel</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/dress.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">Tr 56 #105-37 Piso 3</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/cupos.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">8 Cupos disponibles</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Contexto -->
+								<div class="grupo">
+									<h3 class="fz_h3 fw_700 color_verde_2 ps-3 my-3">Viernes,24 de Octubre</h3>
+									<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 bx_shdw_3 mb-3 d-flex justify-content-between w-100">
+										<hr class="linea_vertical lv_secondary">
+										<div class="pe-3 py-2 w-100">
+											<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación - Patología OM. Médicos de ...</p>
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+												<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/point.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">Centro de Entrenamiento Heel</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/dress.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">Tr 56 #105-37 Piso 3</p>
+											</div>
+
+											<div class="d-flex justify-content-start align-items-center ps-3">
+												<img class="icon_clock me-2" src="img/icon/cupos.svg" alt="clock"/>
+												<p class="fz_p fw_400 color_azul_1 my-1 me-2">8 Cupos disponibles</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					</div>
+				</div>
+			</section>
+
+		{% endblock %}
+		{% block javascripts %}
+			<script>
+				function cambiarColor(btnClic) {
+					// boton.classList.toggle("active");
+					// Remover la clase 'activo' de todos los botones
+					$('.btn_blanco').removeClass('active');
+
+					// Agregar la clase 'activo' solo al botón clicado
+					$(btnClic).addClass('active');
+				}
+
+				function cambiarApariencia(btnClic) {
+						console.log(">>>>")
+						$('.btn_dark').addClass('clicked');
+						setTimeout(() => {
+						$(btnClic).removeClass('clicked');
+						}, 200);
+				}
+			</script>
+		{% endblock %}

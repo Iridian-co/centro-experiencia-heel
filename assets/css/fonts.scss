@@ -1,0 +1,129 @@
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/Inter-Regular.ttf') format('woff2'),
+		url('../fonts/Inter-Regular.woff') format('woff'),
+		url('../fonts/Inter-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.inter {
+	font-family: 'Inter';
+	font-weight: normal;
+	font-style: normal;
+}
+
+.fw_400 {
+	font-family: "inter";
+	font-weight: 400;
+}
+
+.fw_600 {
+	font-family: "inter";
+	font-weight: 600;
+}
+
+.fw_700 {
+	font-family: "inter";
+	font-weight: 700;
+}
+
+.fz_h1 {
+	font-size: 3.1vw; // 60px
+}
+
+.fz_h2 {
+	font-size: 1.3vw; // 26px
+}
+
+.fz_h3 {
+	font-size: 1vw; // 20px
+}
+
+.fz_p {
+	font-size: 0.8vw; // 16px
+}
+
+//big desktop
+@media only screen and (min-width: 1921px) {
+	.fz_h1 {
+		font-size: 4.5rem; // 60px
+	}
+
+	.fz_h2 {
+		font-size: 2.6rem; // 26px
+	}
+
+	.fz_h3 {
+		font-size: 2.2rem; // 20px
+	}
+
+	.fz_p {
+		font-size: 2rem; // 16px
+	}
+}
+
+//desktop
+@media (min-width: 1200px) and (max-width: 1920px) {}
+
+@media (max-width: 1200px) {
+	.fz_h1 {
+		font-size: 3.2rem; // 60px
+	}
+
+	.fz_h2 {
+		font-size: 1.4rem; // 26px
+	}
+
+	.fz_h3 {
+		font-size: 1.1rem; // 20px
+	}
+
+	.fz_p {
+		font-size: 0.9rem; // 16px
+	}
+}
+
+//only tablet portrait
+@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+	.fz_h1 {
+		font-size: 2.8rem; // 60px
+	}
+
+	.fz_h2 {
+		font-size: 1.2rem; // 26px
+	}
+
+	.fz_h3 {
+		font-size: 1rem; // 20px
+	}
+
+	.fz_p {
+		font-size: 0.8rem; // 16px
+	}
+}
+
+//only tablet landscape
+@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {}
+
+//only phone
+@media (max-width: 576px) {
+	.fz_h1 {
+		font-size: 3rem; // 60px
+	}
+
+	.fz_h2 {
+		font-size: 1.3rem; // 26px
+	}
+
+	.fz_h3 {
+		font-size: 1rem; // 20px
+	}
+
+	.fz_p {
+		font-size: 0.8rem; // 16px
+	}
+}

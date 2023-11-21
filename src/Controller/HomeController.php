@@ -20,6 +20,18 @@ class HomeController extends AbstractController
         ]);
     }
 
+	/**
+     * @Route("/base", name="base")
+     */
+    public function base()
+    {
+        return $this->render('home/baseMaqueta.html.twig', []);
+    }
 
-
+	/**
+     * @Route("/login", name="login")
+     */
+    public function login() {
+        return $this->render('user/login.html.twig', []);
+    }
 }
