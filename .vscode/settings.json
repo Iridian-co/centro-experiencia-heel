@@ -1,5 +1,8 @@
 {
 	"[php]": {
 		"editor.defaultFormatter": null
+	},
+	"[twig]": {
+		"editor.defaultFormatter": "mblode.twig-language-2"
 	}
 }

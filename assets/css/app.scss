@@ -1,6 +1,9 @@
 @import "vars.scss";
 @import "fonts.scss";
+@import "pages.scss";
+@import "mixin.scss";
 @import "general-min.css";
+
 
 body {
 	font-family: "inter";
@@ -59,6 +62,10 @@ main {
 
 .bg_azul_3 {
 	background-color: $azul_3;
+}
+
+.bg_azul_4 {
+	background-color: $azul_4;
 }
 
 .bg_verde_1 {
@@ -155,7 +162,12 @@ main {
 }
 
 .bg_gradient_azul_2 {
-	background: rgba(120, 180, 223, 0.1);
+	background: $azul_4;
+}
+
+.bg_gradient_azul_day {
+	background: linear-gradient(0deg, rgba(120, 180, 223, 0.1), rgba(120, 180, 223, 0.1));
+	// background: linear-gradient(0deg, rgba(120, 180, 223, 0.1), rgba(178, 202, 219, 1)), linear-gradient(0deg, $gris_3, $gris_3);
 }
 
 .bx_shdw_1 {
@@ -174,6 +186,10 @@ main {
 
 .brd_azul_2 {
 	border: 1px solid $azul_2;
+}
+
+.brd_gris_3 {
+	border: 1px solid $gris_3;
 }
 
 // button
@@ -198,9 +214,9 @@ main {
 
 	.icon {
 		width: 1vw;
-		height: 1vw;
+		// height: 1vw;
 		color: inherit;
-		fill: blue;
+		// fill: blue;
 		margin-right: 0.5vw;
 		vertical-align: middle;
 	}
@@ -270,21 +286,6 @@ main {
 	}
 }
 
-@mixin borderRadius($brd) {
-	border-radius: $brd;
-	-moz-border-radius: $brd;
-	-webkit-border-radius: $brd;
-}
-
-@mixin borderHr($brd) {
-	-webkit-border-top-left-radius: $brd;
-	-webkit-border-bottom-left-radius: $brd;
-	-moz-border-radius-topleft: $brd;
-	-moz-border-radius-bottomleft: $brd;
-	border-top-left-radius: $brd;
-	border-bottom-left-radius: $brd;
-}
-
 .brd_rds_20 {
 	@include borderRadius(20px);
 }
@@ -330,6 +331,21 @@ main {
 	@extend .btn;
 	@extend .btn_terciary;
 	@extend .btn_mediun;
+}
+
+.btn_calendar {
+	@extend .btn_global;
+	@include btnCalendar($gris_4);
+	padding: .3vw 1vw;
+	@extend .brd_rds_5;
+	flex-grow: 1;
+
+	// Pseudo-estado al hacer clic
+	&.active {
+		color: $blanco !important;
+		background-color: $verde_2;
+		font-weight: 700 !important;
+	}
 }
 
 button {
@@ -563,11 +579,24 @@ form {
 			background-color: $azul_3 !important;
 		}
 	}
+}
 
-	.pdd_w {
-		// padding-right:10rem;
-		// padding-left:10rem;
-		width: 28vw;
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		color: $azul_1;
+
+		&:hover {
+			color: darken($azul_3, 10%);
+
+			a {
+				color: $azul_3;
+			}
+		}
 	}
 }
 
@@ -622,6 +651,51 @@ hr.brd_gris_3 {
 	}
 }
 
+.rounded-circle {
+	border-radius: 50%;
+}
+
+.icon-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+// Estilos para el círculo y el ícono
+.circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4.5vw;
+	height: 4.5vw;
+	border-radius: 50%;
+	margin-right: 10px;
+	color: $azul_2;
+	background: $azul_4;
+
+	&.conferencistas {
+		width: 7vw;
+		height: 7vw;
+	}
+}
+
+// Estilos para el ícono dentro del círculo
+.circle i {
+	font-size: 1vw;
+}
+
+.icon_list {
+	width: 1.8vw;
+	color: inherit;
+	fill: $azul_2;
+	vertical-align: middle;
+}
+
+.vertical_txt {
+	writing-mode: vertical-lr; // Modo de escritura vertical de izquierda a derecha
+	transform: rotate(180deg); // Rota el texto 180 grados para que quede vertical
+	margin: 0; // Elimina el margen para un diseño más limpio
+}
+
 //big desktop
 @media only screen and (min-width: 1921px) {}
 
@@ -636,7 +710,111 @@ hr.brd_gris_3 {
 //only tablet landscape
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {}
 
-@media only screen and (min-width: 577px) and (max-width: 767px) {}
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+	.btn_global {
+		font-size: 1rem; //20px
+	}
+
+	.btn_mediun {
+		padding: 10px 8px;
+	}
+
+	form {
+
+		textarea,
+		input[type="tel"],
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		select {
+			font-size: 0.8rem;
+			padding: 0.8rem;
+
+			&::placeholder {
+				font-size: 0.8rem;
+			}
+
+			&:-ms-input-placeholder {
+				font-size: 0.8rem;
+			}
+
+			&::-ms-input-placeholder {
+				font-size: 0.8rem;
+			}
+		}
+
+		// Estilos generales para el checkbox
+		input[type="checkbox"] {
+			margin-right: 1.5rem;
+		}
+
+		[type="checkbox"] {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+
+		button {
+			&.btn_form {
+				width: 16rem;
+				font-size: 1.2rem;
+				padding: 1rem 2rem;
+			}
+		}
+	}
+}
 
 //only phone
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+	.btn_global {
+		font-size: 1rem; //20px
+	}
+
+	.btn_mediun {
+		padding: 10px 8px;
+	}
+
+	form {
+
+		textarea,
+		input[type="tel"],
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		select {
+			font-size: 0.8rem;
+			// padding: 0.8rem;
+
+			&::placeholder {
+				font-size: 0.8rem;
+			}
+
+			&:-ms-input-placeholder {
+				font-size: 0.8rem;
+			}
+
+			&::-ms-input-placeholder {
+				font-size: 0.8rem;
+			}
+		}
+
+		// Estilos generales para el checkbox
+		input[type="checkbox"] {
+			margin-right: 1.5rem;
+		}
+
+		[type="checkbox"] {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+
+		button {
+			&.btn_form {
+				width: 16rem;
+				font-size: 1.2rem;
+				padding: 1rem 2rem;
+			}
+		}
+	}
+}

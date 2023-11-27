@@ -1,0 +1,28 @@
+@mixin btnCalendar($colory) {
+	&:hover {
+		background-color: darken($colory, 10%);
+	}
+
+	background-color: $colory;
+	color: black;
+	font-size: 0.833vw; //16px
+
+	&.clicked {
+		background-color: lighten($colory, 05%);
+	}
+}
+
+@mixin borderRadius($brd) {
+	border-radius: $brd;
+	-moz-border-radius: $brd;
+	-webkit-border-radius: $brd;
+}
+
+@mixin borderHr($brd) {
+	-webkit-border-top-left-radius: $brd;
+	-webkit-border-bottom-left-radius: $brd;
+	-moz-border-radius-topleft: $brd;
+	-moz-border-radius-bottomleft: $brd;
+	border-top-left-radius: $brd;
+	border-bottom-left-radius: $brd;
+}
