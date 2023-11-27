@@ -494,8 +494,8 @@ form {
 
 	[type="checkbox"] {
 		position: relative;
-		width: 20px;
-		height: 20px;
+		width: 15px;
+		height: 15px;
 		cursor: pointer;
 
 		&::before,
@@ -696,6 +696,15 @@ hr.brd_gris_3 {
 	margin: 0; // Elimina el margen para un diseño más limpio
 }
 
+.banner_login {
+	background-image: url("../../public/img/banner_login.jpg");
+	background-position: inherit;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	overflow: hidden;
+}
+
 //big desktop
 @media only screen and (min-width: 1921px) {}
 
@@ -705,10 +714,26 @@ hr.brd_gris_3 {
 @media (max-width: 992px) {}
 
 //only tablet portrait
-@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {}
+@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+	.banner_login {
+		height: 50vh;
+	}
+}
 
 //only tablet landscape
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {}
+
+@media (min-width: 577px) and (max-width: 767px) and (orientation: landscape) {
+	.banner_login {
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
+	.banner_login {
+		height: 50vh;
+	}
+}
 
 @media only screen and (min-width: 577px) and (max-width: 767px) {
 	.btn_global {
@@ -766,6 +791,11 @@ hr.brd_gris_3 {
 
 //only phone
 @media (max-width: 576px) {
+
+	.banner_login {
+		height: 10rem;
+	}
+
 	.btn_global {
 		font-size: 1rem; //20px
 	}
