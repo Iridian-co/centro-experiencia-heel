@@ -40,6 +40,22 @@ main {
 	width: 350px;
 }
 
+aside {
+	// position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.nav {
+	position: relative;
+	margin: 0 10%;
+}
+
 .line_fz {
 	background: linear-gradient(270deg, #0088C1 0%, #2CB174 63.17%, #BCCD00 130.41%);
 	width: 85px;
@@ -48,6 +64,48 @@ main {
 
 .letter_spacing {
 	letter-spacing: 0.02em;
+}
+
+.letter_sp_1 {
+	letter-spacing: 1px;
+}
+
+.ln_h_60 {
+	line-height: 60px;
+}
+
+header {
+	height: 100px;
+}
+
+.avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.9vw;
+	height: 1.9vw;
+	border-radius: 50%;
+}
+
+.score {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	width: 0.9vw;
+	height: 0.9vw;
+	color: $blanco;
+	margin-top: -0.5vw;
+}
+
+.bell {
+	margin-right: -0.5vw;
+	width: 1.2vw;
+	height: 1.2vw;
+}
+
+.c_pntr {
+	cursor: pointer;
 }
 
 //background
@@ -140,13 +198,15 @@ main {
 	color: $gris_2;
 }
 
+.color_blanco {
+	color: $blanco;
+}
+
 //gradient
 
 .bg_gradient_home {
-	background: hsla(205, 62%, 67%, 1);
-	background: linear-gradient(180deg, hsla(205, 62%, 67%, 1) 0%, hsla(197, 100%, 64%, 1) 30%);
-	background: -moz-linear-gradient(180deg, hsla(205, 62%, 67%, 1) 0%, hsla(197, 100%, 64%, 1) 30%);
-	background: -webkit-linear-gradient(180deg, hsla(205, 62%, 67%, 1) 0%, hsla(197, 100%, 64%, 1) 30%);
+	background: rgb(120, 180, 223);
+	background: linear-gradient(299deg, rgba(120, 180, 223, 0.3) 30%, rgba(120, 180, 223, 0.3) 30%);
 }
 
 .bg_degradado_box_1 {
@@ -281,7 +341,25 @@ main {
 		font-size: 0.833vw; //16px
 
 		&.clicked {
-			background-color: lighten($azul_3, 05%);
+			background-color: lighten($azul_3, 5%);
+		}
+	}
+
+	&.btn_quaternary {
+		background-color: $azul_3;
+		color: $blanco;
+		font-size: 0.833vw; //16px
+
+		&:hover {
+			background-color: lighten($azul_2, 5%);
+		}
+
+		&.clicked {
+			background-color: darken($azul_2, 5%);
+		}
+
+		&.active {
+			background-color: $azul_2;
 		}
 	}
 }
@@ -298,6 +376,10 @@ main {
 	@include borderRadius(5px);
 }
 
+.brd_rds_msg {
+	@include borderRadius(20px 0 20px 20px);
+}
+
 .btn_big {
 	padding: 20px 4px 20px 16px;
 	text-align: start;
@@ -307,6 +389,11 @@ main {
 
 .btn_small {
 	padding: 10px 48px;
+	@extend .brd_rds_10;
+}
+
+.btn_extra_small {
+	padding: 7px 25px;
 	@extend .brd_rds_10;
 }
 
@@ -330,6 +417,12 @@ main {
 .btn_dark {
 	@extend .btn;
 	@extend .btn_terciary;
+	@extend .btn_mediun;
+}
+
+.btn_primary {
+	@extend .btn;
+	@extend .btn_quaternary;
 	@extend .btn_mediun;
 }
 
@@ -601,17 +694,21 @@ ul {
 }
 
 hr.linea_vertical {
-	border: none;
-	border-left: 9px solid $verde_2;
-	@include borderHr(10px);
-	height: initial;
-	position: initial;
-
-	// Estilo alternativo para otro tipo de botón
-	&.lv_secondary {
-		@include borderRadius(10px);
-	}
+	@include lnVertical($verde_2);
 }
+
+hr.linea_vertical_verde_1 {
+	@include lnVertical($verde_1);
+}
+
+hr.linea_vertical_lila {
+	@include lnVertical($lila);
+}
+
+hr.linea_vertical_azul_3 {
+	@include lnVertical($azul_3);
+}
+
 
 hr.brd_gris_3 {
 	border: 1px solid $gris_3;

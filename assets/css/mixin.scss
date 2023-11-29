@@ -26,3 +26,16 @@
 	border-top-left-radius: $brd;
 	border-bottom-left-radius: $brd;
 }
+
+@mixin lnVertical($color) {
+	border: none;
+	border-left: 9px solid $color;
+	@include borderHr(10px);
+	height: initial;
+	position: initial;
+
+	// Estilo alternativo para otro tipo de botón
+	&.lv_secondary {
+		@include borderRadius(10px);
+	}
+}

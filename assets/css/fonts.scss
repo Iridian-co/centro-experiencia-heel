@@ -45,6 +45,10 @@
 	font-size: 0.8vw; // 16px
 }
 
+.fz_min {
+	font-size: 0.6vw; // 12px
+}
+
 //big desktop
 @media only screen and (min-width: 1921px) {
 	.fz_h1 {
@@ -61,6 +65,10 @@
 
 	.fz_p {
 		font-size: 2rem; // 16px
+	}
+
+	.fz_min {
+		font-size: 1.5rem; // 12px
 	}
 }
 
@@ -86,43 +94,55 @@
 	.fz_p {
 		font-size: 0.8rem; // 16px
 	}
+
+	.fz_min {
+		font-size: 0.6rem; // 12px
+	}
 }
 
 @media (min-width: 577px) and (max-width: 767px) {
 	.fz_h1 {
-			font-size: 1.8rem; // 60px
-		}
-	
-		.fz_h2 {
-			font-size: 1.2rem; // 26px
-		}
-	
-		.fz_h3 {
-			font-size: 1rem; // 20px
-		}
-	
-		.fz_p {
-			font-size: 0.8rem; // 16px
-		}
+		font-size: 1.8rem; // 60px
+	}
+
+	.fz_h2 {
+		font-size: 1.2rem; // 26px
+	}
+
+	.fz_h3 {
+		font-size: 1rem; // 20px
+	}
+
+	.fz_p {
+		font-size: 0.8rem; // 16px
+	}
+
+	.fz_min {
+		font-size: 0.6rem; // 12px
+	}
 }
 
 //only tablet landscape
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
 	.fz_h1 {
-			font-size: 2rem; // 60px
-		}
-	
-		.fz_h2 {
-			font-size: 1.3rem; // 26px
-		}
-	
-		.fz_h3 {
-			font-size: 1rem; // 20px
-		}
-	
-		.fz_p {
-			font-size: 0.8rem; // 16px
-		}
+		font-size: 2rem; // 60px
+	}
+
+	.fz_h2 {
+		font-size: 1.3rem; // 26px
+	}
+
+	.fz_h3 {
+		font-size: 1rem; // 20px
+	}
+
+	.fz_p {
+		font-size: 0.8rem; // 16px
+	}
+
+	.fz_min {
+		font-size: 0.6rem; // 12px
+	}
 }
 
 @media only screen and (min-width: 577px) and (max-width: 767px) {}
@@ -143,5 +163,9 @@
 
 	.fz_p {
 		font-size: 0.8rem; // 16px
+	}
+
+	.fz_min {
+		font-size: 0.6rem; // 12px
 	}
 }

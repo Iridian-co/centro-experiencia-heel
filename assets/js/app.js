@@ -75,33 +75,64 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-		const calendarEl = document.getElementById('calendar')
-		const calendar = new Calendar(calendarEl, {
-			events: '',
-			plugins: [dayGridPlugin],
-			initialView: 'dayGridMonth',
-			dayHeaderFormat: { weekday: 'long' },
-			locale: 'es',
-			locales: [{
-				code: 'es',
-				week: {
-					dow: 1, // Monday is the first day of the week.
-					doy: 4  // The week that contains Jan 4th is the first week of the year.
-				},
-				buttonText: {
-					prev: "Ant",
-					next: "Sig",
-					today: "Hoy",
-					month: "Mes",
-					week: "Semana",
-					day: "Día",
-					list: "Agenda"
-				},
-				weekText: "Sm",
-				allDayText: "Todo el día",
-				moreLinkText: "más",
-				noEventsText: "No hay eventos para mostrar",
-			}]
+	const calendarEl = document.getElementById('calendar')
+	const calendar = new Calendar(calendarEl, {
+		events: '',
+		plugins: [dayGridPlugin],
+		initialView: 'dayGridMonth',
+		dayHeaderFormat: { weekday: 'long' },
+		locale: 'es',
+		locales: [{
+			code: 'es',
+			week: {
+				dow: 1, // Monday is the first day of the week.
+				doy: 4  // The week that contains Jan 4th is the first week of the year.
+			},
+			buttonText: {
+				prev: "Ant",
+				next: "Sig",
+				today: "Hoy",
+				month: "Mes",
+				week: "Semana",
+				day: "Día",
+				list: "Agenda"
+			},
+			weekText: "Sm",
+			allDayText: "Todo el día",
+			moreLinkText: "más",
+			noEventsText: "No hay eventos para mostrar",
+		}]
 	})
 	calendar.render()
 })
+
+
+function cambiarColor(btnClic) {
+	// boton.classList.toggle("active");
+	// Remover la clase 'activo' de todos los botones
+	$('.btn_blanco').removeClass('active');
+
+	// Agregar la clase 'activo' solo al botón clicado
+	$(btnClic).addClass('active');
+}
+
+function calendarChange(btnClic) {
+	// boton.classList.toggle("active");
+	// Remover la clase 'activo' de todos los botones
+	$('.btn_calendar').removeClass('active');
+
+	// Agregar la clase 'activo' solo al botón clicado
+	$(btnClic).addClass('active');
+}
+
+function cambiarApariencia(btnClic) {
+	console.log(">>>>")
+	$('.btn_dark').addClass('clicked');
+	setTimeout(() => {
+		$(btnClic).removeClass('clicked');
+	}, 200);
+}
+
+function dropdown() {
+	$(".dropdown_menu").toggle();
+}

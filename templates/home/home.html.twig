@@ -1,0 +1,247 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="bg_gradient_home">
+	{# Aquí puedes incluir el contenido de tu vista #}
+	
+		
+<div class="container-fluid">
+	<div
+		class="row">
+		<!-- SideBar -->
+		<div class="col-12 col-md-2 col-lg-2">
+			<aside class="sidebar ps-0">
+				<header class="d-flex justify-content-between align-items-center">
+					<div class="my-4">
+						<h1 class="fz_h1 my-0 text-center color_azul_1">Logo</h1>
+					</div>
+				</header>
+				<nav class="nav">
+					<ul>
+						<li class="d-block">
+							<a href="#" class="btn_blanco btn_big fw_400 active" id="calendario" onclick="cambiarColor(this, 'calendario')">
+								<img class="icon" src="img/icon/calendario.svg" alt="calendario"/>
+								<span class="texto">Calendario</span>
+								<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+							</a>
+						</li>
+						<li class="d-block">
+							<a href="#" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'cursos')">
+								<img class="icon" src="img/icon/cursos.svg" alt="Cursos"/>
+								<span class="texto">Cursos</span>
+								<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+							</a>
+						</li>
+						<li class="d-block">
+							<a href="#" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'experiencia')">
+								<img class="icon" src="img/icon/cubo.svg" alt="cubo"/>
+								<span class="texto">Centro de Experiencia HEEL</span>
+								<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+							</a>
+						</li>
+						<li class="d-block">
+							<a href="#" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'encuesta')">
+								<img class="icon" src="img/icon/pizza.svg" alt="pizza"/>
+								<span class="texto">Encuesta</span>
+								<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+							</a>
+						</li>
+						<li class="d-block">
+							<a href="#" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'certificado')">
+								<img class="icon" src="img/icon/chulo.svg" alt="chulo"/>
+								<span class="texto">Certificado</span>
+								<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+		</div>
+
+		<!-- SideBar -->
+		<div class="col-12 col-md-10 col-lg-10">
+			<main>
+				<header class="d-flex justify-content-between align-items-center">
+					<div class="my-4">
+						<h2 class="fz_h2 fw_600 my-0 color_azul_1 letter_sp_1">¡Bienvenida Giselle!</h2>
+					</div>
+					<div class="d-inline-flex my-4">
+						<div class="d-inline-flex me-5 my-auto">
+							<a href="#" class="" onclick="dropdown()">
+								<img class="bell" src="img/icon/bell.svg" alt="bell"/>
+							</a>
+							<span class="bg_verde_2 score">
+								<p class="fz_min fw_700 color_blanco">4</p>
+							</span>
+							<div class="dropdown">
+								<div class="dropdown_menu brd_rds_msg bg_blanco bx_shdw_2 mt-4 mt-lg-5 mb-3">
+									<div class="d-flex justify-content-around align-items-center">
+										<h2 class="fz_h2 fw_600 color_azul_1 letter_spacing text-center mb-4 ms-3">Notificaciones</h2>
+										<a href="#" class="" onclick="dropdown()">
+											<img class="bell" src="img/icon/x.svg" alt="close"/>
+										</a>
+									</div>
+									<div class="px-3">
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+											<hr class="linea_vertical_azul_3 my-0">
+											<div class="pe-0 py-2">
+												<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Tienes 1 nueva encuesta disponible!</p>
+												<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+											</div>
+										</div>
+
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+											<hr class="linea_vertical_azul_3 my-0">
+											<div class="pe-0 py-2">
+												<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Tienes 1 nueva encuesta disponible!</p>
+												<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+											</div>
+										</div>
+
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+											<hr class="linea_vertical_lila my-0">
+											<div class="pe-0 py-2">
+												<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Tienes 1 nueva encuesta disponible!</p>
+												<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+											</div>
+										</div>
+
+										<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+											<hr class="linea_vertical_verde_1 my-0">
+											<div class="pe-0 py-2">
+												<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Nuevo curso disponible!</p>
+												<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="avatar me-3 my-auto">
+							<img class="w-100" src="img/user.png" alt="user"/>
+						</div>
+						<h3 class="fz_h3 fw_700 my-0 color_azul_1 me-4 my-auto">Giselle Adriana</h3>
+						<div class="me-4 my-auto">
+							<img class="icon" src="img/icon/arrow_down.svg" alt="arrow_down"/>
+						</div>
+					</div>
+				</header>
+				<article>
+					<div id="vista_1" class="">
+						{% include ("basic/calendario.html.twig") %}
+					</div>
+					<div id="vista_2" class="">
+						{% include ("basic/cursos.html.twig") %}
+					</div>
+					<div id="vista_3" class="">
+						{% include ("basic/experiencia.html.twig") %}
+					</div>
+					<div id="vista_4" class="">
+						{% include ("basic/encuesta.html.twig") %}
+					</div>
+					<div id="vista_5" class="">
+						{% include ("basic/certificado.html.twig") %}
+					</div>
+					{# {% if vista_calendario == vistaSelecionada %}
+						{% include ("basic/calendario.html.twig") %}
+					{% elseif vista == vista_turno %}
+						{% include ("basic/cursos.html.twig") %}
+					{% elseif vista == 'experiencia' %}
+						{% include ("basic/experiencia.html.twig") %}
+					{% elseif vista == 'encuesta' %}
+						{% include ("basic/encuesta.html.twig") %}
+					{% elseif vista == 'certificado' %}
+						{% include ("basic/certificado.html.twig") %}
+					{% endif %} #}
+				</article>
+			</main>
+		</div>
+	</d
+	
+</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script>
+		function cambiarColor(btnClic, id) {
+			// boton.classList.toggle("active");
+			// Remover la clase 'activo' de todos los botones
+			$('.btn_blanco').removeClass('active');
+
+			// Agregar la clase 'activo' solo al botón clicado
+			$(btnClic).addClass('active');
+			//console.log(">>> --> ", btnClic);
+			mostrarVista(id);
+			console.log("id --> ", id);
+		}
+
+		function mostrarVista(param) {
+			// Primero, establece todas las clases a ""
+			document.getElementById("vista_1").className = "";
+			document.getElementById("vista_2").className = "";
+			document.getElementById("vista_3").className = "";
+			document.getElementById("vista_4").className = "";
+			document.getElementById("vista_5").className = "";
+			switch (param) {
+				case "calendario":
+					var x = document.getElementById("vista_1");
+					x.className = "show";
+					console.log("param! ", param);
+					break;
+				case "cursos":
+					var x = document.getElementById("vista_2");
+					x.className = "show";
+					console.log("param! ", param);
+					break;
+				case "experiencia":
+					var x = document.getElementById("vista_3");
+					x.className = "show";
+					console.log("param! ", param);
+					break;
+				case "encuesta":
+					var x = document.getElementById("vista_4");
+					x.className = "show";
+					console.log("param! ", param);
+					break;
+				case "certificado":
+					var x = document.getElementById("vista_5");
+					x.className = "show";
+					console.log("param! ", param);
+					break;
+				default:
+					console.log("¿Qué fruta es esa?");
+			}
+			
+
+		}
+
+		function calendarChange(btnClic) {
+			// boton.classList.toggle("active");
+			// Remover la clase 'activo' de todos los botones
+			$('.btn_calendar').removeClass('active');
+
+			// Agregar la clase 'activo' solo al botón clicado
+			$(btnClic).addClass('active');
+		}
+
+		function cambiarApariencia(btnClic) {
+				console.log(">>>>")
+				$('.btn_dark').addClass('clicked');
+				setTimeout(() => {
+				$(btnClic).removeClass('clicked');
+				}, 200);
+		}
+
+		function CambiarQuaternary(btnClic) {
+				console.log(">>>>")
+				$('.btn_primary').addClass('clicked');
+				setTimeout(() => {
+				$(btnClic).removeClass('clicked');
+				}, 200);
+		}
+
+		function dropdown() {
+			$(".dropdown_menu").toggle();
+		}
+	</script>
+{% endblock %}
