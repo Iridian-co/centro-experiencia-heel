@@ -163,6 +163,9 @@
 
 {% block javascripts %}
 	<script>
+		//carga por defecto la vista calendario
+		mostrarVista();
+
 		function cambiarColor(btnClic, id) {
 			// boton.classList.toggle("active");
 			// Remover la clase 'activo' de todos los botones
@@ -186,34 +189,41 @@
 				case "calendario":
 					var x = document.getElementById("vista_1");
 					x.className = "show";
-					console.log("param! ", param);
+					//console.log("param! ", param);
 					break;
 				case "cursos":
 					var x = document.getElementById("vista_2");
 					x.className = "show";
-					console.log("param! ", param);
+					//console.log("param! ", param);
 					break;
 				case "experiencia":
 					var x = document.getElementById("vista_3");
 					x.className = "show";
-					console.log("param! ", param);
+					//console.log("param! ", param);
 					break;
 				case "encuesta":
 					var x = document.getElementById("vista_4");
 					x.className = "show";
-					console.log("param! ", param);
+					//console.log("param! ", param);
 					break;
 				case "certificado":
 					var x = document.getElementById("vista_5");
 					x.className = "show";
-					console.log("param! ", param);
+					//console.log("param! ", param);
 					break;
 				default:
-					console.log("¿Qué fruta es esa?");
+					var x = document.getElementById("vista_1");
+					x.className = "show";
 			}
 			
 
 		}
+
+		function linkVista(param) {
+			CambiarQuaternary(param);
+			mostrarVista(param, 'cursos');
+		}
+
 
 		function calendarChange(btnClic) {
 			// boton.classList.toggle("active");
