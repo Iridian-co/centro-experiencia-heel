@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="dropdown">
+	<div class="dropdown_menu brd_rds_msg bg_blanco bx_shdw_2 mt-4 mt-lg-5 mb-3">
+		<div class="d-flex justify-content-around align-items-center">
+			<h2 class="fz_h2 fw_600 color_azul_1 letter_spacing text-center mb-4 ms-3">Notificaciones</h2>
+			<a href="#" class="" onclick="dropdown()">
+				<img class="bell" src="img/icon/x.svg" alt="close"/>
+			</a>
+		</div>
+		<div class="px-3">
+			<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+				<hr class="linea_vertical_azul_3 my-0">
+				<div class="pe-0 py-2">
+					<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Tienes 1 nueva encuesta disponible!</p>
+					<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+				</div>
+			</div>
+
+			<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+				<hr class="linea_vertical_azul_3 my-0">
+				<div class="pe-0 py-2">
+					<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Tienes 1 nueva encuesta disponible!</p>
+					<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+				</div>
+			</div>
+
+			<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+				<hr class="linea_vertical_lila my-0">
+				<div class="pe-0 py-2">
+					<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Tienes 1 nueva encuesta disponible!</p>
+					<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+				</div>
+			</div>
+
+			<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between">
+				<hr class="linea_vertical_verde_1 my-0">
+				<div class="pe-0 py-2">
+					<p class="fz_p fw_700 color_azul_1 px-3 my-2">¡Nuevo curso disponible!</p>
+					<p class="fz_p fw_400 color_azul_1 px-3 my-2">Bases de BrSM  - Técnicas de aplicación...</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script></script>
+{% endblock %}

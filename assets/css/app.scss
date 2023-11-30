@@ -87,6 +87,14 @@ header {
 	border-radius: 50%;
 }
 
+.sesion {
+	width: 1.5vw;
+	height: 1.5vw;
+	&.ico {
+		width: 1.5vw;
+	}
+}
+
 .grupo {
 	display: flex;
 	align-items: center;
@@ -114,6 +122,14 @@ header {
 
 .c_pntr {
 	cursor: pointer;
+}
+
+.ws_nowrap {
+	white-space: nowrap;
+}
+
+.txt_deco_none {
+	text-decoration: none;
 }
 
 //background
@@ -338,15 +354,14 @@ header {
 	}
 
 	&.btn_terciary {
+		background-color: $azul_1;
+		color: $blanco;
+		font-size: 0.833vw; //16px
 
 		// Pseudo-estado al pasar el mouse
 		&:hover {
 			background-color: darken($azul_3, 10%);
 		}
-
-		background-color: $azul_1;
-		color: $blanco;
-		font-size: 0.833vw; //16px
 
 		&.clicked {
 			background-color: lighten($azul_3, 5%);
@@ -364,10 +379,6 @@ header {
 
 		&.clicked {
 			background-color: darken($azul_2, 5%);
-		}
-
-		&.active {
-			background-color: $azul_2;
 		}
 	}
 }
