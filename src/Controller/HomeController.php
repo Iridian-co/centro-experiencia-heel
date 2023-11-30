@@ -11,6 +11,20 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+	/**
+     * @Route("/", name="home")
+     */
+    public function home()
+    {
+        return $this->render('home/home.html.twig', [
+			'vsita_calendario' => 'calendario',
+			'vsita_curso' => 'curso',
+			'vsita_experiencia' => 'experiencia',
+			'vsita_encuesta' => 'encuesta',
+			'vsita_certificado' => 'certificado'
+        ]);
+    }
+
     #[Route('/', name: 'homepage')]
     public function index(): Response
     {
@@ -19,7 +33,7 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
-
+	
 	/**
      * @Route("/base", name="base")
      */
