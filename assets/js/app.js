@@ -105,34 +105,5 @@ document.addEventListener('DOMContentLoaded', function () {
 	})
 	calendar.render()
 })
+console.log(" APP ready");
 
-
-function cambiarColor(btnClic) {
-	// boton.classList.toggle("active");
-	// Remover la clase 'activo' de todos los botones
-	$('.btn_blanco').removeClass('active');
-
-	// Agregar la clase 'activo' solo al botón clicado
-	$(btnClic).addClass('active');
-}
-
-function calendarChange(btnClic) {
-	// boton.classList.toggle("active");
-	// Remover la clase 'activo' de todos los botones
-	$('.btn_calendar').removeClass('active');
-
-	// Agregar la clase 'activo' solo al botón clicado
-	$(btnClic).addClass('active');
-}
-
-function cambiarApariencia(btnClic) {
-	console.log(">>>>")
-	$('.btn_dark').addClass('clicked');
-	setTimeout(() => {
-		$(btnClic).removeClass('clicked');
-	}, 200);
-}
-
-function dropdown() {
-	$(".dropdown_menu").toggle();
-}

@@ -71,6 +71,20 @@
 	@include dropdown(50%, 50%, 45%, -50%, -50%);
 }
 
+.dropdown_event {
+	@include dropdown(50%, 50%, 45%, -50%, -50%);
+}
+
+#agendarme {
+	display: contents;
+	@include showHide();
+}
+
+#formEvent {
+	display: none;
+	@include showHide();
+}
+
 /* Calendario */
 .calendar {
 	display: block;

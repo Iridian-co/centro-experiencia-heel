@@ -126,6 +126,7 @@
 						</div>
 						<div class="d-flex justify-content-center align-items-center">
 							{{ include('dropdown/dropdownAgenda.html.twig') }}
+							{{ include('dropdown/dropdownEvento.html.twig') }}
 						</div>
 						<!-- titulo -->
 						<div class="px-4 pb-3 scroll_style">
@@ -173,6 +174,22 @@
 	<script>
 		function dropdownAgenda() {
 			$(".dropdown_agenda").toggle();
+		}
+
+		function NextDropdpwn(hideId, showId) {
+			var x = document.getElementById(showId);
+			var y = document.getElementById(hideId);
+			x.className = "show";
+			y.className = "hide";
+			//console.log(" next  >>>>")
+		}
+
+		function dropdownEventoAgendado(toggle1) {
+			$(toggle1).toggle();
+			if (toggle1 !== '.dropdown_event') {
+				$(".dropdown_event").toggle();
+			}
+			console.log('dropdown_event');
 		}
 	</script>
 {% endblock %}

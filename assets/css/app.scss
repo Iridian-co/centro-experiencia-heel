@@ -90,9 +90,18 @@ header {
 .sesion {
 	width: 1.5vw;
 	height: 1.5vw;
+
 	&.ico {
 		width: 1.5vw;
 	}
+}
+
+.arrowIco {
+	width: 0.9vw;
+}
+
+.closeIco {
+	width: 1.2vw;
 }
 
 .grupo {
@@ -558,13 +567,15 @@ form {
 	}
 
 	input[type="date"],
-	input[type="time"] {
+	input[type="time"],
+	select {
 		appearance: none;
 		-webkit-appearance: none;
 	}
 
 	input,
-	textarea {
+	textarea,
+	select {
 		&:focus {
 			outline: none !important;
 		}
@@ -651,8 +662,8 @@ form {
 
 	select {
 		// color: white;
-		border: none;
-		width: 100%;
+		// border: none;
+		// width: 100%;
 
 		&::-ms-expand {
 			color: #ff0000;
@@ -767,6 +778,20 @@ hr.brd_gris_3 {
 	}
 }
 
+.scroll_hide {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 30vw;
+	/* Ocultar la barra de desplazamiento para IE, Edge y Firefox */
+	-ms-overflow-style: none;/* IE y Edge */
+	scrollbar-width: none;/* Firefox */
+
+	/* Ocultar la barra de desplazamiento para Chrome, Safari y Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
 .rounded-circle {
 	border-radius: 50%;
 }
@@ -792,11 +817,10 @@ hr.brd_gris_3 {
 		width: 7vw;
 		height: 7vw;
 	}
-}
-
-// Estilos para el ícono dentro del círculo
-.circle i {
-	font-size: 1vw;
+	// Estilos para el ícono dentro del círculo
+	&i {
+		font-size: 1vw;
+	}
 }
 
 .icon_list {

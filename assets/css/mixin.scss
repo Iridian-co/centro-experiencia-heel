@@ -52,4 +52,14 @@
 	} @else if $y !=auto {
 		transform: translate($x, $y);
 	}
-} 
+}
+
+@mixin showHide () {
+	&.show {
+			display: contents;
+		}
+	
+		&.hide {
+			display: none;
+		}
+}
