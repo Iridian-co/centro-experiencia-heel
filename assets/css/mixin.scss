@@ -39,3 +39,27 @@
 		@include borderRadius(10px);
 	}
 }
+
+@mixin dropdown($top, $left, $width, $x, $y) {
+	display: none;
+	position: absolute;
+	margin: 0;
+	top: $top;
+	left: $left;
+	width: $width;
+	@if $y == auto {
+		transform: translateX($x);
+	} @else if $y !=auto {
+		transform: translate($x, $y);
+	}
+}
+
+@mixin showHide () {
+	&.show {
+			display: contents;
+		}
+	
+		&.hide {
+			display: none;
+		}
+}

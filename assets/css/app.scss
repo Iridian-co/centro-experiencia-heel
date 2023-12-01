@@ -87,6 +87,23 @@ header {
 	border-radius: 50%;
 }
 
+.sesion {
+	width: 1.5vw;
+	height: 1.5vw;
+
+	&.ico {
+		width: 1.5vw;
+	}
+}
+
+.arrowIco {
+	width: 0.9vw;
+}
+
+.closeIco {
+	width: 1.2vw;
+}
+
 .grupo {
 	display: flex;
 	align-items: center;
@@ -114,6 +131,14 @@ header {
 
 .c_pntr {
 	cursor: pointer;
+}
+
+.ws_nowrap {
+	white-space: nowrap;
+}
+
+.txt_deco_none {
+	text-decoration: none;
 }
 
 //background
@@ -338,15 +363,14 @@ header {
 	}
 
 	&.btn_terciary {
+		background-color: $azul_1;
+		color: $blanco;
+		font-size: 0.833vw; //16px
 
 		// Pseudo-estado al pasar el mouse
 		&:hover {
 			background-color: darken($azul_3, 10%);
 		}
-
-		background-color: $azul_1;
-		color: $blanco;
-		font-size: 0.833vw; //16px
 
 		&.clicked {
 			background-color: lighten($azul_3, 5%);
@@ -364,10 +388,6 @@ header {
 
 		&.clicked {
 			background-color: darken($azul_2, 5%);
-		}
-
-		&.active {
-			background-color: $azul_2;
 		}
 	}
 }
@@ -547,13 +567,15 @@ form {
 	}
 
 	input[type="date"],
-	input[type="time"] {
+	input[type="time"],
+	select {
 		appearance: none;
 		-webkit-appearance: none;
 	}
 
 	input,
-	textarea {
+	textarea,
+	select {
 		&:focus {
 			outline: none !important;
 		}
@@ -640,8 +662,8 @@ form {
 
 	select {
 		// color: white;
-		border: none;
-		width: 100%;
+		// border: none;
+		// width: 100%;
 
 		&::-ms-expand {
 			color: #ff0000;
@@ -756,6 +778,20 @@ hr.brd_gris_3 {
 	}
 }
 
+.scroll_hide {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 30vw;
+	/* Ocultar la barra de desplazamiento para IE, Edge y Firefox */
+	-ms-overflow-style: none;/* IE y Edge */
+	scrollbar-width: none;/* Firefox */
+
+	/* Ocultar la barra de desplazamiento para Chrome, Safari y Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
 .rounded-circle {
 	border-radius: 50%;
 }
@@ -781,11 +817,10 @@ hr.brd_gris_3 {
 		width: 7vw;
 		height: 7vw;
 	}
-}
-
-// Estilos para el ícono dentro del círculo
-.circle i {
-	font-size: 1vw;
+	// Estilos para el ícono dentro del círculo
+	&i {
+		font-size: 1vw;
+	}
 }
 
 .icon_list {

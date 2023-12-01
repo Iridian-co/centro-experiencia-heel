@@ -125,83 +125,8 @@
 							</div>
 						</div>
 						<div class="d-flex justify-content-center align-items-center">
-							<div class="dropdown">
-								<div class="dropdown_agenda brd_rds_20 bg_blanco bx_shdw_2 mt-4 mt-lg-5 mb-3">
-									<div class="mx-2 p-4">
-										<div class="d-flex justify-content-end align-items-center">
-											<a href="#" class="" onclick="dropdownAgenda()">
-												<img class="bell" src="img/icon/x.svg" alt="close"/>
-											</a>
-										</div>
-										<div class="box_notificacion brd_rds_5 mb-3 d-flex justify-content-between w-100">
-											<h2 class="fz_h2 color_azul_1 fw_600 letter_spacing">Bases de BrSM  - Técnicas de aplicación - PatologíaOM. Médicos de la zona Funza, Madrid, Mosquera, Faca. Gerente regional Javier Salgado.</h2>
-										</div>
-
-										<div class="row">
-											<div class="col-6">
-												<div class="parrafo">
-													<h3 class="fz_h3 fw_700 azul_1 mx-auto mb-2">Fecha</h3>
-													<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">08:00 - 16:00</p>
-												</div>
-											</div>
-
-											<div class="col-6">
-												<div class="parrafo">
-													<h3 class="fz_h3 fw_700 azul_1 mx-auto mb-2">Lugar</h3>
-													<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">Centro de Entrenamiento Heel</p>
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="col-6">
-												<div class="parrafo">
-													<h3 class="fz_h3 fw_700 azul_1 mx-auto mb-2">Hora inicio</h3>
-													<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">08:00 - 16:00</p>
-												</div>
-											</div>
-
-											<div class="col-6">
-												<div class="parrafo">
-													<h3 class="fz_h3 fw_700 azul_1 mx-auto mb-2">Dirección</h3>
-													<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">Calle 106 #56-41 Piso 3</p>
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="col-6">
-												<div class="parrafo">
-													<h3 class="fz_h3 fw_700 azul_1 mx-auto mb-2">Hora final</h3>
-													<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">08:00 - 16:00</p>
-												</div>
-											</div>
-
-											<div class="col-6">
-												<div class="parrafo">
-													<h3 class="fz_h3 fw_700 azul_1 mx-auto mb-2">Conferencista</h3>
-													<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">Dra Virginia Sanz</p>
-												</div>
-											</div>
-										</div>
-
-										<div class="box_notificacion brd_rds_5 mb-3 w-100">
-											<h2 class="fz_h2 color_azul_1 fw_600 letter_spacing">Descripción</h2>
-											<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">Bases de BrSM  - Técnicas de aplicación - Patología OM. Médicos de la zona Funza, Madrid, Mosquera, Faca. Gerente regional Javier Salgado.
-											Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-										</div>
-
-										<div class="row">
-											<div class="col-6">
-												<button type="button" class="btn_dark fw_700" onclick="cambiarApariencia(this)">Detalles del evento</button>
-											</div>
-											<div class="col-6">
-												<button type="button" class="btn_primary fw_700 bg_azul_3"onclick="CambiarQuaternary(this)">Agendarme a este evento</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							{{ include('dropdown/dropdownAgenda.html.twig') }}
+							{{ include('dropdown/dropdownEvento.html.twig') }}
 						</div>
 						<!-- titulo -->
 						<div class="px-4 pb-3 scroll_style">
@@ -249,6 +174,22 @@
 	<script>
 		function dropdownAgenda() {
 			$(".dropdown_agenda").toggle();
+		}
+
+		function NextDropdpwn(hideId, showId) {
+			var x = document.getElementById(showId);
+			var y = document.getElementById(hideId);
+			x.className = "show";
+			y.className = "hide";
+			//console.log(" next  >>>>")
+		}
+
+		function dropdownEventoAgendado(toggle1) {
+			$(toggle1).toggle();
+			if (toggle1 !== '.dropdown_event') {
+				$(".dropdown_event").toggle();
+			}
+			console.log('dropdown_event');
 		}
 	</script>
 {% endblock %}
