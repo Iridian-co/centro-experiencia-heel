@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="d-inline-flex mb-3 mt-1 w-100">
+	<!-- Deficiente -->
+	<div class="d-flex justify-content-center flex-column me-2 me-md-4">
+		<label class="fz_min color_gris_1 fw_400 d-grid c_pntr" for="Deficiente">
+			<input type="radio" id="Deficiente" name={{nameInput}} value="Deficiente" class="">
+			<span>Deficiente</span>
+		</label>
+	</div>
+	<!-- Insuficiente -->
+	<div class="d-flex justify-content-center flex-column me-2 me-md-4">
+		<label class="fz_min color_gris_1 fw_400 d-grid c_pntr" for="Insuficiente">
+			<input type="radio" id="Insuficiente" name={{nameInput}} value="Insuficiente" class="">
+			<span>Insuficiente</span>
+		</label>
+	</div>
+	<!-- Aceptable -->
+	<div class="d-flex justify-content-center flex-column me-2 me-md-4">
+		<label class="fz_min color_gris_1 fw_400 d-grid c_pntr" for="Aceptable">
+			<input type="radio" id="Aceptable" name={{nameInput}} value="Aceptable" class="">
+			<span>Aceptable</span>
+		</label>
+	</div>
+
+	<!-- Sobresaliente -->
+	<div class="d-flex justify-content-center flex-column me-2 me-md-4">
+		<label class="fz_min color_gris_1 fw_400 d-grid c_pntr" for="Sobresaliente">
+			<input type="radio" id="Sobresaliente" name={{nameInput}} value="Sobresaliente" class="">
+			<span>Sobresaliente</span>
+		</label>
+	</div>
+
+	<!-- Excelente -->
+	<div class="d-flex justify-content-center flex-column me-2 me-md-4">
+		<label class="fz_min color_gris_1 fw_400 d-grid c_pntr" for="Excelente">
+			<input type="radio" id="Excelente" name={{nameInput}} value="Excelente" class="">
+			<span>Excelente</span>
+		</label>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script></script>
+{% endblock %}
+
