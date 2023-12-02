@@ -3,10 +3,6 @@ import $, { get } from 'jquery'
 window.jQuery = $;
 global.$ = global.jQuery = $;
 
-// import { Calendar } from 'fullcalendar'
-import { Calendar } from '@fullcalendar/core'
-import dayGridPlugin from '@fullcalendar/daygrid'
-
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 
@@ -74,12 +70,24 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 	},
 });
 
+
+// import { Calendar } from 'fullcalendar'
+import { Calendar } from '@fullcalendar/core'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interaction from '@fullcalendar/interaction'
+import timeGridPlugin from '@fullcalendar/timegrid'
+import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
+
 document.addEventListener('DOMContentLoaded', function () {
 	const calendarEl = document.getElementById('calendar')
 	const calendar = new Calendar(calendarEl, {
 		events: '',
 		plugins: [dayGridPlugin],
 		initialView: 'dayGridMonth',
+		headerToolbar: {
+			left: 'prev,title,next',
+			right: 'dayGridMonth,dayGridWeek,dayGridDay' // user can switch between the two
+		},
 		dayHeaderFormat: { weekday: 'long' },
 		locale: 'es',
 		locales: [{
@@ -103,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			noEventsText: "No hay eventos para mostrar",
 		}]
 	})
-	calendar.render()
+	calendar.render();
 })
 console.log(" APP ready");
 
