@@ -47,19 +47,36 @@
 	top: $top;
 	left: $left;
 	width: $width;
-	@if $y == auto {
+
+	@if $y ==auto {
 		transform: translateX($x);
-	} @else if $y !=auto {
+	}
+
+	@else if $y !=auto {
 		transform: translate($x, $y);
 	}
 }
 
 @mixin showHide () {
 	&.show {
-			display: contents;
-		}
-	
-		&.hide {
-			display: none;
-		}
+		display: contents;
+	}
+
+	&.hide {
+		display: none;
+	}
+}
+
+@mixin Clicked($bg_color, $color, $fz, $hv_color, $hv_num, $clck_color, $clck_num) {
+	background-color: $bg_color;
+	color: $color;
+	font-size: $fz;
+
+	&:hover {
+		background-color: lighten($hv_color, $hv_num);
+	}
+
+	&.clicked {
+		background-color: darken($clck_color, $clck_num);
+	}
 }

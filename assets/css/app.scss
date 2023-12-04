@@ -1,9 +1,8 @@
 @import "vars.scss";
 @import "fonts.scss";
-@import "pages.scss";
 @import "mixin.scss";
+@import "pages.scss";
 @import "general-min.css";
-
 
 body {
 	font-family: "inter";
@@ -139,6 +138,13 @@ header {
 
 .txt_deco_none {
 	text-decoration: none;
+}
+
+.tres_puntos {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: start;
 }
 
 //background
@@ -363,32 +369,36 @@ header {
 	}
 
 	&.btn_terciary {
-		background-color: $azul_1;
-		color: $blanco;
-		font-size: 0.833vw; //16px
-
-		// Pseudo-estado al pasar el mouse
-		&:hover {
-			background-color: darken($azul_3, 10%);
-		}
-
-		&.clicked {
-			background-color: lighten($azul_3, 5%);
-		}
+		@include Clicked($azul_1, $blanco, 0.833vw, $azul_3, 10%, $azul_3, 5%);
 	}
 
 	&.btn_quaternary {
-		background-color: $azul_3;
-		color: $blanco;
-		font-size: 0.833vw; //16px
+		@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
+	}
 
-		&:hover {
-			background-color: lighten($azul_2, 5%);
-		}
+	&.btn_download {
+		@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
+	}
+}
 
-		&.clicked {
-			background-color: darken($azul_2, 5%);
-		}
+.position_relative {
+	position: relative;
+}
+
+.efecto {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	@extend .bg_gradient_azul_day;
+	@extend .bx_shdw_3;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: transform 0.5s;
+	display: block;
+	margin: -40% 0 0 -1rem;
+
+	&.animar {
+		transform: scale(1);
 	}
 }
 
@@ -426,7 +436,7 @@ header {
 }
 
 .btn_mediun {
-	padding: 20px 16px;
+	padding: 17px 16px;
 	@extend .brd_rds_20;
 }
 
@@ -783,8 +793,10 @@ hr.brd_gris_3 {
 	overflow-x: hidden;
 	max-height: 30vw;
 	/* Ocultar la barra de desplazamiento para IE, Edge y Firefox */
-	-ms-overflow-style: none;/* IE y Edge */
-	scrollbar-width: none;/* Firefox */
+	-ms-overflow-style: none;
+	/* IE y Edge */
+	scrollbar-width: none;
+	/* Firefox */
 
 	/* Ocultar la barra de desplazamiento para Chrome, Safari y Opera */
 	&::-webkit-scrollbar {
@@ -817,6 +829,7 @@ hr.brd_gris_3 {
 		width: 7vw;
 		height: 7vw;
 	}
+
 	// Estilos para el ícono dentro del círculo
 	&i {
 		font-size: 1vw;
@@ -845,6 +858,19 @@ hr.brd_gris_3 {
 	overflow: hidden;
 }
 
+.parrafo2Lineas {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 50%;
+}
+
+.w_medium {
+	width: 50%;
+}
+
 //big desktop
 @media only screen and (min-width: 1921px) {}
 
@@ -858,6 +884,10 @@ hr.brd_gris_3 {
 	.banner_login {
 		height: 50vh;
 	}
+
+	.w_medium {
+		width: 75%;
+	}
 }
 
 //only tablet landscape
@@ -867,11 +897,19 @@ hr.brd_gris_3 {
 	.banner_login {
 		height: auto;
 	}
+
+	.w_medium {
+		width: 50%;
+	}
 }
 
 @media only screen and (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
 	.banner_login {
 		height: 50vh;
+	}
+
+	.w_medium {
+		width: 50%;
 	}
 }
 
@@ -926,6 +964,10 @@ hr.brd_gris_3 {
 				padding: 1rem 2rem;
 			}
 		}
+	}
+
+	.w_medium {
+		width: 75%;
 	}
 }
 
@@ -987,4 +1029,10 @@ hr.brd_gris_3 {
 			}
 		}
 	}
+
+	.w_medium {
+		width: 100%;
+	}
 }
+
+

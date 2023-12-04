@@ -188,6 +188,7 @@
 		function cambiarApariencia(btnClic) {
 				console.log(" Cambiar Apariencia >>>>")
 				$('.btn_dark').addClass('clicked');
+				$('.btn_small').addClass('clicked');
 				setTimeout(() => {
 				$(btnClic).removeClass('clicked');
 				}, 200);
@@ -209,6 +210,15 @@
 
 		function dropdownSesion() {
 			$(".dropdown_sesion").toggle();
+		}
+
+		function animar(btnClic) {
+			cambiarApariencia(btnClic);
+			var efecto = document.querySelector('.efecto');
+			efecto.classList.add('animar');
+			setTimeout(function() {
+				efecto.classList.remove('animar');
+			}, 500);
 		}
 	</script>
 {% endblock %}
