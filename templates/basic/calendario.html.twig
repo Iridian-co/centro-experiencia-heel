@@ -5,11 +5,30 @@
 <div class="bg_blanco brd_rds_20 bx_shdw_2">
 	<div class="p-4">
 		<div class="container">
-			<div
-				class="row">
+			<div class="row">
 				<!-- Encuestas disponibles -->
-				<div class="col-12">
-					{{ include('calendario/fullcalendar.html.twig') }}
+				<div class="col-12 col-lg-3">
+					<div class="bg_gradient_azul_2 brd_rds_20 bx_shdw_1 mb-4">
+						<div class="p-2">
+							<h2 class="fz_h2 fw_600 color_azul_1 px-3 my-3">Jueves, 23 de Octubre</h2>
+							<div class="scroll_hide_auto">
+								{{ include('componentes/notificacion.html.twig',{title:'', data:true}) }}
+							</div>
+						</div>
+					</div>
+					<div class="bg_gradient_azul_2 brd_rds_20 bx_shdw_1 mb-4">
+						<div class="p-2">
+							<h2 class="fz_h2 fw_600 color_azul_1 px-3 my-3">Próximos eventos</h2>
+							<div class="scroll_hide_auto">
+								{{ include('componentes/notificacion.html.twig',{title:'Viernes,24 de Octubre', data:true}) }}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-9">
+					<div class="bg_gradient_azul_2 brd_rds_20 bx_shdw_1">
+						<div id='calendar' class="p-2 p-lg-4"></div>
+					</div>
 				</div>
 			</div>
 		</div>

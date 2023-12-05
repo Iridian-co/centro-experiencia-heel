@@ -24,7 +24,12 @@
 							<li class="d-block">
 								<a href="#" class="btn_blanco btn_big fw_400" id="cursos" onclick="cambiarColor(this, 'cursos')">
 									<img class="icon" src="img/icon/cursos.svg" alt="Cursos"/>
-									<span class="texto">Cursos</span>
+									{% set course = true %}
+									{% if course %}
+										<span class="texto">Cursos</span>
+									{% else %}
+										<span class="texto">Próximos cursos</span>
+									{% endif %}
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>

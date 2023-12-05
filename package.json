@@ -24,6 +24,7 @@
         "@fullcalendar/daygrid": "^6.1.9",
         "@fullcalendar/interaction": "^6.1.10",
         "@fullcalendar/timegrid": "^6.1.10",
+        "browser-sync": "^2.29.3",
         "firebase": "^9.9.3",
         "fullcalendar": "^6.1.9",
         "jquery": "^3.6.1",

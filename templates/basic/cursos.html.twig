@@ -2,6 +2,8 @@
 
 {% block body %}
 <div class="bg_blanco brd_rds_20 bx_shdw_2">
+{% set curso = false %}
+{% if curso == true %}
 	<div class="p-4">
 		<div class="container">
 			<div class="row">
@@ -61,6 +63,18 @@
 			</div>
 		</div>
 	</div>
+{% else %}
+	<div class="p-4">
+		<div class="container">
+			<div class="row">
+				<!-- Encuestas disponibles -->
+				<div class="col-12">
+					{{ include('componentes/proximoCurso.html.twig',{title:'Cursos'}) }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
 </div>
 {% endblock %}
 
