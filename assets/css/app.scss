@@ -750,32 +750,26 @@ hr.linea_vertical_azul_3 {
 	@include lnVertical($azul_3);
 }
 
-hr.linea_vertical_date {
-	border: 1px solid $gris_3;
-	background: $gris_3;
-			width: 1px;
-			height: 100px;
-			position: relative;
-		.line::after {
-			content: "";
-			/* Necesario para crear el pseudo-elemento */
-			position: absolute;
-			/* Posiciona el círculo en relación a la línea */
-			bottom: 0;
-			/* Coloca el círculo al final de la línea */
-			left: -4.5px;
-			/* Centra el círculo en la línea */
-			width: 10px;
-			/* Ancho del círculo */
-			height: 10px;
-			/* Altura del círculo */
-			background-color: red;
-			/* Color del círculo */
-			border-radius: 50%;
-			/* Hace que el círculo sea redondo */
-		}
+.linea_vertical_date {
+	position: relative;
+	flex: none;
+	border: none;
+	border-left: 1px solid $gris_3;
+	height: 100%;
+	margin: 0;
 }
 
+.vertical-line {
+	height: 100px;
+}
+
+.circle_vertical {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: $beige;
+	padding: 0.2rem;
+}
 
 hr.brd_gris_3 {
 	border: 1px solid $gris_3;
@@ -845,6 +839,10 @@ hr.brd_gris_3 {
 	&::-webkit-scrollbar {
 		display: none;
 	}
+}
+
+.scroll_content {
+	height: 12vw;
 }
 
 .rounded-circle {
@@ -1077,5 +1075,3 @@ hr.brd_gris_3 {
 		width: 100%;
 	}
 }
-
-

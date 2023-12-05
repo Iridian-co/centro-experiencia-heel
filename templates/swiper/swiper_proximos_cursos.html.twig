@@ -1,0 +1,47 @@
+<!-- Slider main container -->
+<div class="content_swp_general d-flex justify-content-center align-items-center mb-3">
+	<div class="swiper-button-prev px-3"></div>
+	<div class="swiper swp_next_course">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<!-- Slides 1 -->
+			<!-- Contenido que se extiende horizontalmente -->
+			{% for repit in 1..7 %}
+				<div class="swiper-slide">
+					<div class="scroll_content bg_gradient_azul_2 brd_rds_5 mb-2 d-flex justify-content-between w-100">
+						<hr class="linea_vertical my-0">
+						<div class="pe-3 pb-1 w-100">
+							<div class="d-flex justify-content-between align-items-start">
+								<h3 class="fz_h3 fw_700 color_azul_1 ps-3 mt-2 mb-3">Bases de BrSM  - Técnicas de aplicación - Patología OM. Médicos de la zona Funza, Madrid, Mosquera, Faca. Gerente regional Javier Salgado.
+								</h3>
+							</div>
+							<div class="d-flex justify-content-start align-items-center ps-3">
+								<img class="icon_clock me-2" src="img/icon/clock.svg" alt="clock"/>
+								<p class="fz_p fw_400 color_azul_1 my-1 me-2">08:00 - 16:00</p>
+								<p class="fz_p fw_400 color_azul_2 my-1">(8h)</p>
+							</div>
+
+							<div class="d-flex justify-content-start align-items-center ps-3">
+								<img class="icon_clock me-2" src="img/icon/point.svg" alt="clock"/>
+								<p class="fz_p fw_400 color_azul_1 my-1 me-2">Centro de Entrenamiento Heel</p>
+							</div>
+
+							<div class="d-flex justify-content-start align-items-center ps-3">
+								<img class="icon_clock me-2" src="img/icon/dress.svg" alt="clock"/>
+								<p class="fz_p fw_400 color_azul_1 my-1 me-2">Tr 56 #105-37 Piso 3</p>
+							</div>
+
+							<div class="d-flex justify-content-start align-items-center ps-3">
+								<img class="icon_clock me-2" src="img/icon/cupos.svg" alt="clock"/>
+								<p class="fz_p fw_400 color_azul_1 my-1 me-2">8 Cupos disponibles</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<!-- If we need navigation buttons -->
+
+	</div>
+	<div class="swiper-button-next px-3"></div>
+</div>

@@ -70,6 +70,66 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 	},
 });
 
+const swpNextCourse = new Swiper(".swp_next_course", {
+	// observer: true,
+	// observeParents: true,
+	// parallax: true,
+	//pagination
+	pagination: {
+		el: ".swiper-pagination",
+		// type: "bullets",
+		// clickable: true,
+	},
+	speed: 400,
+
+	// Navigation arrows
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+
+	// And if we need scrollbar
+	scrollbar: {
+		el: ".swiper-scrollbar",
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	breakpoints: {
+		// when window width is >= 280px
+		280: {
+			slidesPerView: 1,
+			spaceBetween: 12,
+		},
+		768: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+		},
+		1024: {
+			slidesPerView: 1.5,
+			spaceBetween: 20,
+		},
+		1240: {
+			slidesPerView: 1.5,
+			spaceBetween: 20,
+		},
+		1920: {
+			slidesPerView: 1.5,
+			spaceBetween: 20,
+		},
+		3543: {
+			slidesPerView: 1,
+			spaceBetween: 30,
+		},
+	},
+	on: {
+		init: function () {
+			console.log("swiper initialized");
+		},
+	},
+});
+
 
 // import { Calendar } from 'fullcalendar'
 import { Calendar } from '@fullcalendar/core'

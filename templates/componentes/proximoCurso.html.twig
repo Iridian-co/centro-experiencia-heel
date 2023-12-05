@@ -6,17 +6,44 @@
 				<h2 class="fz_h2 fw_600 color_azul_1 letter_spacing">Próximos cursos</h2>
 			</div>
 			<div class="scroll_hide">
-				<ul class="d-grid">
-					<li class="d-flex justify-content-center mb-4">
-						{{ include('componentes/verticalDate.html.twig',{letterDay:'Viernes',day:'24',month:'Oct'}) }}
-					</li>
-					<li class="d-flex justify-content-center mb-4">
-						{{ include('componentes/verticalDate.html.twig',{letterDay:'Viernes',day:'27',month:'Oct'}) }}
-					</li>
-					<li class="d-flex justify-content-center mb-4">
-						{{ include('componentes/verticalDate.html.twig',{letterDay:'Viernes',day:'24',month:'Oct'}) }}
-					</li>
-				</ul>
+				<div class="container">
+					<div class="row">
+						<ul class="">
+							<li class="d-flex mx-5 mb-4">
+								{{ include('componentes/verticalDate.html.twig',{letterDay:'Viernes',day:'29',month:'Oct'}) }}
+								<div class="col-12 col-md-10">
+									<div class="container">
+										<div class="row">
+											{{ include('swiper/swiper_proximos_cursos.html.twig',{aja:'aja'}) }}
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="d-flex mx-5 mb-4">
+								{{ include('componentes/verticalDate.html.twig',{letterDay:'Miercoles',day:'27',month:'Oct'}) }}
+								<div class="col-12 col-md-10">
+									<div class="container">
+										<div class="row">
+											{{ include('swiper/swiper_proximos_cursos.html.twig') }}
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="d-flex mx-5 mb-4">
+								{{ include('componentes/verticalDate.html.twig',{letterDay:'Lunes',day:'25',month:'Oct'}) }}
+								<div class="col-12 col-md-10">
+									<div class="container">
+										<div class="row">
+											{{ include('swiper/swiper_proximos_cursos.html.twig') }}
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
