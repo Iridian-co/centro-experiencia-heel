@@ -322,7 +322,7 @@ header {
 
 	.texto {
 		white-space: normal;
-		width: 70%;
+		width: 74%;
 		display: inline-block;
 		letter-spacing: normal;
 		line-height: initial;
@@ -330,14 +330,14 @@ header {
 	}
 
 	.arrow {
-		width: 0.5vw;
-		border: 105px;
+		width: 0.6vw;
 		color: inherit;
+		margin-left: 0.5vw;
 		vertical-align: middle;
+		// border: 105px;
 		// padding-right: 0.7vw;
 		// float: right;
 		// margin-top: 0.5vw;
-		margin-left: 0.5vw;
 	}
 
 
@@ -419,9 +419,10 @@ header {
 }
 
 .btn_big {
-	padding: 20px 4px 20px 16px;
+	padding: 17px 4px 17px;
 	text-align: start;
 	padding-left: 1.3vw;
+	padding-right: 1.2vw;
 	@extend .brd_rds_20;
 }
 
@@ -749,6 +750,32 @@ hr.linea_vertical_azul_3 {
 	@include lnVertical($azul_3);
 }
 
+hr.linea_vertical_date {
+	border: 1px solid $gris_3;
+	background: $gris_3;
+			width: 1px;
+			height: 100px;
+			position: relative;
+		.line::after {
+			content: "";
+			/* Necesario para crear el pseudo-elemento */
+			position: absolute;
+			/* Posiciona el círculo en relación a la línea */
+			bottom: 0;
+			/* Coloca el círculo al final de la línea */
+			left: -4.5px;
+			/* Centra el círculo en la línea */
+			width: 10px;
+			/* Ancho del círculo */
+			height: 10px;
+			/* Altura del círculo */
+			background-color: red;
+			/* Color del círculo */
+			border-radius: 50%;
+			/* Hace que el círculo sea redondo */
+		}
+}
+
 
 hr.brd_gris_3 {
 	border: 1px solid $gris_3;
@@ -792,6 +819,22 @@ hr.brd_gris_3 {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	max-height: 30vw;
+	/* Ocultar la barra de desplazamiento para IE, Edge y Firefox */
+	-ms-overflow-style: none;
+	/* IE y Edge */
+	scrollbar-width: none;
+	/* Firefox */
+
+	/* Ocultar la barra de desplazamiento para Chrome, Safari y Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.scroll_hide_auto {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 13vw;
 	/* Ocultar la barra de desplazamiento para IE, Edge y Firefox */
 	-ms-overflow-style: none;
 	/* IE y Edge */
