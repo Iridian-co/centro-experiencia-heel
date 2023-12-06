@@ -249,19 +249,58 @@
 	}
 }
 
-//only phone
-@media (max-width: 576px) {
-	// .swiper-button-prev,
-	// 	.swiper-button-next {
-	// 		width: 5%;
-	// 		top: auto;
-	// 			bottom: 10px;
-	// 	}
+@media (min-width: 577px) and (max-width: 767px) and (orientation: landscape) {
+	.content_swp_general .swiper-button-next {
+		position: relative;
+		bottom: 3%;
+	}
 
-	.content_swp_general .swiper-button-next,
 	.content_swp_general .swiper-button-prev {
 		position: relative;
-		top: 53%;
+		top: -3%;
+	}
+
+	.content_swp_general {
+		.swiper {
+			height: auto;
+		}
+	}
+}
+
+@media (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
+	.content_swp_general .swiper-button-next {
+		position: relative;
+		bottom: -3%;
+	}
+
+	.content_swp_general .swiper-button-prev {
+		position: relative;
+		top: 3%;
+	}
+
+	.content_swp_general {
+		.swiper {
+			height: auto;
+		}
+	}
+}
+
+//only phone
+@media (max-width: 576px) {
+	.content_swp_general .swiper-button-next {
+		position: relative;
+		bottom: 3%;
+	}
+
+	.content_swp_general .swiper-button-prev {
+		position: relative;
+		top: -3%;
+	}
+
+	.content_swp_general {
+		.swiper {
+			height: auto;
+		}
 	}
 }
 

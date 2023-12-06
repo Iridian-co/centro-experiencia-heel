@@ -104,11 +104,7 @@ header {
 }
 
 .grupo {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	width: 34vw;
-	border-radius: 50%;
 }
 
 .score {
@@ -763,6 +759,10 @@ hr.linea_vertical_azul_3 {
 	height: 100px;
 }
 
+.m_date {
+	margin-left: 7vw;
+}
+
 .circle_vertical {
 	width: 6px;
 	height: 6px;
@@ -913,7 +913,11 @@ hr.brd_gris_3 {
 }
 
 //big desktop
-@media only screen and (min-width: 1921px) {}
+@media only screen and (min-width: 1921px) {
+	.m_date {
+		margin-left: 7rem;
+	}
+}
 
 //desktop
 @media (min-width: 1200px) and (max-width: 1920px) {}
@@ -929,10 +933,22 @@ hr.brd_gris_3 {
 	.w_medium {
 		width: 75%;
 	}
+
+	.m_date {
+		margin-left: 1rem;
+	}
+
+	.scroll_hide {
+		max-height: max-content;
+	}
 }
 
 //only tablet landscape
-@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {}
+@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+	.m_date {
+		margin-left: 1rem;
+	}
+}
 
 @media (min-width: 577px) and (max-width: 767px) and (orientation: landscape) {
 	.banner_login {
@@ -942,15 +958,31 @@ hr.brd_gris_3 {
 	.w_medium {
 		width: 50%;
 	}
+
+	.vertical-line {
+		height: 0;
+	}
+
+	.circle_vertical {
+		display: none;
+	}
 }
 
-@media only screen and (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
 	.banner_login {
 		height: 50vh;
 	}
 
 	.w_medium {
 		width: 50%;
+	}
+
+	.vertical-line {
+		height: 0;
+	}
+
+	.circle_vertical {
+		display: none;
 	}
 }
 
@@ -1080,7 +1112,11 @@ hr.brd_gris_3 {
 	}
 
 	.vertical-line {
-		height: 1rem;
+		height: 0;
+	}
+
+	.m_date {
+		margin-left: 0;
 	}
 
 	.circle_vertical {
@@ -1090,5 +1126,9 @@ hr.brd_gris_3 {
 	.linea_vertical_date {
 		border-bottom: 1px solid $gris_3;
 		border-left: 0px;
+	}
+
+	.scroll_content {
+		height: inherit;
 	}
 }

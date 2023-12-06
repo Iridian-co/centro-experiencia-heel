@@ -43,7 +43,7 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 			spaceBetween: 12,
 		},
 		768: {
-			slidesPerView: 2,
+			slidesPerView: 3,
 			spaceBetween: 2,
 		},
 		1024: {
@@ -107,7 +107,7 @@ const swpNextCourse = new Swiper(".swp_next_course", {
 			spaceBetween: 20,
 		},
 		1024: {
-			slidesPerView: 1.5,
+			slidesPerView: 1.1,
 			spaceBetween: 20,
 		},
 		1240: {
@@ -115,7 +115,7 @@ const swpNextCourse = new Swiper(".swp_next_course", {
 			spaceBetween: 20,
 		},
 		1920: {
-			slidesPerView: 1.5,
+			slidesPerView: 1.7,
 			spaceBetween: 20,
 		},
 		3543: {
