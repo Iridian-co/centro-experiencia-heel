@@ -11,13 +11,13 @@
 
 	.swiper-button-prev,
 	.swiper-button-next {
-		width: 5% !important;
-		position: relative !important;
-		top: inherit !important;
-		left: inherit !important;
-		right: inherit !important;
-		bottom: inherit !important;
-		margin: 0 !important;
+		width: 5%;
+		position: relative;
+		top: inherit;
+		left: inherit;
+		right: inherit;
+		bottom: inherit;
+		margin: 0;
 		color: $azul_1;
 		font-weight: bolder;
 	}
@@ -246,6 +246,22 @@
 	&.show {
 		// visibility: visible;
 		display: block;
+	}
+}
+
+//only phone
+@media (max-width: 576px) {
+	// .swiper-button-prev,
+	// 	.swiper-button-next {
+	// 		width: 5%;
+	// 		top: auto;
+	// 			bottom: 10px;
+	// 	}
+
+	.content_swp_general .swiper-button-next,
+	.content_swp_general .swiper-button-prev {
+		position: relative;
+		top: 53%;
 	}
 }
 

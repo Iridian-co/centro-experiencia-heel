@@ -842,7 +842,7 @@ hr.brd_gris_3 {
 }
 
 .scroll_content {
-	height: 12vw;
+	height: auto;
 }
 
 .rounded-circle {
@@ -1073,5 +1073,22 @@ hr.brd_gris_3 {
 
 	.w_medium {
 		width: 100%;
+	}
+
+	.scroll_hide {
+		max-height: 30rem;
+	}
+
+	.vertical-line {
+		height: 1rem;
+	}
+
+	.circle_vertical {
+		display: none;
+	}
+
+	.linea_vertical_date {
+		border-bottom: 1px solid $gris_3;
+		border-left: 0px;
 	}
 }
