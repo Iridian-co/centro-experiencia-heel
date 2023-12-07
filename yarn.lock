@@ -1359,7 +1359,7 @@
   dependencies:
     preact "~10.12.1"
 
-"@fullcalendar/daygrid@^6.1.9", "@fullcalendar/daygrid@~6.1.10", "@fullcalendar/daygrid@~6.1.9":
+"@fullcalendar/daygrid@^6.1.10", "@fullcalendar/daygrid@~6.1.10", "@fullcalendar/daygrid@~6.1.9":
   version "6.1.10"
   resolved "https://registry.npmjs.org/@fullcalendar/daygrid/-/daygrid-6.1.10.tgz"
   integrity sha512-Z4GRm1IyHKgxXFTWGcEI0nTsvYOIkpE0aMt3/o3ER2SZkF+hfwcDFhtj0c9+WhMjXFIWYeoTnA9rUOY7Zl/nxA==

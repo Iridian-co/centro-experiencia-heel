@@ -67,11 +67,11 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 			spaceBetween: 30,
 		},
 	},
-	on: {
-		init: function () {
-			console.log("swiper initialized");
-		},
-	},
+	// on: {
+	// 	init: function () {
+	// 		console.log("swiper initialized");
+	// 	},
+	// },
 });
 
 const swpNextCourse = new Swiper(".swp_next_course", {
@@ -127,58 +127,118 @@ const swpNextCourse = new Swiper(".swp_next_course", {
 			spaceBetween: 30,
 		},
 	},
-	on: {
-		init: function () {
-			console.log("swiper initialized");
-		},
-	},
+	// on: {
+	// 	init: function () {
+	// 		console.log("swiper initialized");
+	// 	},
+	// },
 });
 
 
 // import { Calendar } from 'fullcalendar'
 import { Calendar } from '@fullcalendar/core'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interaction from '@fullcalendar/interaction'
 import timeGridPlugin from '@fullcalendar/timegrid'
+import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
+import interaction from '@fullcalendar/interaction'
+
+
+// let request_calendar = "./events.json";
+
+import request_calendar from "./events.json";
 
 document.addEventListener('DOMContentLoaded', function () {
 	const calendarEl = document.getElementById('calendar')
 	const calendar = new Calendar(calendarEl, {
-		events: '',
-		plugins: [dayGridPlugin],
-		initialView: 'dayGridMonth',
+		plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin, interaction],
+		initialView: "dayGridMonth",
+		// select: { start: info.startStr, end: info.endStr, filledIn: true },
 		headerToolbar: {
-			left: 'prev,title,next',
-			right: 'dayGridMonth,dayGridWeek,dayGridDay' // user can switch between the two
+			left: "prev,title,next",
+			right: "dayGridMonth,dayGridWeek,dayGridDay", // user can switch between the two
 		},
-		dayHeaderFormat: { weekday: 'long' },
-		locale: 'es',
-		locales: [{
-			code: 'es',
-			week: {
-				dow: 1, // Monday is the first day of the week.
-				doy: 4  // The week that contains Jan 4th is the first week of the year.
+		editable: true,
+		selectable: true,
+		// events: practiceTimes,
+		dayHeaderFormat: { weekday: "long" },
+		locale: "es",
+		locales: [
+			{
+				code: "es",
+				week: {
+					dow: 1, // Monday is the first day of the week.
+					doy: 4, // The week that contains Jan 4th is the first week of the year.
+				},
+				buttonText: {
+					prev: "Ant",
+					next: "Sig",
+					today: "Hoy",
+					month: "Mes",
+					week: "Semana",
+					day: "Día",
+					list: "Agenda",
+				},
+				weekText: "Sm",
+				allDayText: "Todo el día",
+				moreLinkText: "más",
+				noEventsText: "No hay eventos para mostrar",
 			},
-			buttonText: {
-				prev: "Ant",
-				next: "Sig",
-				today: "Hoy",
-				month: "Mes",
-				week: "Semana",
-				day: "Día",
-				list: "Agenda"
-			},
-			weekText: "Sm",
-			allDayText: "Todo el día",
-			moreLinkText: "más",
-			noEventsText: "No hay eventos para mostrar",
-		}]
-	})
+		],
+		events: function (info, successCallback, failureCallback) {
+			// console.log("request_calendar >>> ", request_calendar);
+			fetch(request_calendar,{
+					headers : { 
+						'Content-Type': 'application/json',
+						'Accept': 'application/json'
+					}
+    		})
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+				console.log("data >>> ", data.trace);
+				let events = data.trace.map(function (event) {
+					// console.log("event >>> ", event);
+					return {
+						title: event.eventTitle,
+						start: new Date(event.eventStartDate),
+						end: new Date(event.eventEndDate),
+						timeStart: event.eventStartTime,
+						timeEnd: event.eventEndTime,
+						location: event.eventLocation,
+						// url: event.eventUrl,
+					};
+				});
+				successCallback(events);
+			})
+			.catch(function (error) {
+				// console.log("error >>> ", error);
+				failureCallback(error);
+			});
+		},
+	});
 	calendar.render();
-})
-console.log(" APP ready");
 
+	calendarEl.addEventListener("click", function (info) {
+		if (info.event) {
+			// Si hizo clic en un evento existente
+			console.log("Clic en evento: " + info.event.title);
+		} else {
+			// Si hizo clic en un día sin evento
+			console.log("Fecha clickeada: " + info.dateStr);
+			manejarClicEnFecha(info.dateStr, "Otros datos");
+			console.log("Fecha clickeada: " + info.startStr);
+		}
+	});
+
+	function manejarClicEnFecha(fecha, otrosDatos) {
+		// Puedes hacer algo con la fecha y otros datos aquí
+		console.log("Fecha:", fecha);
+		console.log("Otros datos:", otrosDatos);
+	}
+
+
+})
 
 // Create Menu ---------------------------------------------------------------->
 

@@ -213,6 +213,22 @@
 	display: inline;
 }
 
+//day calendar
+.fc .fc-daygrid-day-top {
+	flex-direction: row;
+	.fc-daygrid-day-number {
+		@extend .fz_p;
+		@extend .fw_400;
+		color: $azul_1;
+	}
+}
+
+//event calendar notification
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+	&::before {
+		background-color: aqua;
+	}
+}
 // .fc {
 // 	.fc-button-group {
 // 		>.fc-button.fc-button-active,
