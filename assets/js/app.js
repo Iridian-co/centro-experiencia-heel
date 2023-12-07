@@ -24,13 +24,13 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 
 	// Navigation arrows
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
 	},
 
 	// And if we need scrollbar
 	scrollbar: {
-		el: '.swiper-scrollbar',
+		el: ".swiper-scrollbar",
 	},
 	pagination: {
 		el: ".swiper-pagination",
@@ -42,12 +42,16 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 			slidesPerView: 1,
 			spaceBetween: 12,
 		},
+		576: {
+			slidesPerView: 2,
+			spaceBetween: 2,
+		},
 		768: {
 			slidesPerView: 3,
 			spaceBetween: 2,
 		},
 		1024: {
-			slidesPerView: 3,
+			slidesPerView: 2,
 			spaceBetween: 2,
 		},
 		1240: {
