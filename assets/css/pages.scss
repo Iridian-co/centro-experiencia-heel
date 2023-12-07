@@ -98,8 +98,8 @@
 	color: $azul_1;
 	padding: 10px;
 	border: 1px solid $gris_3;
-	font-weight: 700;
-	font-size: 0.8vw; // 16px
+	@extend .fz_p;
+	@extend .fw_700;
 	width: 100%;
 	text-transform: capitalize;
 }
@@ -171,7 +171,6 @@
 	display: flex;
 
 	.fc-toolbar-title {
-		font-size: 1vw;
 		@extend .fz_h3;
 		@extend .fw_700;
 		text-transform: capitalize;
@@ -207,7 +206,8 @@
 .fc-icon-chevron-left::before,
 .fc-icon-chevron-right::before {
 	color: $azul_2;
-	font-size: 2vw;
+	// font-size: 2vw;
+	@extend .fz_h3;
 }
 
 .fc .fc-button .fc-icon {
@@ -249,6 +249,40 @@
 	}
 }
 
+
+@media (max-width: 768px) {
+
+	// .fc-icon-chevron-left::before,
+	// .fc-icon-chevron-right::before {
+	// 	font-size: 1.5rem;
+	// }
+
+	.fc .fc-button-group>.fc-button.fc-button-active,
+	.fc .fc-button-group>.fc-button:active,
+	.fc .fc-button-group>.fc-button:focus,
+	.fc .fc-button-group>.fc-button:hover {
+		@include Clicked($verde_1, $blanco, 0.8rem, $verde_1, 5%, $verde_1, 5%);
+		padding: .5rem 2rem;
+		margin-right: 0.7rem;
+	}
+
+	.fc .fc-button-primary {
+		margin: 0 0.5rem;
+		padding: .5rem 1.5rem;
+	}
+
+	.fc .fc-prev-button,
+	.fc .fc-next-button {
+		padding: .1rem;
+	}
+
+	.fc .fc-col-header-cell-cushion {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
 @media (min-width: 577px) and (max-width: 767px) and (orientation: landscape) {
 	.content_swp_general .swiper-button-next {
 		position: relative;
@@ -263,6 +297,16 @@
 	.content_swp_general {
 		.swiper {
 			height: auto;
+		}
+	}
+
+	.fc {
+		.fc-toolbar {
+			display: block;
+
+			.fc-toolbar-chunk {
+				margin-bottom: 0.7rem;
+			}
 		}
 	}
 }
@@ -283,6 +327,16 @@
 			height: auto;
 		}
 	}
+
+	.fc {
+		.fc-toolbar {
+			display: block;
+
+			.fc-toolbar-chunk {
+				margin-bottom: 0.7rem;
+			}
+		}
+	}
 }
 
 //only phone
@@ -300,6 +354,16 @@
 	.content_swp_general {
 		.swiper {
 			height: auto;
+		}
+	}
+
+	.fc {
+		.fc-toolbar {
+			display: block;
+
+			.fc-toolbar-chunk {
+				margin-bottom: 0.7rem;
+			}
 		}
 	}
 }

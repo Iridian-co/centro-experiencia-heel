@@ -5,52 +5,58 @@
 	<div class="container-fluid">
 		<div class="row">
 			<!-- SideBar -->
-			<div class="col-12 col-md-2 col-lg-2">
+			<div class="col-12 col-md-3 col-lg-2">
 				<aside class="sidebar ps-0">
 					<header class="d-flex justify-content-between align-items-center">
-						<div class="my-4">
+						<div class="my-2 my-lg-4">
 							<h1 class="fz_h1 my-0 text-center color_azul_1">Logo</h1>
 						</div>
+						{# <div class="burger">
+							<div class="x"></div>
+							<div class="y"></div>
+							<div class="z"></div>
+						</div> #}
 					</header>
-					<nav class="nav mt-4">
+					{# <div class="circles"></div> #}
+					<nav class="menu nav mt-4">
 						<ul>
-							<li class="d-block">
-								<a href="#" class="btn_blanco btn_big fw_400 active" id="calendario" onclick="cambiarColor(this, 'calendario')">
+							<li class="d-block animate">
+								<a href="#vista_1" class="btn_blanco btn_big fw_400 active" id="calendario" onclick="cambiarColor(this, 'calendario')">
 									<img class="icon" src="img/icon/calendario.svg" alt="calendario"/>
-									<span class="texto">Calendario</span>
+									<span class="texto fz_p fw_400 color_azul_1 fz_p fw_400 color_azul_1">Calendario</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
-							<li class="d-block">
-								<a href="#" class="btn_blanco btn_big fw_400" id="cursos" onclick="cambiarColor(this, 'cursos')">
+							<li class="d-block animate">
+								<a href="#vista_2" class="btn_blanco btn_big fw_400" id="cursos" onclick="cambiarColor(this, 'cursos')">
 									<img class="icon" src="img/icon/cursos.svg" alt="Cursos"/>
 									{% set course = true %}
 									{% if course %}
-										<span class="texto">Cursos</span>
+										<span class="texto fz_p fw_400 color_azul_1">Cursos</span>
 									{% else %}
-										<span class="texto">Próximos cursos</span>
+										<span class="texto fz_p fw_400 color_azul_1">Próximos cursos</span>
 									{% endif %}
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
-							<li class="d-block">
-								<a href="#" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'experiencia')">
+							<li class="d-block animate">
+								<a href="#vista_3" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'experiencia')">
 									<img class="icon" src="img/icon/cubo.svg" alt="cubo"/>
-									<span class="texto">Centro de Experiencia HEEL</span>
+									<span class="texto fz_p fw_400 color_azul_1">Centro de Experiencia HEEL</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
-							<li class="d-block">
-								<a href="#" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'encuesta')">
+							<li class="d-block animate">
+								<a href="#vista_4" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'encuesta')">
 									<img class="icon" src="img/icon/pizza.svg" alt="pizza"/>
-									<span class="texto">Encuesta</span>
+									<span class="texto fz_p fw_400 color_azul_1">Encuesta</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
-							<li class="d-block">
-								<a href="#" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'certificado')">
+							<li class="d-block animate">
+								<a href="#vista_5" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'certificado')">
 									<img class="icon" src="img/icon/chulo.svg" alt="chulo"/>
-									<span class="texto">Certificado</span>
+									<span class="texto fz_p fw_400 color_azul_1">Certificado</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
@@ -60,13 +66,13 @@
 			</div>
 
 			<!-- SideBar -->
-			<div class="col-12 col-md-10 col-lg-10">
+			<div class="col-12 col-md-9 col-lg-10">
 				<main>
-					<header class="d-flex justify-content-between align-items-center">
-						<div class="my-4">
+					<header class="d-sm-flex justify-content-between align-items-center mb-3 mb-lg-0">
+						<div class="my-2 my-lg-4 ms-5 ms-md-0">
 							<h2 class="fz_h2 fw_600 my-0 color_azul_1 letter_sp_1">¡Bienvenida Giselle!</h2>
 						</div>
-						<div class="d-inline-flex my-4">
+						<div class="d-inline-flex my-2 my-lg-4 mx-4 mx-md-0">
 							<div class="d-inline-flex me-4 align-items-center">
 								<a href="#" class="" onclick="dropdown()">
 									<img class="bell" src="img/icon/bell.svg" alt="bell"/>
