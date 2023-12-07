@@ -15,7 +15,7 @@
 											</div> #}
 		</div>
 		<!-- Contexto -->
-		{% if data == true %}
+		{% if data == false %}
 			<div class="px-2 scroll_style">
 				{% for repit in 1..4 %}
 					<div class="d-sm-flex justify-content-start align-items-center">
@@ -41,11 +41,7 @@
 				{% endfor %}
 			</div>
 		{% else %}
-			<div class="d-flex justify-content-center align-items-center flex-column">
-				<h2 class="fz_h2 fw_600 color_azul_2 letter_spacing text-center mb-4">Aún no tienes certificados disponibles</h2>
-				<p class="fz_p fw_400 color_azul_1 w_medium text-center ps-3 my-2">Para obtener tus certificados realiza la inscripción y agendamiento a cualquiera de los cursos que te ofrece el Centro de Experiencia Heel, asiste, participa y califica tu experiencia.</p>
-				<a href="#" class="btn_primary fz_h3 fw_700 bg_azul_3 color_blanco w-auto mt-3  py-3 px-5" onclick="NextDropdpwn('agendarme', 'formEvent')">Ver cursos</a>
-			</div>
+			{{ include('componentes/noDisponibles.html.twig',{title:'Aún no tienes certificados disponibles', data:true}) }}
 		{% endif %}
 	</div>
 
