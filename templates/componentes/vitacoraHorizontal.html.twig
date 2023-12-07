@@ -15,18 +15,18 @@
 											</div> #}
 		</div>
 		<!-- Contexto -->
-		{% if data == true %}
+		{% if data == false %}
 			<div class="px-2 scroll_style">
 				{% for repit in 1..4 %}
-					<div class="d-flex justify-content-start align-items-center">
+					<div class="d-sm-flex justify-content-start align-items-center">
 						<h3 class="fz_h3 fw_700 color_verde_2 ws_nowrap px-3 my-3">Viernes 24 Oct</h3>
 						<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 mb-3 d-flex justify-content-between w-100">
 							<hr class="linea_vertical my-0">
 							<div class="pe-3 py-2 w-100">
-								<div class="d-flex justify-content-between align-items-start">
+								<div class="d-sm-flex justify-content-between align-items-start">
 									<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación - PatologíaOM. Médicos de la zona Funza, Madrid, Mosquera, Faca...
 									</p>
-									<a href="#" class="btn btn_small btn_quaternary fw_700 bg_azul_3 position_relative w-auto mx-0 my-0" {# download="mi-archivo.pdf" #} onclick="animar(this)">Descargar
+									<a href="#" class="btn btn_small btn_quaternary fw_700 bg_azul_3 fz_h3 position_relative w-auto ms-3 mx-0 my-0" {# download="mi-archivo.pdf" #} onclick="animar(this)">Descargar
 										<span class="efecto"></span>
 									</a>
 								</div>
@@ -41,11 +41,7 @@
 				{% endfor %}
 			</div>
 		{% else %}
-			<div class="d-flex justify-content-center align-items-center flex-column">
-				<h2 class="fz_h2 fw_600 color_azul_2 letter_spacing text-center mb-4">Aún no tienes certificados disponibles</h2>
-				<p class="fz_p fw_400 color_azul_1 w_medium text-center ps-3 my-2">Para obtener tus certificados realiza la inscripción y agendamiento a cualquiera de los cursos que te ofrece el Centro de Experiencia Heel, asiste, participa y califica tu experiencia.</p>
-				<a href="#" class="btn_primary fz_h3 fw_700 bg_azul_3 color_blanco w-auto mt-3  py-3 px-5" onclick="NextDropdpwn('agendarme', 'formEvent')">Ver cursos</a>
-			</div>
+			{{ include('componentes/noDisponibles.html.twig',{title:'Aún no tienes certificados disponibles', data:true}) }}
 		{% endif %}
 	</div>
 

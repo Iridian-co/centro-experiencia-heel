@@ -2,12 +2,14 @@
 
 {% block body %}
 <div class="bg_blanco brd_rds_20 bx_shdw_2">
-	<div class="p-4">
+	<div class="p-2 p-lg-4">
 		<div class="container">
 			<div class="row">
 				<!-- Encuestas disponibles -->
 				<div class="col-12 col-lg-6">
-					{{ include('componentes/vitacora.html.twig',{title:'Encuestas disponibles'}) }}
+					<div class="encuesta">
+						{{ include('componentes/vitacora.html.twig',{title:'Encuestas disponibles'}) }}
+					</div>
 				</div>
 				<div class="col-12 col-lg-6">
 					<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4">
@@ -15,8 +17,8 @@
 							<p class="fz_p fw_600 color_azul_1 letter_spacing my-auto">Encuesta de evalueación del curso</p>
 						</div>
 						<!-- titulo -->
-						<div class="px-2 pb-3 ">
-							<div class="px-2 scroll_style">
+						<div class="px-2 pb-3">
+							<div class="px-2 scroll_encuesta">
 								<h2 class="fz_h2 color_azul_1 fw_600 letter_spacing">Bases de BrSM  - Técnicas de aplicación - PatologíaOM. Médicos de la zona Funza, Madrid, Mosquera, Faca. Gerente regional Javier Salgado.</h2>
 
 								<div class="parrafo">

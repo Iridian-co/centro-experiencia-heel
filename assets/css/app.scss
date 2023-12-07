@@ -3,6 +3,7 @@
 @import "mixin.scss";
 @import "pages.scss";
 @import "general-min.css";
+@import "menu.scss";
 
 body {
 	font-family: "inter";
@@ -40,7 +41,6 @@ main {
 }
 
 aside {
-	// position: fixed;
 	width: 100%;
 	height: 100vh;
 	background: transparent;
@@ -104,11 +104,7 @@ header {
 }
 
 .grupo {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	width: 34vw;
-	border-radius: 50%;
 }
 
 .score {
@@ -357,11 +353,7 @@ header {
 	&.btn_secondary {
 		background-color: $blanco;
 		color: $azul_1;
-		font-size: 0.833vw; //16px
-
-		// &:hover {
-		// 	background-color: darken($blanco, 10%);
-		// }
+		@extend .fz_p;
 
 		&.active {
 			background-color: $azul_3;
@@ -750,32 +742,30 @@ hr.linea_vertical_azul_3 {
 	@include lnVertical($azul_3);
 }
 
-hr.linea_vertical_date {
-	border: 1px solid $gris_3;
-	background: $gris_3;
-			width: 1px;
-			height: 100px;
-			position: relative;
-		.line::after {
-			content: "";
-			/* Necesario para crear el pseudo-elemento */
-			position: absolute;
-			/* Posiciona el círculo en relación a la línea */
-			bottom: 0;
-			/* Coloca el círculo al final de la línea */
-			left: -4.5px;
-			/* Centra el círculo en la línea */
-			width: 10px;
-			/* Ancho del círculo */
-			height: 10px;
-			/* Altura del círculo */
-			background-color: red;
-			/* Color del círculo */
-			border-radius: 50%;
-			/* Hace que el círculo sea redondo */
-		}
+.linea_vertical_date {
+	position: relative;
+	flex: none;
+	border: none;
+	border-left: 1px solid $gris_3;
+	height: 100%;
+	margin: 0;
 }
 
+.vertical-line {
+	height: 100px;
+}
+
+.m_date {
+	margin-left: 7vw;
+}
+
+.circle_vertical {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: $beige;
+	padding: 0.2rem;
+}
 
 hr.brd_gris_3 {
 	border: 1px solid $gris_3;
@@ -794,6 +784,31 @@ hr.brd_gris_3 {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	max-height: 30vw;
+
+	// Estilos específicos para el desplazamiento
+	&::-webkit-scrollbar {
+		width: 12px; // Ancho de la barra de desplazamiento
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(178, 202, 219, 0.5); // Color del pulgar de la barra de desplazamiento
+		border-radius: 6px; // Bordes redondeados del pulgar
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: rgba(255, 255, 255, 1); // Color de fondo de la barra de desplazamiento
+	}
+
+	// Ocultar las flechas de desplazamiento
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+}
+
+.scroll_encuesta {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 33vw;
 
 	// Estilos específicos para el desplazamiento
 	&::-webkit-scrollbar {
@@ -845,6 +860,10 @@ hr.brd_gris_3 {
 	&::-webkit-scrollbar {
 		display: none;
 	}
+}
+
+.scroll_content {
+	height: auto;
 }
 
 .rounded-circle {
@@ -914,13 +933,117 @@ hr.brd_gris_3 {
 	width: 50%;
 }
 
+.burger {
+	display: none;
+}
+
 //big desktop
-@media only screen and (min-width: 1921px) {}
+@media only screen and (min-width: 1921px) {
+	.m_date {
+		margin-left: 7rem;
+	}
+}
 
 //desktop
 @media (min-width: 1200px) and (max-width: 1920px) {}
 
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+
+	.score {
+		width: 0.9rem;
+		height: 0.9rem;
+		margin-top: -0.5rem;
+	}
+
+	.bell {
+		margin-right: -0.5rem;
+		width: 1.7rem;
+		height: 1.7rem;
+	}
+
+	.avatar {
+		width: 1.9rem;
+		height: 1.9rem;
+		border-radius: 50%;
+	}
+
+	.btn_icon {
+		.icon {
+			width: 1.7rem;
+			margin-right: 0.7rem;
+			margin-left: 0.7rem;
+		}
+
+		.texto {
+			width: 60%;
+		}
+
+		.arrow {
+			width: 0.6rem;
+			margin-left: 0.5rem;
+		}
+
+		&.btn_terciary {
+			@include Clicked($azul_1, $blanco, 0.833rem, $azul_3, 10%, $azul_3, 5%);
+		}
+
+		&.btn_quaternary {
+			@include Clicked($azul_3, $blanco, 0.833rem, $azul_2, 5%, $azul_2, 5%);
+		}
+
+		&.btn_download {
+			@include Clicked($azul_3, $blanco, 0.833rem, $azul_2, 5%, $azul_2, 5%);
+		}
+	}
+
+	.sesion {
+		width: 1.5rem;
+		height: 1.5rem;
+
+		&.ico {
+			width: 1.5rem;
+		}
+	}
+
+	.arrowIco {
+		width: 0.9rem;
+	}
+
+	.closeIco {
+		width: 1.2rem;
+	}
+
+	.icon_clock {
+		width: 1rem;
+		height: 1rem;
+		margin-right: 0.5rem;
+	}
+
+	.grupo {
+		width: 16rem;
+	}
+
+	.circle {
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		margin-right: 10rem;
+
+		&.conferencistas {
+			width: 6rem;
+			height: 6rem;
+		}
+
+		// Estilos para el ícono dentro del círculo
+		&i {
+			font-size: 1rem;
+		}
+	}
+
+	.icon_list {
+		width: 1.8rem;
+	}
+}
 
 //only tablet portrait
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
@@ -931,10 +1054,79 @@ hr.brd_gris_3 {
 	.w_medium {
 		width: 75%;
 	}
+
+	.m_date {
+		margin-left: 1rem;
+	}
+
+	.scroll_hide {
+		max-height: max-content;
+	}
+
+	.btn_icon {
+		.icon {
+			width: 1.5rem;
+			margin-right: 0.2rem;
+			margin-left: 0.5rem;
+		}
+
+		.texto {
+			width: 60%;
+		}
+
+		.arrow {
+			width: 0.6rem;
+			margin-left: 0.5rem;
+		}
+	}
+
+	.scroll_content {
+		height: inherit;
+	}
+
+	.scroll_hide {
+		max-height: max-content;
+	}
+
+	.scroll_hide_auto {
+		height: 13rem;
+	}
+
+	.scroll_style {
+		max-height: max-content;
+	}
+
+	.encuesta {
+		.scroll_style {
+			max-height: 30rem;
+		}
+	}
+
+	.scroll_encuesta {
+		max-height: 30rem;
+	}
+
 }
 
 //only tablet landscape
-@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {}
+@media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+	.m_date {
+		margin-left: 1rem;
+	}
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+	.circles,
+	.burger {
+		display: block;
+	}
+
+	aside {
+		width: 100%;
+		height: 150vh;
+	}
+}
 
 @media (min-width: 577px) and (max-width: 767px) and (orientation: landscape) {
 	.banner_login {
@@ -944,15 +1136,60 @@ hr.brd_gris_3 {
 	.w_medium {
 		width: 50%;
 	}
+
+	.vertical-line {
+		height: 0;
+	}
+
+	.circle_vertical {
+		display: none;
+	}
+
+	.circles,
+	.burger {
+		display: block;
+	}
 }
 
-@media only screen and (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
 	.banner_login {
 		height: 50vh;
 	}
 
 	.w_medium {
 		width: 50%;
+	}
+
+	.vertical-line {
+		height: 0;
+	}
+
+	.circle_vertical {
+		display: none;
+	}
+
+	aside {
+		height: 80vh;
+	}
+
+	.scroll_content {
+		height: inherit;
+	}
+
+	.scroll_hide {
+		max-height: 30rem;
+	}
+
+	.scroll_hide_auto {
+		height: 13rem;
+	}
+
+	.scroll_style {
+		max-height: 30rem;
+	}
+
+	.scroll_encuesta {
+		max-height: 30rem;
 	}
 }
 
@@ -1017,6 +1254,10 @@ hr.brd_gris_3 {
 //only phone
 @media (max-width: 576px) {
 
+	aside {
+		height: 80vh;
+	}
+
 	.banner_login {
 		height: 10rem;
 	}
@@ -1076,6 +1317,85 @@ hr.brd_gris_3 {
 	.w_medium {
 		width: 100%;
 	}
+
+
+
+	.vertical-line {
+		height: 0;
+	}
+
+	.m_date {
+		margin-left: 0;
+	}
+
+	.circle_vertical {
+		display: none;
+	}
+
+	.linea_vertical_date {
+		border-bottom: 1px solid $gris_3;
+		border-left: 0px;
+	}
+
+
+
+	.btn_icon {
+		.icon {
+			width: 1.7rem;
+			margin-right: 0.7rem;
+			margin-left: 0.7rem;
+		}
+
+		.texto {
+			width: 60%;
+		}
+
+		.arrow {
+			width: 0.6rem;
+			margin-left: 0.5rem;
+		}
+
+		// Estilo alternativo para otro tipo de botón
+		&.btn_secondary {
+			font-size: 0.8rem; //16px
+		}
+
+		&.btn_terciary {
+			@include Clicked($azul_1, $blanco, 1rem, $azul_3, 10%, $azul_3, 5%);
+		}
+
+		&.btn_quaternary {
+			@include Clicked($azul_3, $blanco, 1rem, $azul_2, 5%, $azul_2, 5%);
+		}
+
+		&.btn_download {
+			@include Clicked($azul_3, $blanco, 1rem, $azul_2, 5%, $azul_2, 5%);
+		}
+	}
+
+	.circles,
+	.burger {
+		display: block;
+		position: fixed;
+	}
+
+	.scroll_content {
+		height: inherit;
+	}
+
+	.scroll_hide {
+		max-height: 20rem;
+	}
+
+	.scroll_hide_auto {
+		height: 13rem;
+	}
+
+	.scroll_style {
+		max-height: 20rem;
+	}
+
+	.scroll_encuesta {
+		max-height: 20rem;
+	}
 }
-
-
