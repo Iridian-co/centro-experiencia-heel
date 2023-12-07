@@ -308,6 +308,10 @@
 			}
 		}
 	}
+
+	.dropdown_sesion {
+		@include dropdown(175%, auto, auto, -100%, auto);
+	}
 }
 
 @media (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
@@ -364,6 +368,10 @@
 				margin-bottom: 0.7rem;
 			}
 		}
+	}
+
+	.dropdown_sesion {
+		@include dropdown(100%, auto, auto, -100%, auto);
 	}
 }
 
