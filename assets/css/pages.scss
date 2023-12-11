@@ -244,6 +244,11 @@
 	background: linear-gradient(0deg, rgba(44, 177, 116, 0.3), rgba(44, 177, 116, 0.3));
 }
 
+.fc-day-selected,
+.fc-col-header-cell-cushion {
+	background: #2CB174;
+}
+
 .linea_vertical_date {
 
 	&.gris {
