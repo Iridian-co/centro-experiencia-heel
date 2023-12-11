@@ -1,164 +1,40 @@
 {
 	"events": [
 		{
-			"eventTitle": "Conferencia de Innovación Tecnológica",
-			"eventStartDate": "10/15/2023",
-			"eventEndDate": "10/15/2023",
-			"eventStartTime": "09:00 AM",
-			"eventEndTime": "06:00 PM",
-			"eventLocation": "Centro de Convenciones XYZ"
+			"id": 0,
+			"title": "Bases de BrSM...",
+			"start": "2023-12-07",
+			"end": "2023-12-07",
+			"allDay": true,
+			"extendedProps": {
+				"description": "description 1",
+				"cursos": 3,
+				"colorido": "gris"
+			}
 		},
 		{
-			"eventTitle": "Taller de Desarrollo de Aplicaciones Móviles",
-			"eventStartDate": "10/20/2023",
-			"eventEndDate": "10/20/2023",
-			"eventStartTime": "10:30 AM",
-			"eventEndTime": "04:30 PM",
-			"eventLocation": "Sala de Conferencias ABC"
+			"id": 1,
+			"title": "Bases de BrSM... 2",
+			"start": "2023-12-08",
+			"end": "2023-12-08",
+			"allDay": true,
+			"extendedProps": {
+				"description": "description",
+				"cursos": 1,
+				"colorido": "lila"
+			}
 		},
 		{
-			"eventTitle": "Feria de Emprendimiento Local",
-			"eventStartDate": "09/10/2023",
-			"eventEndDate": "09/10/2023",
-			"eventStartTime": "11:00 AM",
-			"eventEndTime": "07:00 PM",
-			"eventLocation": "Plaza del Pueblo"
-		},
-		{
-			"eventTitle": "Seminario de Marketing Digital",
-			"eventStartDate": "09/09/2023",
-			"eventEndDate": "09/09/2023",
-			"eventStartTime": "10:00 AM",
-			"eventEndTime": "04:00 PM",
-			"eventLocation": "Salón de Eventos Zeta"
-		},
-		{
-			"eventTitle": "Expo de Tecnología e Innovación",
-			"eventStartDate": "09/28/2023",
-			"eventEndDate": "09/28/2023",
-			"eventStartTime": "08:30 AM",
-			"eventEndTime": "05:30 PM",
-			"eventLocation": "Pabellón de Exposiciones Gamma"
-		},
-		{
-			"eventTitle": "Taller de Diseño Gráfico Avanzado",
-			"eventStartDate": "09/29/2023",
-			"eventEndDate": "09/29/2023",
-			"eventStartTime": "11:00 AM",
-			"eventEndTime": "04:00 PM",
-			"eventLocation": "Aula Creativa Epsilon"
-		},
-		{
-			"eventTitle": "Foro de Emprendedores",
-			"eventStartDate": "09/25/2023",
-			"eventEndDate": "09/25/2023",
-			"eventStartTime": "09:30 AM",
-			"eventEndTime": "06:30 PM",
-			"eventLocation": "Centro de Emprendimiento Beta"
-		},
-		{
-			"eventTitle": "Charla sobre Inteligencia Artificial",
-			"eventStartDate": "10/04/2023",
-			"eventEndDate": "10/04/2023",
-			"eventStartTime": "02:00 PM",
-			"eventEndTime": "07:00 PM",
-			"eventLocation": "Sala de Conferencias Delta"
-		},
-		{
-			"eventTitle": "Curso de Desarrollo Web Frontend",
-			"eventStartDate": "10/09/2023",
-			"eventEndDate": "10/09/2023",
-			"eventStartTime": "10:00 AM",
-			"eventEndTime": "05:00 PM",
-			"eventLocation": "Aula de Desarrollo Web"
-		},
-		{
-			"eventTitle": "Expo de Arte Contemporáneo",
-			"eventStartDate": "10/16/2023",
-			"eventEndDate": "10/16/2023",
-			"eventStartTime": "12:00 PM",
-			"eventEndTime": "08:00 PM",
-			"eventLocation": "Galería de Arte Omega"
-		},
-		{
-			"eventTitle": "Conferencia de Energías Renovables",
-			"eventStartDate": "10/05/2023",
-			"eventEndDate": "10/05/2023",
-			"eventStartTime": "09:00 AM",
-			"eventEndTime": "06:00 PM",
-			"eventLocation": "Auditorio de Sostenibilidad Iota"
-		},
-		{
-			"eventTitle": "Taller de Fotografía Profesional",
-			"eventStartDate": "10/13/2023",
-			"eventEndDate": "10/13/2023",
-			"eventStartTime": "11:30 AM",
-			"eventEndTime": "05:30 PM",
-			"eventLocation": "Estudio Fotográfico Kappa"
-		},
-		{
-			"eventTitle": "Feria de Gastronomía Local",
-			"eventStartDate": "09/22/2023",
-			"eventEndDate": "09/22/2023",
-			"eventStartTime": "11:00 AM",
-			"eventEndTime": "07:00 PM",
-			"eventLocation": "Plaza de la Ciudad"
-		},
-		{
-			"eventTitle": "Seminario de Ciberseguridad",
-			"eventStartDate": "10/02/2023",
-			"eventEndDate": "10/02/2023",
-			"eventStartTime": "10:00 AM",
-			"eventEndTime": "04:00 PM",
-			"eventLocation": "Sala de Seguridad Digital"
-		},
-		{
-			"eventTitle": "Taller de Escritura Creativa",
-			"eventStartDate": "10/10/2023",
-			"eventEndDate": "10/10/2023",
-			"eventStartTime": "12:00 PM",
-			"eventEndTime": "05:00 PM",
-			"eventLocation": "Biblioteca Municipal Mu"
-		},
-		{
-			"eventTitle": "Expo de Moda y Diseño",
-			"eventStartDate": "09/17/2023",
-			"eventEndDate": "09/17/2023",
-			"eventStartTime": "10:30 AM",
-			"eventEndTime": "06:30 PM",
-			"eventLocation": "Centro de Diseño Nu"
-		},
-		{
-			"eventTitle": "Foro de Educación y Tecnología",
-			"eventStartDate": "09/30/2023",
-			"eventEndDate": "09/30/2023",
-			"eventStartTime": "09:30 AM",
-			"eventEndTime": "05:30 PM",
-			"eventLocation": "Auditorio Educativo Xi"
-		},
-		{
-			"eventTitle": "Feria de Artesanías Locales",
-			"eventStartDate": "10/12/2023",
-			"eventEndDate": "10/12/2023",
-			"eventStartTime": "11:00 AM",
-			"eventEndTime": "07:00 PM",
-			"eventLocation": "Plaza Artesanal Sigma"
-		},
-		{
-			"eventTitle": "Conferencia de Salud y Bienestar",
-			"eventStartDate": "09/28/2023",
-			"eventEndDate": "09/30/2023",
-			"eventStartTime": "09:00 AM",
-			"eventEndTime": "06:00 PM",
-			"eventLocation": "Centro de Salud Theta"
-		},
-		{
-			"eventTitle": "Taller de Cocina Internacional",
-			"eventStartDate": "10/07/2023",
-			"eventEndDate": "10/07/2023",
-			"eventStartTime": "11:30 AM",
-			"eventEndTime": "05:30 PM",
-			"eventLocation": "Cocina Gourmet Mu"
+			"id": 2,
+			"title": "Bases de BrSM... 2",
+			"start": "2023-12-08",
+			"end": "2023-12-08",
+			"allDay": false,
+			"extendedProps": {
+				"description": "description 2",
+				"cursos": "",
+				"colorido": "lila"
+			}
 		}
 	]
 }

@@ -141,11 +141,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
 import interaction from '@fullcalendar/interaction'
-
-
-// let request_calendar = "./events.json";
-
-import request_calendar from "./events.json";
+import { events } from "./events.json";
 
 document.addEventListener('DOMContentLoaded', function () {
 	const calendarEl = document.getElementById('calendar')
@@ -159,6 +155,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 		editable: true,
 		selectable: true,
+		select: function (start, end, allDays) {
+			console.log("select event start", start, end, allDays);
+		},
 		// events: practiceTimes,
 		dayHeaderFormat: { weekday: "long" },
 		locale: "es",
@@ -184,58 +183,71 @@ document.addEventListener('DOMContentLoaded', function () {
 				noEventsText: "No hay eventos para mostrar",
 			},
 		],
-		events: function (info, successCallback, failureCallback) {
-			// console.log("request_calendar >>> ", request_calendar);
-			fetch(request_calendar,{
-					headers : { 
-						'Content-Type': 'application/json',
-						'Accept': 'application/json'
-					}
-    		})
-			.then(function (response) {
-				return response.json();
-			})
-			.then(function (data) {
-				console.log("data >>> ", data.trace);
-				let events = data.trace.map(function (event) {
-					// console.log("event >>> ", event);
-					return {
-						title: event.eventTitle,
-						start: new Date(event.eventStartDate),
-						end: new Date(event.eventEndDate),
-						timeStart: event.eventStartTime,
-						timeEnd: event.eventEndTime,
-						location: event.eventLocation,
-						// url: event.eventUrl,
-					};
-				});
-				successCallback(events);
-			})
-			.catch(function (error) {
-				// console.log("error >>> ", error);
-				failureCallback(error);
-			});
+		events: events,
+		eventContent: function (info) {
+			// console.log(">>> Contenedor ", info.view);
+			console.log("Hola Yayo!");
+			return {
+				html: `
+				<div class="score_cursos fw_400 color_blanco fz_min ${info.event.extendedProps.colorido}">${info.event.extendedProps.cursos}</div>
+                <div class="background_events">
+					<div class="bg_gradient_azul_2 brd_rds_5 mb-2 d-flex justify-content-between w-100">
+						<hr class="linea_vertical_date my-0 ${info.event.extendedProps.colorido}">
+						<div class="pe-2 pb-1 w-100">
+							<div class="d-flex justify-content-between align-items-start">
+								<p class="fz_p fw_400 color_azul_1 tres_puntos ps-2 my-2">${info.event.title}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+					`,
+				// <div>Location: ${info.event.extendedProps.location}</div>
+				// <div>Date: ${info.event.start.toLocaleDateString("es-US",
+				// {month: "long",day: "numeric",year: "numeric",})}</div>
+				// <div>Time: ${info.event.extendedProps.timeStart} - ${info.event.extendedProps.timeEnd}</div>
+			};
+		},
+		eventMouseEnter: function (mouseEnterInfo) {
+			console.log(mouseEnterInfo);
+			let el = mouseEnterInfo.el;
+			el.classList.add("relative");
+			// console.log(">>> " + JSON.stringify(mouseEnterInfo) );
+
+			let newEl = document.createElement("div");
+			let newElTitle = mouseEnterInfo.event.title;
+			// let newElLocation = mouseEnterInfo.event.extendedProps.location;
+			newEl.innerHTML = `
+                <div class="fc-hoverable-event"
+                    style="position: absolute; bottom: 100%; left: 0; width: 300px; height: auto; background-color: white; z-index: 50; border: 1px solid #e2e8f0; border-radius: 0.375rem; padding: 0.75rem; font-size: 14px; font-family: 'Inter', sans-serif; cursor: pointer;"
+                >
+                    <strong>${newElTitle}</strong>
+                </div>
+            `;
+			el.after(newEl);
+		},
+		eventMouseLeave: function () {
+			document.querySelector(".fc-hoverable-event").remove();
 		},
 	});
 	calendar.render();
 
-	calendarEl.addEventListener("click", function (info) {
-		if (info.event) {
-			// Si hizo clic en un evento existente
-			console.log("Clic en evento: " + info.event.title);
-		} else {
-			// Si hizo clic en un día sin evento
-			console.log("Fecha clickeada: " + info.dateStr);
-			manejarClicEnFecha(info.dateStr, "Otros datos");
-			console.log("Fecha clickeada: " + info.startStr);
-		}
-	});
+	// calendarEl.addEventListener("click", function (info) {
+	// 	console.log("info ", info);
+	// 	if (info.event) {
+	// 		// Si hizo clic en un evento existente
+	// 		console.log("Clic en evento: " + info.event.title);
+	// 	} else {
+	// 		// Si hizo clic en un día sin evento
+	// 		console.log("Fecha clickeada: " + info.dateStr);
+	// 		manejarClicEnFecha(info.dateStr, "Otros datos");
+	// 	}
+	// });
 
-	function manejarClicEnFecha(fecha, otrosDatos) {
-		// Puedes hacer algo con la fecha y otros datos aquí
-		console.log("Fecha:", fecha);
-		console.log("Otros datos:", otrosDatos);
-	}
+	// function manejarClicEnFecha(fecha, otrosDatos) {
+	// 	// Puedes hacer algo con la fecha y otros datos aquí
+	// 	console.log("Fecha:", fecha);
+	// 	console.log("Otros datos:", otrosDatos);
+	// }
 
 
 })

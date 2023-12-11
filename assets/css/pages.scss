@@ -216,6 +216,7 @@
 //day calendar
 .fc .fc-daygrid-day-top {
 	flex-direction: row;
+
 	.fc-daygrid-day-number {
 		@extend .fz_p;
 		@extend .fw_400;
@@ -224,11 +225,80 @@
 }
 
 //event calendar notification
-.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
-	&::before {
-		background-color: aqua;
+// .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+// 	&::before {
+// 		background-color: aqua;
+// 	}
+// }
+
+//event calendar notification
+.fc-h-event {
+	@extend .bg_gradient_azul_day;
+	border: none;
+}
+
+.fc .fc-highlight {
+	// @extend .bg_degradado_verde;
+	border: 1px solid $verde_1;
+	@include borderRadius(5px);
+	background: linear-gradient(0deg, rgba(44, 177, 116, 0.3), rgba(44, 177, 116, 0.3));
+}
+
+.linea_vertical_date {
+
+	&.gris {
+		@include lnVertical($gris_1);
+	}
+
+	&.lila {
+		@include lnVertical($lila);
+	}
+
+	&.verde_2 {
+		@include lnVertical($verde_2);
+	}
+
+	&.azul_3 {
+		@include lnVertical($azul_3);
 	}
 }
+
+.background_events,
+.fc-h-event .fc-event-main,
+.fc-direction-ltr .fc-daygrid-event.fc-event-end,
+.fc-direction-rtl .fc-daygrid-event.fc-event-start {
+	background: transparent;
+}
+
+.score_cursos {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5vw;
+	height: 1.5vw;
+	border-radius: 50%;
+	margin-top: -1.5vw;
+	float: right;
+	margin-bottom: 0.5vw;
+
+	&.gris {
+		background-color: $gris_1;
+	}
+
+	&.lila {
+		background-color: $lila;
+	}
+
+	&.verde_2 {
+		background-color: $verde_2;
+	}
+
+	&.azul_3 {
+		background-color: $azul_3;
+	}
+
+}
+
 // .fc {
 // 	.fc-button-group {
 // 		>.fc-button.fc-button-active,
