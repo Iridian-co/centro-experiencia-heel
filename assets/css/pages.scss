@@ -373,6 +373,12 @@
 	}
 }
 
+@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+	.dropdown_sesion {
+		@include dropdown(20%, auto, auto, -100%, auto);
+	}
+}
+
 @media (min-width: 577px) and (max-width: 767px) and (orientation: landscape) {
 	.content_swp_general .swiper-button-next {
 		position: relative;
@@ -462,7 +468,24 @@
 	}
 
 	.dropdown_sesion {
-		@include dropdown(100%, auto, auto, -100%, auto);
+		@include dropdown(100%, auto, auto, -12%, auto);
+	}
+
+	/* dropdown */
+	.dropdown_menu {
+		@include dropdown(auto, auto, auto, -12%, auto);
+	}
+
+	.dropdown_sesion {
+		@include dropdown(10%, auto, auto, -60%, auto);
+	}
+
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 45%, -50%, -50%);
+	}
+
+	.dropdown_event {
+		@include dropdown(50%, 50%, 45%, -50%, -50%);
 	}
 }
 
