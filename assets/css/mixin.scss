@@ -47,6 +47,7 @@
 	top: $top;
 	left: $left;
 	width: $width;
+	z-index: 2;
 
 	@if $y ==auto {
 		transform: translateX($x);
