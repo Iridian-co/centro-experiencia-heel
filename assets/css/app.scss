@@ -946,10 +946,18 @@ hr.brd_gris_3 {
 	.m_date {
 		margin-left: 7rem;
 	}
+
+	.mxw_100 {
+		max-width: 100% !important;
+	}
 }
 
 //desktop
-@media (min-width: 1200px) and (max-width: 1920px) {}
+@media (min-width: 1200px) and (max-width: 1920px) {
+	.mxw_100 {
+		max-width: 100% !important;
+	}
+}
 
 @media (max-width: 992px) {
 
