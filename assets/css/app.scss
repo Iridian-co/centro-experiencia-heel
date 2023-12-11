@@ -351,6 +351,10 @@ header {
 		.icon {
 			filter: brightness(0) invert(1); // Invierte el color del icono cuando el botón está activo
 		}
+		.texto {
+			color: $blanco;
+			@extend .fw_700;
+		}
 	}
 
 	// Estilo alternativo para otro tipo de botón
