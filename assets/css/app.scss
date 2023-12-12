@@ -538,6 +538,58 @@ button:-moz-focusring {
 	background-size: 15px 15px;
 }
 
+// Cambia el color de fondo del radio button
+// input[type="radio"] {
+// 	
+// 	appearance: none;
+// 	background-color: $gris_3;
+// 	margin: 0 auto;
+// 	font: inherit;
+// 	color: currentColor;
+// 	width: 1.15em;
+// 	height: 1.15em;
+// 	border-radius: 50%;
+// 	transform: translateY(-0.075em);
+// 	display: grid;
+// 	place-content: center;
+// }
+
+input[type="radio"] {
+	accent-color: $azul_1;
+	/* Add if not using autoprefixer */
+	-webkit-appearance: none;
+	/* Remove most all native input styles */
+	appearance: none;
+	/* For iOS < 15 */
+	background-color: $gris_3;
+	/* Not removed via appearance */
+	margin: 0 auto;
+	font: inherit;
+	color: currentColor;
+	width: 0.8vw;
+	height: 0.8vw;
+	border-radius: 50%;
+	transform: translateY(-0.075em);
+	display: grid;
+	place-content: center;
+}
+
+input[type="radio"]::before {
+	content: "";
+	width: 0.5vw;
+	height: 0.5vw;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em $azul_1;
+	/* Windows High Contrast Mode */
+	background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+	transform: scale(1);
+}
+
 //form
 form {
 
@@ -961,7 +1013,18 @@ hr.brd_gris_3 {
 	}
 
 	.btn_big {
-		padding:1.2rem 1.3rem 1.2rem 1.2rem;
+		padding: 1.2rem 1.3rem 1.2rem 1.2rem;
+	}
+
+	input[type="radio"] {
+		appearance: none;
+		width: 0.9rem;
+		height: 0.9rem;
+	}
+
+	input[type="radio"]::before {
+		width: 0.6rem;
+		height: 0.6rem;
 	}
 }
 
@@ -973,6 +1036,10 @@ hr.brd_gris_3 {
 }
 
 @media (max-width: 992px) {
+
+	.btn_big {
+		padding: 1.2rem 1.3rem 1.2rem 1.2rem;
+	}
 
 	.score {
 		width: 0.9rem;
@@ -1071,6 +1138,17 @@ hr.brd_gris_3 {
 
 	.icon_list {
 		width: 1.8rem;
+	}
+
+	input[type="radio"] {
+		appearance: none;
+		width: 0.8rem;
+		height: 0.8rem;
+	}
+
+	input[type="radio"]::before {
+		width: 0.5rem;
+		height: 0.5rem;
 	}
 }
 
@@ -1427,4 +1505,6 @@ hr.brd_gris_3 {
 	.scroll_encuesta {
 		max-height: 20rem;
 	}
+
+
 }
