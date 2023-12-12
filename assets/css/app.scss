@@ -352,6 +352,7 @@ header {
 		.icon {
 			filter: brightness(0) invert(1); // Invierte el color del icono cuando el botón está activo
 		}
+
 		.texto {
 			color: $blanco;
 			@extend .fw_700;
@@ -420,15 +421,18 @@ header {
 }
 
 .btn_big {
-	padding: 17px 4px 17px;
+	padding: 0.8vw 1.3vw 0.8vw 1.2vw;
 	text-align: start;
-	padding-left: 1.3vw;
-	padding-right: 1.2vw;
 	@extend .brd_rds_20;
 }
 
 .btn_small {
 	padding: 10px 48px;
+	@extend .brd_rds_10;
+}
+
+.btn_xx_small {
+	padding: 5px 40px;
 	@extend .brd_rds_10;
 }
 
@@ -954,6 +958,10 @@ hr.brd_gris_3 {
 
 	.mxw_100 {
 		max-width: 100% !important;
+	}
+
+	.btn_big {
+		padding:1.2rem 1.3rem 1.2rem 1.2rem;
 	}
 }
 

@@ -312,3 +312,13 @@ function closeMenu() {
 /* function gridSize(){
 
 } */
+
+// cambiar Color ---------------------------------------------------------------->
+
+function NextDropdpwn(hideId, showId) {
+	var x = document.getElementById(showId);
+	var y = document.getElementById(hideId);
+	x.className = "show";
+	y.className = "hide";
+	//console.log(" next  >>>>")
+}

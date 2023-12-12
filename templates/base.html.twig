@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Heel Centro de Experiencia!
-			{% endblock %}
+			{% block title %}Heel Centro de Experiencia!{% endblock %}
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		<meta charset="UTF-8">
@@ -16,7 +15,30 @@
 		{{ encore_entry_link_tags('app') }}
 	</head>
 	<body>
-		{% block body %}{% endblock %}
+		<div class="bg_gradient_home">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- SideBar -->
+					<div class="col-12 col-md-3 col-lg-2">
+						{{ include('componentes/SideBar.html.twig',{activeParam}) }}
+					</div>
+
+					<!-- Content -->
+					<div class="col-12 col-md-9 col-lg-10">
+						<main>
+							{{ include('componentes/Header.html.twig') }}
+							<article class="wpContent">
+								<div class="wrapper">
+									<div class="general-scroll">
+										{% block body %}{% endblock %}
+									</div>
+								</div>
+							</article>
+						</main>
+					</div>
+				</div>
+			</div>
+		</div>
 		{{ encore_entry_script_tags('app') }}
 		{% block javascripts %}{% endblock %}
 	</body>

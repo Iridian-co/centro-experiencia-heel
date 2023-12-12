@@ -1,0 +1,46 @@
+<nav class="menu nav mt-4">
+	<ul>
+
+		<li class="d-block animate">
+			<a href="{{ path('home') }}" class="btn_blanco btn_big fw_400 my-0 
+			{% if view == 'home' %} {% if view == 'home' %} {{activeParam}} {% endif %} {% endif %}" id="calendario" onclick="cambiarColor(this, 'calendario')">
+				<img class="icon" src="img/icon/calendario.svg" alt="calendario" width="15" height="20"/>
+				<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Calendario</span>
+				<img class="arrow" src="img/icon/flecha.svg" alt="flecha" width="2.7" height="15"/>
+			</a>
+		</li>
+		<li class="d-block animate">
+			<a href="{{ path('cursos') }}" class="btn_blanco btn_big fw_400 my-0 {% if view == 'cursos' %} {{activeParam}} {% endif %}" id="cursos" onclick="cambiarColor(this, 'cursos')">
+				<img class="icon" src="img/icon/cursos.svg" alt="Cursos" width="15" height="20"/>
+				{% set course = true %}
+				{% if course %}
+					<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Cursos</span>
+				{% else %}
+					<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Próximos cursos</span>
+				{% endif %}
+				<img class="arrow" src="img/icon/flecha.svg" alt="flecha" width="2.7" height="15"/>
+			</a>
+		</li>
+		<li class="d-block animate">
+			<a href="{{ path('experiencia') }}" class="btn_blanco btn_big fw_400 my-0 {% if view == 'experiencia' %} {{activeParam}} {% endif %}" onclick="cambiarColor(this, 'experiencia')">
+				<img class="icon" src="img/icon/cubo.svg" alt="cubo" width="15" height="20"/>
+				<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Centro de Experiencia HEEL</span>
+				<img class="arrow" src="img/icon/flecha.svg" alt="flecha" width="2.7" height="15"/>
+			</a>
+		</li>
+		<li class="d-block animate">
+			<a href="{{ path('encuesta') }}" class="btn_blanco btn_big fw_400 my-0 {% if view == 'encuesta' %} {{activeParam}} {% endif %}" onclick="cambiarColor(this, 'encuesta')">
+				<img class="icon" src="img/icon/pizza.svg" alt="pizza" width="15" height="20"/>
+				<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Encuesta</span>
+				<img class="arrow" src="img/icon/flecha.svg" alt="flecha" width="2.7" height="15"/>
+			</a>
+		</li>
+		<li class="d-block animate">
+			<a href="{{ path('certificado') }}" class="btn_blanco btn_big fw_400 my-0 {% if view == 'certificado' %} {{activeParam}} {% endif %}" onclick="cambiarColor(this, 'certificado')">
+				<img class="icon" src="img/icon/chulo.svg" alt="chulo" width="15" height="20"/>
+				<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Certificado</span>
+				<img class="arrow" src="img/icon/flecha.svg" alt="flecha" width="2.7" height="15"/>
+			</a>
+		</li>
+	</ul>
+</nav>
