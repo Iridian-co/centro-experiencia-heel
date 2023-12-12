@@ -307,3 +307,8 @@ function closeMenu() {
 		$("div.x, div.y, div.z").removeClass("collapse");
 	}, 70);
 }
+
+
+/* function gridSize(){
+
+} */

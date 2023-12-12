@@ -97,33 +97,37 @@
 							{{ include('dropdown/dropdownSesion.html.twig') }}
 						</div>
 					</header>
-					<article>
-						<div id="vista_1" class="">
-							{% include ("basic/calendario.html.twig") %}
+					<article class="wpContent">
+						<div class="wrapper">
+							<div class="general-scroll">
+								<div id="vista_1" class="">
+									{% include ("basic/calendario.html.twig") %}
+								</div>
+								<div id="vista_2" class="">
+									{% include ("basic/cursos.html.twig") %}
+								</div>
+								<div id="vista_3" class="">
+									{% include ("basic/experiencia.html.twig") %}
+								</div>
+								<div id="vista_4" class="">
+									{% include ("basic/encuesta.html.twig") %}
+								</div>
+								<div id="vista_5" class="">
+									{% include ("basic/certificado.html.twig") %}
+								</div>
+								{# {% if vista_calendario == vistaSelecionada %}
+									{% include ("basic/calendario.html.twig") %}
+								{% elseif vista == vista_turno %}
+									{% include ("basic/cursos.html.twig") %}
+								{% elseif vista == 'experiencia' %}
+									{% include ("basic/experiencia.html.twig") %}
+								{% elseif vista == 'encuesta' %}
+									{% include ("basic/encuesta.html.twig") %}
+								{% elseif vista == 'certificado' %}
+									{% include ("basic/certificado.html.twig") %}
+								{% endif %} #}
+							</div>
 						</div>
-						<div id="vista_2" class="">
-							{% include ("basic/cursos.html.twig") %}
-						</div>
-						<div id="vista_3" class="">
-							{% include ("basic/experiencia.html.twig") %}
-						</div>
-						<div id="vista_4" class="">
-							{% include ("basic/encuesta.html.twig") %}
-						</div>
-						<div id="vista_5" class="">
-							{% include ("basic/certificado.html.twig") %}
-						</div>
-						{# {% if vista_calendario == vistaSelecionada %}
-							{% include ("basic/calendario.html.twig") %}
-						{% elseif vista == vista_turno %}
-							{% include ("basic/cursos.html.twig") %}
-						{% elseif vista == 'experiencia' %}
-							{% include ("basic/experiencia.html.twig") %}
-						{% elseif vista == 'encuesta' %}
-							{% include ("basic/encuesta.html.twig") %}
-						{% elseif vista == 'certificado' %}
-							{% include ("basic/certificado.html.twig") %}
-						{% endif %} #}
 					</article>
 				</main>
 			</div>

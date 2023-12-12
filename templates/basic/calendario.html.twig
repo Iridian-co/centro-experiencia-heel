@@ -3,11 +3,12 @@
 {% block body %}
 	
 <div class="bg_blanco brd_rds_20 bx_shdw_2">
-	<div class="p-2 p-lg-3">
-		<div class="container mxw_100">
+	{# <div class="p-2 p-lg-3"> #}
+		{# <div class="container px-0 mxw_100"> #} {# clases mxw_100, container innecesarias #}
+		<div class="container-fluid">
 			<div class="row">
 				<!-- Encuestas disponibles -->
-				<div class="col-12 col-lg-3">
+				<div class="col-12 col-lg-3 ps-0"> {# se le quitan los padding en inicial o a la izquierda a los col para que ocupen el 100% del container e ignoren los padding de el #}
 					<div class="bg_gradient_azul_2 brd_rds_20 bx_shdw_1 mb-4 mt-4 mt-md-0">
 						<div class="p-2">
 							<h2 class="fz_h2 fw_600 color_azul_1 px-2 my-3">Jueves, 23 de Octubre</h2>
@@ -25,14 +26,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-9">
+				<div class="col-12 col-lg-9 pe-0"> {# se le quitan los padding en final o a la derecha a los col para que ocupen el 100% del container e ignoren los padding de el #}
 					<div class="bg_gradient_azul_2 brd_rds_20 bx_shdw_1">
 						<div id='calendar' class="p-2 p-lg-4"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	{# </div> #}
 </div>
 
 {% endblock %}
