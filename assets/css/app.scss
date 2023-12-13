@@ -56,6 +56,18 @@ aside {
 	margin: 0 10%;
 }
 
+.navbar {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
 .line_fz {
 	background: linear-gradient(270deg, #0088C1 0%, #2CB174 63.17%, #BCCD00 130.41%);
 	width: 85px;
@@ -423,7 +435,7 @@ header {
 .btn_big {
 	padding: 0.8vw 1.3vw 0.8vw 1.2vw;
 	text-align: start;
-	@extend .brd_rds_20;
+	@extend .brd_rds_10;
 }
 
 .btn_small {
@@ -1198,6 +1210,21 @@ hr.brd_gris_3 {
 }
 
 //only tablet portrait
+@media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+
+	aside {
+		height: 30vh;
+		flex-direction: row !important;
+
+		.menu {
+			height: auto;
+			width: auto;
+			margin: 0.5rem !important;
+		}
+	}
+}
+
+//only tablet portrait
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
 	.banner_login {
 		height: 50vh;
@@ -1258,12 +1285,27 @@ hr.brd_gris_3 {
 		max-height: 30rem;
 	}
 
+	.tres_puntos {
+		white-space: inherit;
+	}
+
 }
 
 //only tablet landscape
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
 	.m_date {
 		margin-left: 1rem;
+	}
+
+	aside {
+		height: 45vh;
+		// flex-direction: row !important;
+
+		.menu {
+			height: auto;
+			width: auto;
+			margin: 0.5rem !important;
+		}
 	}
 }
 
@@ -1274,9 +1316,8 @@ hr.brd_gris_3 {
 		display: block;
 	}
 
-	aside {
-		width: 100%;
-		height: 150vh;
+	landscape .tres_puntos {
+		white-space: inherit;
 	}
 }
 
@@ -1300,6 +1341,10 @@ hr.brd_gris_3 {
 	.circles,
 	.burger {
 		display: block;
+	}
+
+	.tres_puntos {
+		white-space: inherit;
 	}
 }
 
@@ -1342,6 +1387,10 @@ hr.brd_gris_3 {
 
 	.scroll_encuesta {
 		max-height: 30rem;
+	}
+
+	.tres_puntos {
+		white-space: inherit;
 	}
 }
 
@@ -1401,13 +1450,17 @@ hr.brd_gris_3 {
 	.w_medium {
 		width: 75%;
 	}
+
+	.tres_puntos {
+		white-space: inherit;
+	}
 }
 
 //only phone
 @media (max-width: 576px) {
 
 	aside {
-		height: 80vh;
+		height: 60vh;
 	}
 
 	.banner_login {

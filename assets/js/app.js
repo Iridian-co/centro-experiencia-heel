@@ -40,7 +40,7 @@ const swpConferencistas = new Swiper(".swp_conferencistas", {
 		// when window width is >= 280px
 		280: {
 			slidesPerView: 1,
-			spaceBetween: 12,
+			spaceBetween: 2,
 		},
 		576: {
 			slidesPerView: 2,
@@ -186,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		events: events,
 		eventContent: function (info) {
 			// console.log(">>> Contenedor ", info.view);
-			console.log("Hola Yayo!");
 			return {
 				html: `
 				<div class="score_cursos fw_400 color_blanco fz_min ${info.event.extendedProps.colorido}">${info.event.extendedProps.cursos}</div>
@@ -208,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			};
 		},
 		eventMouseEnter: function (mouseEnterInfo) {
-			console.log(mouseEnterInfo);
+			// console.log(mouseEnterInfo);
 			let el = mouseEnterInfo.el;
 			el.classList.add("relative");
 			// console.log(">>> " + JSON.stringify(mouseEnterInfo) );
@@ -254,59 +253,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Create Menu ---------------------------------------------------------------->
 
-if ("ontouchstart" in window) {
-	var click = "touchstart";
-} else {
-	var click = "click";
-}
+// if ("ontouchstart" in window) {
+// 	var click = "touchstart";
+// } else {
+// 	var click = "click";
+// }
 
-$("div.burger").on(click, function () {
-	if (!$(this).hasClass("open")) {
-		openMenu();
-	} else {
-		closeMenu();
-	}
-});
+// $("div.burger").on(click, function () {
+// 	if (!$(this).hasClass("open")) {
+// 		openMenu();
+// 	} else {
+// 		closeMenu();
+// 	}
+// });
 
-$("div.menu ul li a").on(click, function (e) {
-	e.preventDefault();
-	closeMenu();
-});
+// $("div.menu ul li a").on(click, function (e) {
+// 	e.preventDefault();
+// 	closeMenu();
+// });
 
-function openMenu() {
-	$("div.circles").addClass("expand");
+// function openMenu() {
+// 	$("div.circles").addClass("expand");
 
-	$("div.burger").addClass("open");
-	$("div.x, div.y, div.z").addClass("collapse");
-	$(".menu li").addClass("animate");
+// 	$("div.burger").addClass("open");
+// 	$("div.x, div.y, div.z").addClass("collapse");
+// 	$(".menu li").addClass("animate");
 
-	setTimeout(function () {
-		$("div.y").hide();
-		$("div.x").addClass("rotate30");
-		$("div.z").addClass("rotate150");
-	}, 70);
-	setTimeout(function () {
-		$("div.x").addClass("rotate45");
-		$("div.z").addClass("rotate135");
-	}, 120);
-}
+// 	setTimeout(function () {
+// 		$("div.y").hide();
+// 		$("div.x").addClass("rotate30");
+// 		$("div.z").addClass("rotate150");
+// 	}, 70);
+// 	setTimeout(function () {
+// 		$("div.x").addClass("rotate45");
+// 		$("div.z").addClass("rotate135");
+// 	}, 120);
+// }
 
-function closeMenu() {
-	$("div.burger").removeClass("open");
-	$("div.x").removeClass("rotate45").addClass("rotate30");
-	$("div.z").removeClass("rotate135").addClass("rotate150");
-	$("div.circles").removeClass("expand");
-	$(".menu li").removeClass("animate");
+// function closeMenu() {
+// 	$("div.burger").removeClass("open");
+// 	$("div.x").removeClass("rotate45").addClass("rotate30");
+// 	$("div.z").removeClass("rotate135").addClass("rotate150");
+// 	$("div.circles").removeClass("expand");
+// 	$(".menu li").removeClass("animate");
 
-	setTimeout(function () {
-		$("div.x").removeClass("rotate30");
-		$("div.z").removeClass("rotate150");
-	}, 50);
-	setTimeout(function () {
-		$("div.y").show();
-		$("div.x, div.y, div.z").removeClass("collapse");
-	}, 70);
-}
+// 	setTimeout(function () {
+// 		$("div.x").removeClass("rotate30");
+// 		$("div.z").removeClass("rotate150");
+// 	}, 50);
+// 	setTimeout(function () {
+// 		$("div.y").show();
+// 		$("div.x, div.y, div.z").removeClass("collapse");
+// 	}, 70);
+// }
 
 
 /* function gridSize(){
@@ -314,10 +313,27 @@ function closeMenu() {
 } */
 
 // cambiar Color ---------------------------------------------------------------->
-		function dropdown() {
-			$(".dropdown_menu").toggle();
-		}
+function dropdown() {
+	$(".dropdown_menu").toggle();
+}
 
-		function dropdownSesion() {
-			$(".dropdown_sesion").toggle();
-		}
+function dropdownSesion() {
+	$(".dropdown_sesion").toggle();
+}
+
+// Menu  ---------------------------------------------------------------->
+//Regular Javascript
+var navicon = document.getElementById("navicon");
+var navEl = document.getElementById("siteNav");
+
+function toggleMenu() {
+	navEl.classList.toggle("hidden");
+	// console.log("menu hidden");
+}
+
+navicon.addEventListener("click", toggleMenu, false);
+
+const elemento = document.getElementById("siteNav");
+if (window.matchMedia("(max-width: 1024px)").matches) {
+	elemento.classList.add("hidden");
+}

@@ -1,12 +1,3 @@
-.burger {
-	height: 2rem;
-	width: 2.5rem;
-	position: absolute;
-	top: 0.6rem;
-	left: 1.3rem;
-	cursor: pointer;
-}
-
 .x,
 .y,
 .z {
@@ -40,7 +31,6 @@
 
 .collapse {
 	top: 1.5rem;
-	background: $azul_1;
 	-webkit-transition: all 70ms ease-out;
 	-moz-transition: all 70ms ease-out;
 	-ms-transition: all 70ms ease-out;
@@ -183,17 +173,54 @@
 	transition-delay: 0.15s;
 }
 
+#navicon {
+	display: none;
+}
 
+@media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+	#navicon {
+			display: block;
+		}
+}
 
-@media (max-width: 767px) and (orientation: landscape) {
+@media (max-width: 1024px) and (orientation: landscape) {
 	.menu ul li {
 		width: 60%;
 		margin-bottom: 0.7rem;
 	}
+
+	#navicon {
+		display: block;
+	}
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
+@media (max-width: 768px) and (orientation: portrait) {
 	.menu ul li {
 		margin-bottom: 0.7rem;
 	}
+
+	.menu {
+		height: auto;
+		width: auto;
+	}
+
+	aside {
+		flex-direction: row !important;
+	}
+
+	#navicon {
+		display: block;
+	}
+}
+
+// Create Menu ---------------------------------------------------------------->
+
+// Boton Menu ---------------------------------------------------------------->
+// @import "_navbar.scss";
+.hidden {
+	display: none !important;
+}
+
+.shown {
+	display: block;
 }

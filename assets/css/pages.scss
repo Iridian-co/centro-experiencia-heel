@@ -324,21 +324,6 @@
 // 	}
 // }
 
-
-#vista_1,
-#vista_2,
-#vista_3,
-#vista_4,
-#vista_5 {
-	// visibility: hidden;
-	display: none;
-
-	&.show {
-		// visibility: visible;
-		display: block;
-	}
-}
-
 //big desktop
 @media only screen and (min-width: 1921px) {
 	.dropdown_agenda {
@@ -510,7 +495,7 @@
 	}
 
 	.dropdown_sesion {
-		@include dropdown(100%, auto, auto, -12%, auto);
+		@include dropdown(80%, auto, auto, -75%, auto);
 	}
 
 	/* dropdown */
