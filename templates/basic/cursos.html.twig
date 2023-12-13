@@ -87,5 +87,13 @@
 			}
 			console.log('dropdown_event');
 		}
+
+		function NextDropdpwn(hideId, showId) {
+			var x = document.getElementById(showId);
+			var y = document.getElementById(hideId);
+			x.className = "show";
+			y.className = "hide";
+			console.log(" next  >>>>")
+		}
 	</script>
 {% endblock %}

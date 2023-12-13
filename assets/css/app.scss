@@ -1002,6 +1002,11 @@ hr.brd_gris_3 {
 	display: none;
 }
 
+.mx_row {
+	margin-right: calc(-.5 * var(--bs-gutter-x));
+	margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
 //big desktop
 @media only screen and (min-width: 1921px) {
 	.m_date {

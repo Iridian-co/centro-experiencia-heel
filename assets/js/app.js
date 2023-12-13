@@ -144,7 +144,7 @@ import interaction from '@fullcalendar/interaction'
 import { events } from "./events.json";
 
 document.addEventListener('DOMContentLoaded', function () {
-	const calendarEl = document.getElementById('calendar')
+	const calendarEl = document.getElementById('calendar');
 	const calendar = new Calendar(calendarEl, {
 		plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin, interaction],
 		initialView: "dayGridMonth",
@@ -314,11 +314,10 @@ function closeMenu() {
 } */
 
 // cambiar Color ---------------------------------------------------------------->
+		function dropdown() {
+			$(".dropdown_menu").toggle();
+		}
 
-function NextDropdpwn(hideId, showId) {
-	var x = document.getElementById(showId);
-	var y = document.getElementById(hideId);
-	x.className = "show";
-	y.className = "hide";
-	//console.log(" next  >>>>")
-}
+		function dropdownSesion() {
+			$(".dropdown_sesion").toggle();
+		}

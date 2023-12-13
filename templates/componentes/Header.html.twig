@@ -10,7 +10,7 @@
 			<span class="bg_verde_2 score">
 				<p class="fz_min fw_700 color_blanco my-0">4</p>
 			</span>
-			{# {{ include('dropdown/dropdownMenu.html.twig') }} #}
+			{{ include('dropdown/dropdownMenu.html.twig') }}
 		</div>
 		<div class="avatar me-3 my-auto">
 			<img class="w-100" src="img/user.png" alt="user"/>
@@ -21,6 +21,18 @@
 				<img class="w-100" src="img/icon/arrow_down.svg" alt="arrow_down"/>
 			</div>
 		</a>
-		{# {{ include('dropdown/dropdownSesion.html.twig') }} #}
+		{{ include('dropdown/dropdownSesion.html.twig') }}
 	</div>
 </header>
+
+{% block javascripts %}
+	<script>
+		function dropdown() {
+			$(".dropdown_menu").toggle();
+		}
+
+		function dropdownSesion() {
+			$(".dropdown_sesion").toggle();
+		}
+	</script>
+{% endblock %}
