@@ -379,9 +379,15 @@
 	}
 
 	.fc .fc-col-header-cell-cushion {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		// white-space: nowrap;
+		// overflow: hidden;
+		// text-overflow: ellipsis;
+		visibility: hidden;
+		text-align: center;
+		width: 2rem;
+		&::first-letter {
+			visibility: visible;
+		}
 	}
 }
 
