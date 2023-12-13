@@ -179,7 +179,7 @@
 		padding: 0.5rem 1rem;
 		@include borderRadius(10px);
 		box-shadow: 0px 4px 4px 0px #2B4C6017;
-		line-height: 25px;
+		// line-height: 25px;
 
 		&:after {
 			content: url("../../public/img/icon/calendary.svg");
@@ -339,6 +339,18 @@
 	}
 }
 
+//big desktop
+@media only screen and (min-width: 1921px) {
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 60%, -55%, -60%);
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1200px) and (orientation: landscape) {
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 70%, -55%, -60%);
+	}
+}
 
 @media (max-width: 768px) {
 
@@ -373,9 +385,29 @@
 	}
 }
 
+@media (min-width: 768px) and (max-width: 992px) and (orientation: portrait) {
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 80%, -55%, -60%);
+	}
+}
+
 @media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+
+	/* dropdown */
+	.dropdown_menu {
+		@include dropdown(auto, auto, auto, -100%, auto);
+	}
+
 	.dropdown_sesion {
 		@include dropdown(20%, auto, auto, -100%, auto);
+	}
+
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 45%, -50%, -50%);
+	}
+
+	.dropdown_event {
+		@include dropdown(50%, 50%, 45%, -50%, -50%);
 	}
 }
 
@@ -408,6 +440,10 @@
 
 	.dropdown_sesion {
 		@include dropdown(175%, auto, auto, -100%, auto);
+	}
+
+	.dropdown_agenda {
+		@include dropdown(40%, 50%, 90%, -55%, -20%);
 	}
 }
 
@@ -476,12 +512,12 @@
 		@include dropdown(auto, auto, auto, -12%, auto);
 	}
 
-	.dropdown_sesion {
-		@include dropdown(10%, auto, auto, -60%, auto);
-	}
+	// .dropdown_sesion {
+	// 	@include dropdown(10%, auto, auto, -60%, auto);
+	// }
 
 	.dropdown_agenda {
-		@include dropdown(50%, 50%, 45%, -50%, -50%);
+		@include dropdown(50%, 50%, 90%, -55%, -30%);
 	}
 
 	.dropdown_event {

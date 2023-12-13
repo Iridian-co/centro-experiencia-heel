@@ -427,22 +427,22 @@ header {
 }
 
 .btn_small {
-	padding: 10px 48px;
+	padding: .5vw 2.5vw;
 	@extend .brd_rds_10;
 }
 
 .btn_xx_small {
-	padding: 5px 40px;
+	padding: 0.2vw 2vw;
 	@extend .brd_rds_10;
 }
 
 .btn_extra_small {
-	padding: 7px 25px;
+	padding: .3vw 1.3vw;
 	@extend .brd_rds_10;
 }
 
 .btn_mediun {
-	padding: 17px 16px;
+	padding: 0.9vw 0.8vw;
 	@extend .brd_rds_20;
 }
 
@@ -1026,6 +1026,26 @@ hr.brd_gris_3 {
 		width: 0.6rem;
 		height: 0.6rem;
 	}
+
+	.btn_big {
+		padding: 0.8rem 1.3rem 0.8rem 1.2rem;
+	}
+
+	.btn_small {
+		padding: .5rem 2.5rem;
+	}
+
+	.btn_xx_small {
+		padding: 0.2rem 2rem;
+	}
+
+	.btn_extra_small {
+		padding: 1rem 1.5rem;
+	}
+
+	.btn_mediun {
+		padding: 0.9rem 0.8rem;
+	}
 }
 
 //desktop
@@ -1149,6 +1169,26 @@ hr.brd_gris_3 {
 	input[type="radio"]::before {
 		width: 0.5rem;
 		height: 0.5rem;
+	}
+
+	.btn_big {
+		padding: 0.8rem 1.3rem 0.8rem 1.2rem;
+	}
+
+	.btn_small {
+		padding: .5rem 2.5rem;
+	}
+
+	.btn_xx_small {
+		padding: 0.2rem 2rem;
+	}
+
+	.btn_extra_small {
+		padding: .3rem 1.3rem;
+	}
+
+	.btn_mediun {
+		padding: 0.9rem 0.8rem;
 	}
 }
 
