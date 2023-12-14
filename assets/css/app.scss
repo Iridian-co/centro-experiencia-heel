@@ -1262,6 +1262,17 @@ hr.brd_gris_3 {
 		}
 	}
 
+	aside {
+		height: 20vh;
+		flex-direction: row !important;
+
+		.menu {
+			height: auto;
+			width: auto;
+			margin: 0.5rem !important;
+		}
+	}
+
 	.scroll_content {
 		height: inherit;
 	}
@@ -1312,6 +1323,7 @@ hr.brd_gris_3 {
 			ul {
 				display: flex;
 				margin-bottom: 1rem;
+
 				li {
 					margin-right: 0.5rem;
 				}
