@@ -257,8 +257,11 @@ header {
 //gradient
 
 .bg_gradient_home {
-	background: rgb(120, 180, 223);
-	background: linear-gradient(299deg, rgba(120, 180, 223, 0.3) 30%, rgba(120, 180, 223, 0.3) 30%);
+background: rgb(120, 180, 223);
+	background: -moz-linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
+	background: -webkit-linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
+	background: linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#78b4df", endColorstr="#ffffff", GradientType=1);
 }
 
 .bg_degradado_box_1 {

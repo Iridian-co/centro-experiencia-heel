@@ -10,6 +10,10 @@
 }
 
 
+.wrapper {
+	background-color: white;
+}
+
 /* width */
 ::-webkit-scrollbar {
 width: 10px;
@@ -62,4 +66,17 @@ width: 10px;
         padding: 1.5rem;
     }
 
+}
+
+@media only screen and (max-width: 764px) {
+	.wpContent {
+		display: block;
+	}
+	.general-scroll{
+		overflow-y: inherit;
+		padding-right: 0;
+	}
+	.wrapper{
+		padding: 1rem;
+	}
 }
