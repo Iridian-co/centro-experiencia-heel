@@ -182,9 +182,13 @@
 		// line-height: 25px;
 
 		&:after {
-			content: url("../../public/img/icon/calendary.svg");
-			margin-left: .5rem;
-			display: inline;
+			content: "";
+			display: inline-block;
+			width: 1vw;
+			height: 1vw;
+			margin-left: 1.5rem;
+			background-image: url("../../public/img/icon/calendary.svg");
+			background-size: cover;
 		}
 	}
 }
@@ -221,6 +225,14 @@
 		@extend .fz_p;
 		@extend .fw_400;
 		color: $azul_1;
+	}
+
+	.day-1::before {
+		content: "99";
+	}
+
+	.day-2::before {
+		content: "77";
 	}
 }
 
@@ -274,6 +286,10 @@
 .fc-direction-rtl .fc-daygrid-event.fc-event-start {
 	background: transparent;
 }
+
+
+
+/* Agregue estilos para los días restantes */
 
 .score_cursos {
 	display: flex;
@@ -343,7 +359,7 @@
 	// .fc-icon-chevron-right::before {
 	// 	font-size: 1.5rem;
 	// }
-
+	.day_clicked,
 	.fc .fc-button-group>.fc-button.fc-button-active,
 	.fc .fc-button-group>.fc-button:active,
 	.fc .fc-button-group>.fc-button:focus,
@@ -370,8 +386,13 @@
 		visibility: hidden;
 		text-align: center;
 		width: 2rem;
+
 		&::first-letter {
 			visibility: visible;
+		}
+
+		&.clicked {
+			@include Clicked($verde_1, $blanco, 0.8rem, $verde_1, 5%, $verde_1, 5%);
 		}
 	}
 }

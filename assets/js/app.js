@@ -144,14 +144,24 @@ import interaction from '@fullcalendar/interaction'
 import { events } from "./events.json";
 
 document.addEventListener('DOMContentLoaded', function () {
-	const calendarEl = document.getElementById('calendar');
+	const calendarEl = document.getElementById("calendar");
+	let draggableEl = document.getElementById("mydraggable");
+
 	const calendar = new Calendar(calendarEl, {
 		plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin, interaction],
+		droppable: true,
 		initialView: "dayGridMonth",
 		// select: { start: info.startStr, end: info.endStr, filledIn: true },
 		headerToolbar: {
 			left: "prev,title,next",
 			right: "dayGridMonth,dayGridWeek,dayGridDay", // user can switch between the two
+		},
+		views: {
+			dayGridMonth: {
+				// name of view
+				titleFormat: { year: "numeric", month: "short" },
+				// other view-specific options here
+			},
 		},
 		editable: true,
 		selectable: true,
@@ -206,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				// <div>Time: ${info.event.extendedProps.timeStart} - ${info.event.extendedProps.timeEnd}</div>
 			};
 		},
+		//hover events
 		eventMouseEnter: function (mouseEnterInfo) {
 			// console.log(mouseEnterInfo);
 			let el = mouseEnterInfo.el;
@@ -227,8 +238,54 @@ document.addEventListener('DOMContentLoaded', function () {
 		eventMouseLeave: function () {
 			document.querySelector(".fc-hoverable-event").remove();
 		},
+		//multiples events
+		dayMaxEventRows: 3,
+		//trae clic event
+		dayCellDidMount: function (info) {
+			// let elemento = document.getElementsByClassName(
+			// 	"fc-scrollgrid-sync-inner"
+			// );
+			
+
+			info.el.addEventListener("click", function () {
+				// info.el.style.backgroundColor = "red";
+				// info.dow.style.backgroundColor = "yellow";
+				console.log("dow >>> " + JSON.stringify(info.dow));
+				console.log("getDay >>> " + JSON.stringify(info.date.getDay()));
+				// console.log("info >>> " + JSON.stringify(info));
+				// console.log("el >>> " + JSON.stringify(info.el.style));
+				if (info.date.getDay() === 0) {
+					info.view.dateEnv.locale.week.dow = "red";
+					// Domingo
+					// info.date.getDay(0).style.backgroundColor = "red";
+					// info.el.style.backgroundColor = "red";
+				}
+			});
+		},
+		dateClick: function (info) {
+			// let elemento = document.querySelector(".fc-scrollgrid-sync-inner");
+			let elemento = document.querySelector('[aria-label="domingo"]');
+			elemento.classList.add("clicked");
+			console.log("elemento >>> " + elemento);
+			console.log("textContent >>> " + elemento.textContent);
+			// alert("Clicked on: " + info.dateStr);
+			// alert("Current view: " + info.view.type);
+			// change the day's background color just for fun
+			// info.dayEl.style.backgroundColor = "red";
+		},
 	});
 	calendar.render();
+
+	// Event Dragging
+	new Draggable(containerEl, {
+		itemSelector: ".item-class",
+		eventData: function (eventEl) {
+			return {
+				title: eventEl.innerText,
+				duration: "02:00",
+			};
+		},
+	});
 
 	// calendarEl.addEventListener("click", function (info) {
 	// 	console.log("info ", info);
@@ -247,8 +304,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 	console.log("Fecha:", fecha);
 	// 	console.log("Otros datos:", otrosDatos);
 	// }
-
-
 })
 
 // Create Menu ---------------------------------------------------------------->
