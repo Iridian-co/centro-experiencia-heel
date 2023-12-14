@@ -257,7 +257,7 @@ header {
 //gradient
 
 .bg_gradient_home {
-background: rgb(120, 180, 223);
+	background: rgb(120, 180, 223);
 	background: -moz-linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
 	background: -webkit-linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
 	background: linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
@@ -1301,13 +1301,54 @@ hr.brd_gris_3 {
 	}
 
 	aside {
-		height: 45vh;
+		height: 12vh;
 		// flex-direction: row !important;
 
 		.menu {
 			height: auto;
 			width: auto;
 			margin: 0.5rem !important;
+
+			ul {
+				display: flex;
+				margin-bottom: 1rem;
+				li {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.btn_big {
+		padding: 0.8rem 2rem 0.8rem 1rem;
+	}
+
+	.btn_icon {
+		.icon {
+			width: 1rem;
+			margin-right: 0.5rem;
+		}
+
+		.texto {
+			white-space: normal;
+			width: 74%;
+		}
+
+		.arrow {
+			width: 0.6rem;
+			margin-left: 0.5rem;
+		}
+
+		&.btn_terciary {
+			@include Clicked($azul_1, $blanco, 0.833vw, $azul_3, 10%, $azul_3, 5%);
+		}
+
+		&.btn_quaternary {
+			@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
+		}
+
+		&.btn_download {
+			@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
 		}
 	}
 }
