@@ -1022,6 +1022,15 @@ hr.brd_gris_3 {
 	margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
+//Super big desktop
+@media only screen and (min-width: 2560px) {
+	.py_lx_5 {
+		padding-top: 3rem !important;
+		padding-bottom: 3rem !important;
+	}
+}
+
+
 //big desktop
 @media only screen and (min-width: 1921px) {
 	.m_date {

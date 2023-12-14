@@ -430,7 +430,7 @@
 	}
 
 	.dropdown_sesion {
-		@include dropdown(175%, auto, auto, -100%, auto);
+		@include dropdown(85%, auto, auto, -100%, auto);
 	}
 
 	.dropdown_agenda {
@@ -495,7 +495,7 @@
 	}
 
 	.dropdown_sesion {
-		@include dropdown(80%, auto, auto, -75%, auto);
+		@include dropdown(85%, auto, auto, -75%, auto);
 	}
 
 	/* dropdown */
