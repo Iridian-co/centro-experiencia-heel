@@ -7,24 +7,21 @@
 	<div class="container-fluid">
 		<div class="row">
 			<!-- Encuestas disponibles -->
-			<div class="col-12 col-lg-6 ps-0">
+			<div class="col-12 col-lg-6 ps-lg-0">
 				{{ include('componentes/vitacora.html.twig',{title:'Cursos'}) }}
 			</div>
-			<div class="col-12 col-lg-6 pe-0">
-				<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4">
-					<div class="d-md-flex justify-content-between px-2 px-lg-4 pb-3">
-						<h3 class="fz_h3 fw_600 color_azul_1 letter_spacing my-auto">Detalle del curso</h3>
+			<div class="col-12 col-lg-6 pe-lg-0">
+				<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4 mb-4">
+					<!-- titulo -->
+					<div class="d-sm-flex justify-content-between px-3 px-xl-4 pb-3">
+						<h3 class="fz_h3 fw_600 color_azul_1 letter_spacing mt-1 mb-3 my-sm-auto text-center">Detalle del curso</h3>
 						<div class="d-flex justify-content-between my-0">
 							<button type="button" class="btn btn_extra_small fw_700 bg_azul_3 mt-3 mt-md-0" onclick="dropdownAgenda()">Agendarme al evento</button>
 							{# <h3 class="fz_h3 fw_700 color_blanco mx-auto my-0 px-4">Agendarme al evento</h3> #}
 						</div>
 					</div>
-					<div class="d-flex justify-content-center align-items-center">
-						{{ include('dropdown/dropdownAgenda.html.twig') }}
-						{{ include('dropdown/dropdownEvento.html.twig') }}
-					</div>
-					<!-- titulo -->
-					<div class="px-4 pb-3 scroll_style">
+					
+					<div class="px-4 my-3 scroll_style">
 						<h2 class="fz_h2 color_azul_1 fw_600 letter_spacing">Bases de BrSM  - Técnicas de aplicación - PatologíaOM. Médicos de la zona Funza, Madrid, Mosquera, Faca. Gerente regional Javier Salgado.</h2>
 
 						<div class="parrafo">
@@ -55,6 +52,10 @@
 								<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
 							</div>
 						</div>
+					</div>
+					<div class="d-flex justify-content-center align-items-center">
+						{{ include('dropdown/dropdownAgenda.html.twig') }}
+						{{ include('dropdown/dropdownEvento.html.twig') }}
 					</div>
 				</div>
 
