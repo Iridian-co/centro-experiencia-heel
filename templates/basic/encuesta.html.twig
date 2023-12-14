@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="bg_blanco brd_rds_20 bx_shdw_2">
+{# <div class="bg_blanco brd_rds_20 bx_shdw_2"> #}
 	<div class="container-fluid">
 		<div class="row">
 			<!-- Encuestas disponibles -->
-			<div class="col-12 col-lg-6 ps-0">
+			<div class="col-12 col-lg-6 ps-lg-0">
 				<div class="encuesta">
 					{{ include('componentes/vitacora.html.twig',{title:'Encuestas disponibles'}) }}
 				</div>
 			</div>
-			<div class="col-12 col-lg-6 pe-0">
-				<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4">
+			<div class="col-12 col-lg-6 pe-lg-0">
+				<div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4 mb-4">
 					<div class="d-flex justify-content-between px-2 pb-3">
 						<h3 class="fz_h3 fw_600 color_azul_1 letter_spacing my-auto px-2">Encuesta de evaluación  del curso</h3>
 					</div>
@@ -54,11 +54,10 @@
 
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
-</div>
+{# </div> #}
 
 {% endblock %}
 

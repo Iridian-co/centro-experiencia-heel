@@ -15,8 +15,8 @@
 		{
 			"id": 1,
 			"title": "Bases de BrSM... 2",
-			"start": "2023-12-08",
-			"end": "2023-12-08",
+			"start": "2023-12-14",
+			"end": "2023-12-14",
 			"allDay": true,
 			"extendedProps": {
 				"description": "description",
@@ -27,8 +27,8 @@
 		{
 			"id": 2,
 			"title": "Bases de BrSM... 2",
-			"start": "2023-12-08",
-			"end": "2023-12-08",
+			"start": "2023-12-14",
+			"end": "2023-12-14",
 			"allDay": false,
 			"extendedProps": {
 				"description": "description 2",
