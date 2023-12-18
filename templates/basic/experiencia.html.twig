@@ -1,81 +1,77 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div class="bg_blanco brd_rds_20 bx_shdw_2">
-		<div class="p-2 p-lg-4">
-			<div class="container">
-				<!-- Encuestas disponibles -->
-				<div class="bg_gradient_azul_2 brd_rds_20 mb-3">
-					<div class="row">
-						<div class="col-12 col-lg-6">
-							<div class="py-4 px-5">
-								<h3 class="fz_h3 fw_700 color_azul_1 mx-auto mb-2">¿Qué es el Centro de Experiencia HEEL?</h3>
-								<h2 class="fz_h2 fw_600 color_azul_1  ">Lorem ipsum dolor sit amet, consectetuer adipiscing </h2>
-								<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-								<a href="#" class="btn_primary fz_h3 fw_700 bg_azul_3 color_blanco w-auto mt-3  py-3 px-5"onclick="cambiarColor('#cursos', 'cursos')">Ver cursos</a>
-							</div>
+	{# <div class="bg_blanco brd_rds_20 bx_shdw_2"> #}
+		<div class="bg_gradient_azul_2 brd_rds_20 mb-3">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 col-lg-6">
+						<div class="py-4 px-5">
+							<h3 class="fz_h3 fw_700 color_azul_1 mx-auto mb-2">¿Qué es el Centro de Experiencia HEEL?</h3>
+							<h2 class="fz_h2 fw_600 color_azul_1  ">Lorem ipsum dolor sit amet, consectetuer adipiscing </h2>
+							<p class="fz_p fw_400 color_azul_1 letter_spacing mb-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+							<a href="{{ path('cursos') }}" class="btn_primary fz_h3 fw_700 bg_azul_3 color_blanco brd_rds_20 w-auto mt-3  py-2 px-3 px-lg-5">Ver cursos</a>
 						</div>
-						<div class="col-12 col-lg-6 d-flex justify-content-center justify-content-md-center justify-content-lg-start align-items-end">
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="d-flex justify-content-center justify-content-md-center justify-content-lg-start align-items-end h-100">
 							<div class="grupo">
 								<img class="w-100" src="img/grupo_med.png" alt="user"/>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<!-- Beneficios de nuestro Centro de Experiencia  -->
-					<div class="col-12 col-lg-6">
-						<div class="box_notificacion bg_gradient_azul_2 brd_rds_20 mb-3 w-100">
-								<div class="p-2 p-lg-4">
-									<h3 class="fz_h3 fw_700 color_azul_1 text-center pb-4">Beneficios de nuestro Centro de Experiencia</h3>
-									<ul class="icon-list d-flex justify-content-center align-items-center">
-										<li class="text-center mx-auto">
-											<span class="circle mx-2 mx-lg-4">
-												<img class="icon_list" src="img/icon/rocket.svg" alt="Cursos"/>
-											</span> 
-											<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
-										</li>
-										<li class="text-center mx-auto">
-											<span class="circle mx-2 mx-lg-4">
-												<img class="icon_list" src="img/icon/book.svg" alt="book"/>
-											</span> 
-											<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
-										</li>
-										<li class="text-center mx-auto">
-											<span class="circle mx-2 mx-lg-4">
-												<img class="icon_list" src="img/icon/card.svg" alt="card"/>
-											</span> 
-											<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
-										</li>
-										<li class="text-center mx-auto">
-											<span class="circle mx-2 mx-lg-4">
-												<img class="icon_list" src="img/icon/lupa.svg" alt="lupa"/>
-											</span> 
-											<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
-										</li>
-									</ul>
-									
-									<p class="fz_p fw_400 color_azul_1 my-2 text-center mt-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-								</div>
-							</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Beneficios de nuestro Centro de Experiencia  -->
+				<div class="col-12 col-lg-6 ps-lg-0">
+					<div class="box_notificacion bg_gradient_azul_2 brd_rds_20 mb-3 w-100">
+						<div class="p-2 p-lg-3 p-xl-4">
+							<h3 class="fz_h3 fw_700 color_azul_1 text-center pb-4">Beneficios de nuestro Centro de Experiencia</h3>
+							<ul class="icon-list d-flex justify-content-center align-items-center">
+								<li class="text-center mx-auto">
+									<span class="circle mx-2 mx-lg-4">
+										<img class="icon_list" src="img/icon/rocket.svg" alt="Cursos"/>
+									</span> 
+									<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
+								</li>
+								<li class="text-center mx-auto">
+									<span class="circle mx-2 mx-lg-4">
+										<img class="icon_list" src="img/icon/book.svg" alt="book"/>
+									</span> 
+									<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
+								</li>
+								<li class="text-center mx-auto">
+									<span class="circle mx-2 mx-lg-4">
+										<img class="icon_list" src="img/icon/card.svg" alt="card"/>
+									</span> 
+									<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
+								</li>
+								<li class="text-center mx-auto">
+									<span class="circle mx-2 mx-lg-4">
+										<img class="icon_list" src="img/icon/lupa.svg" alt="lupa"/>
+									</span> 
+									<p class="fz_p fw_700 color_azul_1 my-2 px-1 px-lg-2">Lorem ipsum dolor</p>
+								</li>
+							</ul>
+							<p class="fz_p fw_400 color_azul_1 my-2 text-center mt-4 mt_lx_5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+						</div>
 					</div>
-					<!-- Nuestros conferencistas  -->
-					<div class="col-12 col-lg-6">
-						<div class="box_notificacion bg_gradient_azul_2 brd_rds_20 mb-3 w-100">
-							<div class="p-2 p-lg-4">
-								<h3 class="fz_h3 fw_700 color_azul_1 text-center pb-4">Nuestros conferencistas</h3>
-								<div class="container">
-									<div class="row">
-										{{ include('swiper/swiper_conferencistas.html.twig') }}
-									</div>
-								</div>
-							</div>
+				</div>
+				<!-- Nuestros conferencistas  -->
+				<div class="col-12 col-lg-6 pe-lg-0">
+					<div class="box_notificacion bg_gradient_azul_2 brd_rds_20 mb-3 w-100">
+						<div class="p-2 p-lg-3 p-xl-4">
+							<h3 class="fz_h3 fw_700 color_azul_1 text-center pb-4">Nuestros conferencistas</h3>
+							{{ include('swiper/swiper_conferencistas.html.twig') }}
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	{# </div> #}
 
 
 {% endblock %}

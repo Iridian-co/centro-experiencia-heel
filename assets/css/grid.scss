@@ -1,0 +1,82 @@
+.wpContent{
+    display: flex;
+    align-items: stretch;
+}
+
+.general-scroll{
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+
+
+.wrapper {
+	background-color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(#B2CADB, 0.5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(#B2CADB, 0.5);
+}
+
+@media only screen and (min-width: 1200px) {
+    .wpContent{
+        height: calc(100vh - 100px);
+        display: flex;
+        padding: 1vw;
+    }
+
+    .wrapper{
+        padding: 2vw;
+        background-color: white;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+    }
+
+    .general-scroll{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 1920px) {
+    .wpContent{
+        height: calc(100vh - 100px);
+        display: flex;
+        padding: 1rem;
+    }
+
+    .wrapper{
+        padding: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+	.wpContent {
+		display: block;
+	}
+	.general-scroll{
+		overflow-y: inherit;
+		padding-right: 0;
+	}
+	.wrapper{
+		padding: 1rem;
+	}
+}

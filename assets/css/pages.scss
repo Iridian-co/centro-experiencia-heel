@@ -179,12 +179,16 @@
 		padding: 0.5rem 1rem;
 		@include borderRadius(10px);
 		box-shadow: 0px 4px 4px 0px #2B4C6017;
-		line-height: 25px;
+		// line-height: 25px;
 
 		&:after {
-			content: url("../../public/img/icon/calendary.svg");
-			margin-left: .5rem;
-			display: inline;
+			content: "";
+			display: inline-block;
+			width: 1vw;
+			height: 1vw;
+			margin-left: 1.5rem;
+			background-image: url("../../public/img/icon/calendary.svg");
+			background-size: cover;
 		}
 	}
 }
@@ -213,6 +217,109 @@
 	display: inline;
 }
 
+//day calendar
+.fc .fc-daygrid-day-top {
+	flex-direction: row;
+
+	.fc-daygrid-day-number {
+		@extend .fz_p;
+		@extend .fw_400;
+		color: $azul_1;
+	}
+
+	.day-1::before {
+		content: "99";
+	}
+
+	.day-2::before {
+		content: "77";
+	}
+}
+
+//event calendar notification
+// .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+// 	&::before {
+// 		background-color: aqua;
+// 	}
+// }
+
+//event calendar notification
+.fc-h-event {
+	@extend .bg_gradient_azul_day;
+	border: none;
+}
+
+.fc .fc-highlight {
+	// @extend .bg_degradado_verde;
+	border: 1px solid $verde_1;
+	@include borderRadius(5px);
+	background: linear-gradient(0deg, rgba(44, 177, 116, 0.3), rgba(44, 177, 116, 0.3));
+}
+
+.fc-day-selected,
+.fc-col-header-cell-cushion {
+	background: #2CB174;
+}
+
+.linea_vertical_date {
+
+	&.gris {
+		@include lnVertical($gris_1);
+	}
+
+	&.lila {
+		@include lnVertical($lila);
+	}
+
+	&.verde_2 {
+		@include lnVertical($verde_2);
+	}
+
+	&.azul_3 {
+		@include lnVertical($azul_3);
+	}
+}
+
+.background_events,
+.fc-h-event .fc-event-main,
+.fc-direction-ltr .fc-daygrid-event.fc-event-end,
+.fc-direction-rtl .fc-daygrid-event.fc-event-start {
+	background: transparent;
+}
+
+
+
+/* Agregue estilos para los días restantes */
+
+.score_cursos {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5vw;
+	height: 1.5vw;
+	border-radius: 50%;
+	margin-top: -1.5vw;
+	float: right;
+	margin-bottom: 0.5vw;
+
+	&.gris {
+		background-color: $gris_1;
+	}
+
+	&.lila {
+		background-color: $lila;
+	}
+
+	&.verde_2 {
+		background-color: $verde_2;
+	}
+
+	&.azul_3 {
+		background-color: $azul_3;
+	}
+
+}
+
 // .fc {
 // 	.fc-button-group {
 // 		>.fc-button.fc-button-active,
@@ -233,21 +340,18 @@
 // 	}
 // }
 
-
-#vista_1,
-#vista_2,
-#vista_3,
-#vista_4,
-#vista_5 {
-	// visibility: hidden;
-	display: none;
-
-	&.show {
-		// visibility: visible;
-		display: block;
+//big desktop
+@media only screen and (min-width: 1921px) {
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 60%, -55%, -60%);
 	}
 }
 
+@media (min-width: 993px) and (max-width: 1200px) and (orientation: landscape) {
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 70%, -55%, -60%);
+	}
+}
 
 @media (max-width: 768px) {
 
@@ -255,7 +359,7 @@
 	// .fc-icon-chevron-right::before {
 	// 	font-size: 1.5rem;
 	// }
-
+	.day_clicked,
 	.fc .fc-button-group>.fc-button.fc-button-active,
 	.fc .fc-button-group>.fc-button:active,
 	.fc .fc-button-group>.fc-button:focus,
@@ -276,9 +380,46 @@
 	}
 
 	.fc .fc-col-header-cell-cushion {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		// white-space: nowrap;
+		// overflow: hidden;
+		// text-overflow: ellipsis;
+		visibility: hidden;
+		text-align: center;
+		width: 2rem;
+
+		&::first-letter {
+			visibility: visible;
+		}
+
+		&.clicked {
+			@include Clicked($verde_1, $blanco, 0.8rem, $verde_1, 5%, $verde_1, 5%);
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 992px) and (orientation: portrait) {
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 80%, -55%, -60%);
+	}
+}
+
+@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+
+	/* dropdown */
+	.dropdown_menu {
+		@include dropdown(auto, auto, auto, -100%, auto);
+	}
+
+	.dropdown_sesion {
+		@include dropdown(20%, auto, auto, -100%, auto);
+	}
+
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 45%, -50%, -50%);
+	}
+
+	.dropdown_event {
+		@include dropdown(50%, 50%, 45%, -50%, -50%);
 	}
 }
 
@@ -310,7 +451,11 @@
 	}
 
 	.dropdown_sesion {
-		@include dropdown(175%, auto, auto, -100%, auto);
+		@include dropdown(85%, auto, auto, -100%, auto);
+	}
+
+	.dropdown_agenda {
+		@include dropdown(40%, 50%, 90%, -55%, -20%);
 	}
 }
 
@@ -371,7 +516,24 @@
 	}
 
 	.dropdown_sesion {
-		@include dropdown(100%, auto, auto, -100%, auto);
+		@include dropdown(85%, auto, auto, -75%, auto);
+	}
+
+	/* dropdown */
+	.dropdown_menu {
+		@include dropdown(auto, auto, auto, -12%, auto);
+	}
+
+	// .dropdown_sesion {
+	// 	@include dropdown(10%, auto, auto, -60%, auto);
+	// }
+
+	.dropdown_agenda {
+		@include dropdown(50%, 50%, 90%, -55%, -30%);
+	}
+
+	.dropdown_event {
+		@include dropdown(50%, 50%, 45%, -50%, -50%);
 	}
 }
 

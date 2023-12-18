@@ -2,15 +2,11 @@
 
 {% block body %}
 	
-<div class="bg_blanco brd_rds_20 bx_shdw_2">
-	<div class="p-2 p-lg-4">
-		<div class="container">
-			<div class="row">
-				<!-- Encuestas disponibles -->
-				<div class="col-12">
-					{{ include('componentes/vitacoraHorizontal.html.twig',{title:'Encuestas disponibles', data:true}) }}
-				</div>
-			</div>
+<div class="container-fluid">
+	<div class="row">
+		<!-- Encuestas disponibles -->
+		<div class="col-12">
+			{{ include('componentes/vitacoraHorizontal.html.twig',{title:'Encuestas disponibles', data:true}) }}
 		</div>
 	</div>
 </div>

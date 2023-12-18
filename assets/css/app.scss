@@ -4,6 +4,7 @@
 @import "pages.scss";
 @import "general-min.css";
 @import "menu.scss";
+@import "grid.scss";
 
 body {
 	font-family: "inter";
@@ -14,7 +15,7 @@ body {
 // 	margin-left: 2vw;
 // 	padding: 2vw;
 // 	text-align: center;
-// }
+// }  
 
 main {
 	display: block;
@@ -53,6 +54,18 @@ aside {
 .nav {
 	position: relative;
 	margin: 0 10%;
+}
+
+.navbar {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 
 .line_fz {
@@ -122,6 +135,10 @@ header {
 	margin-right: -0.5vw;
 	width: 1.2vw;
 	height: 1.2vw;
+}
+
+.logo {
+	width: 10vw;
 }
 
 .c_pntr {
@@ -241,7 +258,10 @@ header {
 
 .bg_gradient_home {
 	background: rgb(120, 180, 223);
-	background: linear-gradient(299deg, rgba(120, 180, 223, 0.3) 30%, rgba(120, 180, 223, 0.3) 30%);
+	background: -moz-linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
+	background: -webkit-linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
+	background: linear-gradient(302deg, rgba(120, 180, 223, 0.3) 17%, rgba(120, 180, 223, 1) 39%, rgba(255, 255, 255, 1) 93%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#78b4df", endColorstr="#ffffff", GradientType=1);
 }
 
 .bg_degradado_box_1 {
@@ -347,6 +367,11 @@ header {
 		.icon {
 			filter: brightness(0) invert(1); // Invierte el color del icono cuando el botón está activo
 		}
+
+		.texto {
+			color: $blanco;
+			@extend .fw_700;
+		}
 	}
 
 	// Estilo alternativo para otro tipo de botón
@@ -411,25 +436,28 @@ header {
 }
 
 .btn_big {
-	padding: 17px 4px 17px;
+	padding: 0.8vw 1.3vw 0.8vw 1.2vw;
 	text-align: start;
-	padding-left: 1.3vw;
-	padding-right: 1.2vw;
-	@extend .brd_rds_20;
+	@extend .brd_rds_10;
 }
 
 .btn_small {
-	padding: 10px 48px;
+	padding: .5vw 2.5vw;
+	@extend .brd_rds_10;
+}
+
+.btn_xx_small {
+	padding: 0.2vw 2vw;
 	@extend .brd_rds_10;
 }
 
 .btn_extra_small {
-	padding: 7px 25px;
+	padding: .3vw 1.3vw;
 	@extend .brd_rds_10;
 }
 
 .btn_mediun {
-	padding: 17px 16px;
+	padding: 0.9vw 0.8vw;
 	@extend .brd_rds_20;
 }
 
@@ -523,6 +551,58 @@ button:-moz-focusring {
 	width: 15px;
 	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb24tdGFibGVyLXgiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlPSIjRUUxQTdCIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPg0KICA8cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4NCiAgPGxpbmUgeDE9IjE4IiB5MT0iNiIgeDI9IjYiIHkyPSIxOCIgLz4NCiAgPGxpbmUgeDE9IjYiIHkxPSI2IiB4Mj0iMTgiIHkyPSIxOCIgLz4NCjwvc3ZnPg==);
 	background-size: 15px 15px;
+}
+
+// Cambia el color de fondo del radio button
+// input[type="radio"] {
+// 	
+// 	appearance: none;
+// 	background-color: $gris_3;
+// 	margin: 0 auto;
+// 	font: inherit;
+// 	color: currentColor;
+// 	width: 1.15em;
+// 	height: 1.15em;
+// 	border-radius: 50%;
+// 	transform: translateY(-0.075em);
+// 	display: grid;
+// 	place-content: center;
+// }
+
+input[type="radio"] {
+	accent-color: $azul_1;
+	/* Add if not using autoprefixer */
+	-webkit-appearance: none;
+	/* Remove most all native input styles */
+	appearance: none;
+	/* For iOS < 15 */
+	background-color: $gris_3;
+	/* Not removed via appearance */
+	margin: 0 auto;
+	font: inherit;
+	color: currentColor;
+	width: 0.8vw;
+	height: 0.8vw;
+	border-radius: 50%;
+	transform: translateY(-0.075em);
+	display: grid;
+	place-content: center;
+}
+
+input[type="radio"]::before {
+	content: "";
+	width: 0.5vw;
+	height: 0.5vw;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em $azul_1;
+	/* Windows High Contrast Mode */
+	background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+	transform: scale(1);
 }
 
 //form
@@ -937,17 +1017,82 @@ hr.brd_gris_3 {
 	display: none;
 }
 
+.mx_row {
+	margin-right: calc(-.5 * var(--bs-gutter-x));
+	margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+//Super big desktop
+@media only screen and (min-width: 2560px) {
+	.py_lx_5 {
+		padding-top: 3rem !important;
+		padding-bottom: 3rem !important;
+	}
+
+	.mt_lx_5 {
+		margin-top: 3rem !important;
+	}
+}
+
+
 //big desktop
 @media only screen and (min-width: 1921px) {
 	.m_date {
 		margin-left: 7rem;
 	}
+
+	.mxw_100 {
+		max-width: 100% !important;
+	}
+
+	.btn_big {
+		padding: 1.2rem 1.3rem 1.2rem 1.2rem;
+	}
+
+	input[type="radio"] {
+		appearance: none;
+		width: 0.9rem;
+		height: 0.9rem;
+	}
+
+	input[type="radio"]::before {
+		width: 0.6rem;
+		height: 0.6rem;
+	}
+
+	.btn_big {
+		padding: 0.8rem 1.3rem 0.8rem 1.2rem;
+	}
+
+	.btn_small {
+		padding: .5rem 2.5rem;
+	}
+
+	.btn_xx_small {
+		padding: 0.2rem 2rem;
+	}
+
+	.btn_extra_small {
+		padding: 1rem 1.5rem;
+	}
+
+	.btn_mediun {
+		padding: 0.9rem 0.8rem;
+	}
 }
 
 //desktop
-@media (min-width: 1200px) and (max-width: 1920px) {}
+@media (min-width: 1200px) and (max-width: 1920px) {
+	.mxw_100 {
+		max-width: 100% !important;
+	}
+}
 
 @media (max-width: 992px) {
+
+	.btn_big {
+		padding: 1.2rem 1.3rem 1.2rem 1.2rem;
+	}
 
 	.score {
 		width: 0.9rem;
@@ -959,6 +1104,10 @@ hr.brd_gris_3 {
 		margin-right: -0.5rem;
 		width: 1.7rem;
 		height: 1.7rem;
+	}
+
+	.logo {
+		width: 10rem;
 	}
 
 	.avatar {
@@ -1043,6 +1192,52 @@ hr.brd_gris_3 {
 	.icon_list {
 		width: 1.8rem;
 	}
+
+	input[type="radio"] {
+		appearance: none;
+		width: 0.8rem;
+		height: 0.8rem;
+	}
+
+	input[type="radio"]::before {
+		width: 0.5rem;
+		height: 0.5rem;
+	}
+
+	.btn_big {
+		padding: 0.8rem 1.3rem 0.8rem 1.2rem;
+	}
+
+	.btn_small {
+		padding: .5rem 2.5rem;
+	}
+
+	.btn_xx_small {
+		padding: 0.2rem 2rem;
+	}
+
+	.btn_extra_small {
+		padding: .3rem 1.3rem;
+	}
+
+	.btn_mediun {
+		padding: 0.9rem 0.8rem;
+	}
+}
+
+//only tablet portrait
+@media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+
+	aside {
+		height: 30vh;
+		flex-direction: row !important;
+
+		.menu {
+			height: auto;
+			width: auto;
+			margin: 0.5rem !important;
+		}
+	}
 }
 
 //only tablet portrait
@@ -1080,6 +1275,17 @@ hr.brd_gris_3 {
 		}
 	}
 
+	aside {
+		height: 20vh;
+		flex-direction: row !important;
+
+		.menu {
+			height: auto;
+			width: auto;
+			margin: 0.5rem !important;
+		}
+	}
+
 	.scroll_content {
 		height: inherit;
 	}
@@ -1106,12 +1312,69 @@ hr.brd_gris_3 {
 		max-height: 30rem;
 	}
 
+	.tres_puntos {
+		white-space: inherit;
+	}
+
 }
 
 //only tablet landscape
 @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
 	.m_date {
 		margin-left: 1rem;
+	}
+
+	aside {
+		height: 12vh;
+		// flex-direction: row !important;
+
+		.menu {
+			height: auto;
+			width: auto;
+			margin: 0.5rem !important;
+
+			ul {
+				display: flex;
+				margin-bottom: 1rem;
+
+				li {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.btn_big {
+		padding: 0.8rem 2rem 0.8rem 1rem;
+	}
+
+	.btn_icon {
+		.icon {
+			width: 1rem;
+			margin-right: 0.5rem;
+		}
+
+		.texto {
+			white-space: normal;
+			width: 74%;
+		}
+
+		.arrow {
+			width: 0.6rem;
+			margin-left: 0.5rem;
+		}
+
+		&.btn_terciary {
+			@include Clicked($azul_1, $blanco, 0.833vw, $azul_3, 10%, $azul_3, 5%);
+		}
+
+		&.btn_quaternary {
+			@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
+		}
+
+		&.btn_download {
+			@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
+		}
 	}
 }
 
@@ -1122,9 +1385,8 @@ hr.brd_gris_3 {
 		display: block;
 	}
 
-	aside {
-		width: 100%;
-		height: 150vh;
+	landscape .tres_puntos {
+		white-space: inherit;
 	}
 }
 
@@ -1148,6 +1410,10 @@ hr.brd_gris_3 {
 	.circles,
 	.burger {
 		display: block;
+	}
+
+	.tres_puntos {
+		white-space: inherit;
 	}
 }
 
@@ -1190,6 +1456,10 @@ hr.brd_gris_3 {
 
 	.scroll_encuesta {
 		max-height: 30rem;
+	}
+
+	.tres_puntos {
+		white-space: inherit;
 	}
 }
 
@@ -1249,17 +1519,21 @@ hr.brd_gris_3 {
 	.w_medium {
 		width: 75%;
 	}
+
+	.tres_puntos {
+		white-space: inherit;
+	}
 }
 
 //only phone
 @media (max-width: 576px) {
 
 	aside {
-		height: 80vh;
+		height: 60vh;
 	}
 
 	.banner_login {
-		height: 10rem;
+		height: 15rem;
 	}
 
 	.btn_global {
@@ -1397,5 +1671,9 @@ hr.brd_gris_3 {
 
 	.scroll_encuesta {
 		max-height: 20rem;
+	}
+
+	.tres_puntos {
+		white-space: inherit;
 	}
 }

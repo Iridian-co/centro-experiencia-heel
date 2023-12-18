@@ -9,7 +9,10 @@
 				<aside class="sidebar ps-0">
 					<header class="d-flex justify-content-between align-items-center">
 						<div class="my-2 my-lg-4">
-							<h1 class="fz_h1 my-0 text-center color_azul_1">Logo</h1>
+							{# <h1 class="fz_h1 my-0 text-center color_azul_1">Logo</h1> #}
+							<div class="logo">
+								<img class="w-100" src="img/Logo_Heel.png" alt="user"/>
+							</div>
 						</div>
 						{# <div class="burger">
 							<div class="x"></div>
@@ -21,42 +24,42 @@
 					<nav class="menu nav mt-4">
 						<ul>
 							<li class="d-block animate">
-								<a href="#vista_1" class="btn_blanco btn_big fw_400 active" id="calendario" onclick="cambiarColor(this, 'calendario')">
+								<a href="#vista_1" class="btn_blanco btn_big fw_400 my-0 active" id="calendario" onclick="cambiarColor(this, 'calendario')">
 									<img class="icon" src="img/icon/calendario.svg" alt="calendario"/>
-									<span class="texto fz_p fw_400 color_azul_1 fz_p fw_400 color_azul_1">Calendario</span>
+									<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Calendario</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
 							<li class="d-block animate">
-								<a href="#vista_2" class="btn_blanco btn_big fw_400" id="cursos" onclick="cambiarColor(this, 'cursos')">
+								<a href="#vista_2" class="btn_blanco btn_big fw_400 my-0" id="cursos" onclick="cambiarColor(this, 'cursos')">
 									<img class="icon" src="img/icon/cursos.svg" alt="Cursos"/>
 									{% set course = true %}
 									{% if course %}
-										<span class="texto fz_p fw_400 color_azul_1">Cursos</span>
+										<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Cursos</span>
 									{% else %}
-										<span class="texto fz_p fw_400 color_azul_1">Próximos cursos</span>
+										<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Próximos cursos</span>
 									{% endif %}
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
 							<li class="d-block animate">
-								<a href="#vista_3" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'experiencia')">
+								<a href="#vista_3" class="btn_blanco btn_big fw_400 my-0" onclick="cambiarColor(this, 'experiencia')">
 									<img class="icon" src="img/icon/cubo.svg" alt="cubo"/>
-									<span class="texto fz_p fw_400 color_azul_1">Centro de Experiencia HEEL</span>
+									<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Centro de Experiencia HEEL</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
 							<li class="d-block animate">
-								<a href="#vista_4" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'encuesta')">
+								<a href="#vista_4" class="btn_blanco btn_big fw_400 my-0" onclick="cambiarColor(this, 'encuesta')">
 									<img class="icon" src="img/icon/pizza.svg" alt="pizza"/>
-									<span class="texto fz_p fw_400 color_azul_1">Encuesta</span>
+									<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Encuesta</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
 							<li class="d-block animate">
-								<a href="#vista_5" class="btn_blanco btn_big fw_400" onclick="cambiarColor(this, 'certificado')">
+								<a href="#vista_5" class="btn_blanco btn_big fw_400 my-0" onclick="cambiarColor(this, 'certificado')">
 									<img class="icon" src="img/icon/chulo.svg" alt="chulo"/>
-									<span class="texto fz_p fw_400 color_azul_1">Certificado</span>
+									<span class="texto fz_p fw_400 color_azul_1 text-capitalize">Certificado</span>
 									<img class="arrow" src="img/icon/flecha.svg" alt="flecha"/>
 								</a>
 							</li>
@@ -80,7 +83,7 @@
 								<span class="bg_verde_2 score">
 									<p class="fz_min fw_700 color_blanco my-0">4</p>
 								</span>
-								{{ include('dropdown/dropdownMenu.html.twig') }}
+								{# {{ include('dropdown/dropdownMenu.html.twig') }} #}
 							</div>
 							<div class="avatar me-3 my-auto">
 								<img class="w-100" src="img/user.png" alt="user"/>
@@ -91,36 +94,40 @@
 									<img class="w-100" src="img/icon/arrow_down.svg" alt="arrow_down"/>
 								</div>
 							</a>
-							{{ include('dropdown/dropdownSesion.html.twig') }}
+							{# {{ include('dropdown/dropdownSesion.html.twig') }} #}
 						</div>
 					</header>
-					<article>
-						<div id="vista_1" class="">
-							{% include ("basic/calendario.html.twig") %}
+					<article class="wpContent">
+						<div class="wrapper">
+							<div class="general-scroll">
+								<div id="vista_1" class="">
+									{% include ("basic/calendario.html.twig") %}
+								</div>
+								<div id="vista_2" class="">
+									{% include ("basic/cursos.html.twig") %}
+								</div>
+								<div id="vista_3" class="">
+									{% include ("basic/experiencia.html.twig") %}
+								</div>
+								<div id="vista_4" class="">
+									{% include ("basic/encuesta.html.twig") %}
+								</div>
+								<div id="vista_5" class="">
+									{% include ("basic/certificado.html.twig") %}
+								</div>
+								{# {% if vista_calendario == vistaSelecionada %}
+									{% include ("basic/calendario.html.twig") %}
+								{% elseif vista == vista_turno %}
+									{% include ("basic/cursos.html.twig") %}
+								{% elseif vista == 'experiencia' %}
+									{% include ("basic/experiencia.html.twig") %}
+								{% elseif vista == 'encuesta' %}
+									{% include ("basic/encuesta.html.twig") %}
+								{% elseif vista == 'certificado' %}
+									{% include ("basic/certificado.html.twig") %}
+								{% endif %} #}
+							</div>
 						</div>
-						<div id="vista_2" class="">
-							{% include ("basic/cursos.html.twig") %}
-						</div>
-						<div id="vista_3" class="">
-							{% include ("basic/experiencia.html.twig") %}
-						</div>
-						<div id="vista_4" class="">
-							{% include ("basic/encuesta.html.twig") %}
-						</div>
-						<div id="vista_5" class="">
-							{% include ("basic/certificado.html.twig") %}
-						</div>
-						{# {% if vista_calendario == vistaSelecionada %}
-							{% include ("basic/calendario.html.twig") %}
-						{% elseif vista == vista_turno %}
-							{% include ("basic/cursos.html.twig") %}
-						{% elseif vista == 'experiencia' %}
-							{% include ("basic/experiencia.html.twig") %}
-						{% elseif vista == 'encuesta' %}
-							{% include ("basic/encuesta.html.twig") %}
-						{% elseif vista == 'certificado' %}
-							{% include ("basic/certificado.html.twig") %}
-						{% endif %} #}
 					</article>
 				</main>
 			</div>

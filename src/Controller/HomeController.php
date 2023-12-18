@@ -16,24 +16,14 @@ class HomeController extends AbstractController
      */
     public function home()
     {
-        return $this->render('home/home.html.twig', [
-			'vsita_calendario' => 'calendario',
-			'vsita_curso' => 'curso',
-			'vsita_experiencia' => 'experiencia',
-			'vsita_encuesta' => 'encuesta',
-			'vsita_certificado' => 'certificado'
+		$activeParam = 'active';
+		$view = 'home';
+        return $this->render('basic/calendario.html.twig', [
+			'activeParam' => $activeParam,
+			'view' => $view
         ]);
     }
 
-    #[Route('/', name: 'homepage')]
-    public function index(): Response
-    {
-
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-	
 	/**
      * @Route("/base", name="base")
      */
@@ -48,4 +38,59 @@ class HomeController extends AbstractController
     public function login() {
         return $this->render('user/login.html.twig', []);
     }
+
+	/**
+	 * @Route("/cursos", name="cursos")
+	 */
+	public function cursos()
+	{
+		$activeParam = 'active';
+		$view = 'cursos';
+		return $this->render('basic/cursos.html.twig', [
+			'activeParam' => $activeParam,
+			'view' => $view
+		]);
+	}
+
+	/**
+	 * @Route("/experiencia", name="experiencia")
+	 */
+	public function experiencia()
+	{
+		$activeParam = 'active';
+		$view = 'experiencia';
+		return $this->render('basic/experiencia.html.twig', [
+			'activeParam' => $activeParam,
+			'view' => $view
+		]);
+	}
+
+	
+
+	/**
+	 * @Route("/encuesta", name="encuesta")
+	 */
+	public function encuesta()
+	{
+		$activeParam = 'active';
+		$view = 'encuesta';
+		return $this->render('basic/encuesta.html.twig', [
+			'activeParam' => $activeParam,
+			'view' => $view
+		]);
+	}
+	
+
+	/**
+	 * @Route("/certificado", name="certificado")
+	 */
+	public function certificado()
+	{
+		$activeParam = 'active';
+		$view = 'certificado';
+		return $this->render('basic/certificado.html.twig', [
+			'activeParam' => $activeParam,
+			'view' => $view
+		]);
+	}
 }

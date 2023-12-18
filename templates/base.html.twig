@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Heel Centro de Experiencia!
-			{% endblock %}
+			{% block title %}Heel Centro de Experiencia!{% endblock %}
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		<meta charset="UTF-8">
@@ -16,7 +15,53 @@
 		{{ encore_entry_link_tags('app') }}
 	</head>
 	<body>
-		{% block body %}{% endblock %}
+		<div class="bg_gradient_home">
+			<main>
+				<div class="container-fluid">
+					<div class="row">
+						<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0 py_lx_5">
+							<div class="col-12 col-md-3 col-lg-2">
+								<header class="d-flex justify-content-around justify-content-md-center align-items-center">
+									<div class="my-auto4">
+										<div class="logo">
+											<img class="w-100" src="img/Logo_Heel.png" alt="user"/>
+										</div>
+									</div>
+									<button id="navicon" class="brd_gris_3 brd_rds_10 c_pntr my-0 p-2">
+										<span class="color_azul_1 fz_h2">&#9776;</span>
+									</button>
+								</header>
+							</div>
+							<div class="col-12 col-md-9 col-lg-10">
+								<div class="px-4 px-md-5">
+									{{ include('componentes/Header.html.twig') }}
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div>
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12 col-xl-2 pe-0 d-md-block shown" id="siteNav">
+							<nav>
+								{{ include('componentes/SideBar.html.twig',{activeParam}) }}
+							</nav>
+						</div>
+						<!-- Content -->
+						<div role="main" class="col-md-12 col-xl-10 ml-sm-auto_yayo px-md-4">
+							<article class="wpContent">
+								<div class="wrapper bg_blanco brd_rds_20 bx_shdw_2">
+									<div class="general-scroll">
+										{% block body %}{% endblock %}
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
 		{{ encore_entry_script_tags('app') }}
 		{% block javascripts %}{% endblock %}
 	</body>
