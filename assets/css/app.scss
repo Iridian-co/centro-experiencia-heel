@@ -278,6 +278,9 @@ header {
 
 .bg_gradient_azul_2 {
 	background: $azul_4;
+	&.active {
+		background: rgba(44, 177, 116, 0.1);
+	}
 }
 
 .bg_gradient_azul_day {
@@ -1090,6 +1093,10 @@ hr.brd_gris_3 {
 
 @media (max-width: 992px) {
 
+	header {
+		height: 6rem;
+	}
+
 	.btn_big {
 		padding: 1.2rem 1.3rem 1.2rem 1.2rem;
 	}
@@ -1276,7 +1283,7 @@ hr.brd_gris_3 {
 	}
 
 	aside {
-		height: 20vh;
+		height: 30vh;
 		flex-direction: row !important;
 
 		.menu {
@@ -1356,7 +1363,7 @@ hr.brd_gris_3 {
 
 		.texto {
 			white-space: normal;
-			width: 74%;
+			width: 80%;
 		}
 
 		.arrow {

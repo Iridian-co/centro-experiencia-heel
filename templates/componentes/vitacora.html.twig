@@ -1,4 +1,5 @@
 {% set repit = 0 %}
+{% set active = false %}
 <div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4 mb-4">
 	<!-- Titulo -->
 	<div class="d-sm-flex justify-content-between px-3 px-xl-4 pb-1">
@@ -17,7 +18,7 @@
 			{% for repit in 1..5 %}
 				<div class="base">
 					<h3 class="fz_h3 fw_700 color_verde_2 ps-1 my-3">Viernes,24 de Octubre</h3>
-					<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 bx_shdw_3 mb-3 d-flex justify-content-between w-100">
+					<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 bx_shdw_3 mb-3 d-flex justify-content-between w-100 {% if active %} active {% endif %}">
 						<hr class="linea_vertical lv_secondary">
 						<div class="pe-3 py-2 w-100">
 							<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación - Patología OM. Médicos de ...</p>
