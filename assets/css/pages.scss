@@ -114,7 +114,8 @@
 	@include borderRadius(5px);
 	border: none;
 	margin: 0 0.5vw;
-	padding: .5vw 2vw;
+	padding: .3vw 1vw;
+	height: min-content;
 
 	// opacity: .5;
 	&:focus,
@@ -130,6 +131,7 @@
 	color: $azul_2;
 	background: $blanco;
 	padding: .0.6vw;
+	height: inherit;
 	@include borderRadius(10px);
 	box-shadow: 0px 4px 4px 0px #2B4C6017;
 
@@ -208,6 +210,7 @@
 	@extend .fz_p;
 	@extend .fw_700;
 	padding: .3vw 2vw;
+	height: min-content;
 }
 
 .fc-icon-chevron-left::before,
