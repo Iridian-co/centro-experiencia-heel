@@ -870,12 +870,16 @@ hr.brd_gris_3 {
 
 	// Estilos específicos para el desplazamiento
 	&::-webkit-scrollbar {
-		width: 12px; // Ancho de la barra de desplazamiento
+		width: 10px; // Ancho de la barra de desplazamiento
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: rgba(178, 202, 219, 0.5); // Color del pulgar de la barra de desplazamiento
-		border-radius: 6px; // Bordes redondeados del pulgar
+		background: rgba(178, 202, 219, 0.5); // Color del pulgar de la barra de desplazamiento
+		// Bordes redondeados del pulgar
+		border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		
 	}
 
 	&::-webkit-scrollbar-track {
@@ -886,6 +890,7 @@ hr.brd_gris_3 {
 	&::-webkit-scrollbar-button {
 		display: none;
 	}
+	
 }
 
 .scroll_encuesta {
@@ -895,12 +900,15 @@ hr.brd_gris_3 {
 
 	// Estilos específicos para el desplazamiento
 	&::-webkit-scrollbar {
-		width: 12px; // Ancho de la barra de desplazamiento
+		width: 10px; // Ancho de la barra de desplazamiento
 	}
 
 	&::-webkit-scrollbar-thumb {
 		background-color: rgba(178, 202, 219, 0.5); // Color del pulgar de la barra de desplazamiento
-		border-radius: 6px; // Bordes redondeados del pulgar
+		// Bordes redondeados del pulgar
+		border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
 	}
 
 	&::-webkit-scrollbar-track {
