@@ -1371,7 +1371,7 @@ hr.brd_gris_3 {
 
 		.texto {
 			white-space: normal;
-			width: 80%;
+			width: 85%;
 		}
 
 		.arrow {
@@ -1390,6 +1390,10 @@ hr.brd_gris_3 {
 		&.btn_download {
 			@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
 		}
+	}
+
+	.vh_full {
+		height: 100vh!important;
 	}
 }
 
