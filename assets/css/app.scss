@@ -393,7 +393,7 @@ header {
 	}
 
 	&.btn_quaternary {
-		@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
+		@include Clicked($azul_3, $blanco, 1vw, $azul_2, 5%, $azul_2, 5%);
 	}
 
 	&.btn_download {
@@ -1033,6 +1033,15 @@ hr.brd_gris_3 {
 	margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
+.vh_max {
+	height: 100%!important;
+}
+
+.width_text_six {
+    word-wrap: break-word;
+    width: 60%;
+}
+
 //Super big desktop
 @media only screen and (min-width: 2560px) {
 	.py_lx_5 {
@@ -1331,6 +1340,10 @@ hr.brd_gris_3 {
 		white-space: inherit;
 	}
 
+	.vh_full {
+		height: 100vh!important;
+	}
+
 }
 
 //only tablet landscape
@@ -1434,6 +1447,10 @@ hr.brd_gris_3 {
 	.tres_puntos {
 		white-space: inherit;
 	}
+
+	.width_text_six {
+		width: 100%;
+	}
 }
 
 @media (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
@@ -1479,6 +1496,14 @@ hr.brd_gris_3 {
 
 	.tres_puntos {
 		white-space: inherit;
+	}
+
+	.width_text_six {
+		width: 100%;
+	}
+
+	.vh_full {
+		height: 100vh!important;
 	}
 }
 
@@ -1541,6 +1566,10 @@ hr.brd_gris_3 {
 
 	.tres_puntos {
 		white-space: inherit;
+	}
+
+	.width_text_six {
+		width: 100%;
 	}
 }
 
@@ -1694,5 +1723,9 @@ hr.brd_gris_3 {
 
 	.tres_puntos {
 		white-space: inherit;
+	}
+
+	.width_text_six {
+		width: 100%;
 	}
 }
