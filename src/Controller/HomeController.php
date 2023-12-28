@@ -36,7 +36,14 @@ class HomeController extends AbstractController
      * @Route("/login", name="login")
      */
     public function login() {
-        return $this->render('user/login.html.twig', []);
+		$activeParam = 'active';
+		$view = 'login';
+		$only_login = true;
+        return $this->render('user/login.html.twig', [
+			'activeParam' => $activeParam,
+			'view' => $view,
+			'only_login' => $only_login
+		]);
     }
 
 	/**

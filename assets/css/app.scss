@@ -1042,6 +1042,12 @@ hr.brd_gris_3 {
     width: 60%;
 }
 
+.bg_modal {
+	width: 100%;
+    height: 100%;
+    background: #00000030;
+}
+
 //Super big desktop
 @media only screen and (min-width: 2560px) {
 	.py_lx_5 {
@@ -1451,6 +1457,13 @@ hr.brd_gris_3 {
 	.width_text_six {
 		width: 100%;
 	}
+
+	.scroll_mobile {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 10rem;
+		margin-bottom: 1rem;
+	}
 }
 
 @media (min-width: 577px) and (max-width: 767px) and (orientation: portrait) {
@@ -1504,6 +1517,20 @@ hr.brd_gris_3 {
 
 	.vh_full {
 		height: 100vh!important;
+	}
+
+	.scroll_mobile {
+		scroll-behavior: smooth;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 32vw;
+	}
+
+	.scroll_mobile {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 13rem;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -1727,5 +1754,12 @@ hr.brd_gris_3 {
 
 	.width_text_six {
 		width: 100%;
+	}
+
+	.scroll_mobile {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 13rem;
+		margin-bottom: 1rem;
 	}
 }

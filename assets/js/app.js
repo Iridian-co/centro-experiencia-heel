@@ -141,7 +141,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
 import interaction from '@fullcalendar/interaction'
-import { events } from "./events.json";
+import events from './events.json';
 
 document.addEventListener('DOMContentLoaded', function () {
 	const calendarEl = document.getElementById("calendar");
