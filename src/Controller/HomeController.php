@@ -18,9 +18,11 @@ class HomeController extends AbstractController
     {
 		$activeParam = 'active';
 		$view = 'home';
+		$only_login = false;
         return $this->render('basic/calendario.html.twig', [
 			'activeParam' => $activeParam,
-			'view' => $view
+			'view' => $view,
+			'only_login' => $only_login
         ]);
     }
 
@@ -53,9 +55,11 @@ class HomeController extends AbstractController
 	{
 		$activeParam = 'active';
 		$view = 'cursos';
+		$only_login = false;
 		return $this->render('basic/cursos.html.twig', [
 			'activeParam' => $activeParam,
-			'view' => $view
+			'view' => $view,
+			'only_login' => $only_login
 		]);
 	}
 
@@ -66,9 +70,11 @@ class HomeController extends AbstractController
 	{
 		$activeParam = 'active';
 		$view = 'experiencia';
+		$only_login = false;
 		return $this->render('basic/experiencia.html.twig', [
 			'activeParam' => $activeParam,
-			'view' => $view
+			'view' => $view,
+			'only_login' => $only_login
 		]);
 	}
 
@@ -81,9 +87,11 @@ class HomeController extends AbstractController
 	{
 		$activeParam = 'active';
 		$view = 'encuesta';
+		$only_login = false;
 		return $this->render('basic/encuesta.html.twig', [
 			'activeParam' => $activeParam,
-			'view' => $view
+			'view' => $view,
+			'only_login' => $only_login
 		]);
 	}
 	
@@ -95,9 +103,11 @@ class HomeController extends AbstractController
 	{
 		$activeParam = 'active';
 		$view = 'certificado';
+		$only_login = false;
 		return $this->render('basic/certificado.html.twig', [
 			'activeParam' => $activeParam,
-			'view' => $view
+			'view' => $view,
+			'only_login' => $only_login
 		]);
 	}
 }
