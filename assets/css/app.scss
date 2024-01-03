@@ -870,7 +870,8 @@ hr.brd_gris_3 {
 
 	// Estilos específicos para el desplazamiento
 	&::-webkit-scrollbar {
-		width: 10px; // Ancho de la barra de desplazamiento
+		width: 11px; // Ancho de la barra de desplazamiento
+		height: 32px;
 	}
 
 	&::-webkit-scrollbar-thumb {
