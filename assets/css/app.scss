@@ -87,7 +87,7 @@ aside {
 }
 
 header {
-	height: 100px;
+	height: 6vw;
 }
 
 .avatar {
@@ -128,13 +128,13 @@ header {
 	width: 0.9vw;
 	height: 0.9vw;
 	color: $blanco;
-	margin-top: -0.5vw;
+	margin-top: -0.2vw;
 }
 
 .bell {
-	margin-right: -0.5vw;
+	margin-right: -0.3vw;
 	width: 1.2vw;
-	height: 1.2vw;
+	height: 1.4vw;
 }
 
 .logo {
@@ -278,6 +278,9 @@ header {
 
 .bg_gradient_azul_2 {
 	background: $azul_4;
+	&.active {
+		background: rgba(44, 177, 116, 0.1);
+	}
 }
 
 .bg_gradient_azul_day {
@@ -338,7 +341,7 @@ header {
 
 	.texto {
 		white-space: normal;
-		width: 74%;
+		width: 70%;
 		display: inline-block;
 		letter-spacing: normal;
 		line-height: initial;
@@ -390,7 +393,7 @@ header {
 	}
 
 	&.btn_quaternary {
-		@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
+		@include Clicked($azul_3, $blanco, 1vw, $azul_2, 5%, $azul_2, 5%);
 	}
 
 	&.btn_download {
@@ -863,16 +866,21 @@ hr.brd_gris_3 {
 .scroll_style {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	max-height: 30vw;
+	max-height: 32vw;
 
 	// Estilos específicos para el desplazamiento
 	&::-webkit-scrollbar {
-		width: 12px; // Ancho de la barra de desplazamiento
+		width: 11px; // Ancho de la barra de desplazamiento
+		height: 32px;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: rgba(178, 202, 219, 0.5); // Color del pulgar de la barra de desplazamiento
-		border-radius: 6px; // Bordes redondeados del pulgar
+		background: rgba(178, 202, 219, 0.5); // Color del pulgar de la barra de desplazamiento
+		// Bordes redondeados del pulgar
+		border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		
 	}
 
 	&::-webkit-scrollbar-track {
@@ -883,6 +891,7 @@ hr.brd_gris_3 {
 	&::-webkit-scrollbar-button {
 		display: none;
 	}
+	
 }
 
 .scroll_encuesta {
@@ -892,12 +901,15 @@ hr.brd_gris_3 {
 
 	// Estilos específicos para el desplazamiento
 	&::-webkit-scrollbar {
-		width: 12px; // Ancho de la barra de desplazamiento
+		width: 10px; // Ancho de la barra de desplazamiento
 	}
 
 	&::-webkit-scrollbar-thumb {
 		background-color: rgba(178, 202, 219, 0.5); // Color del pulgar de la barra de desplazamiento
-		border-radius: 6px; // Bordes redondeados del pulgar
+		// Bordes redondeados del pulgar
+		border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
 	}
 
 	&::-webkit-scrollbar-track {
@@ -1022,6 +1034,21 @@ hr.brd_gris_3 {
 	margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
+.vh_max {
+	height: 100%!important;
+}
+
+.width_text_six {
+    word-wrap: break-word;
+    width: 60%;
+}
+
+.bg_modal {
+	width: 100%;
+    height: 100%;
+    background: #00000030;
+}
+
 //Super big desktop
 @media only screen and (min-width: 2560px) {
 	.py_lx_5 {
@@ -1089,6 +1116,10 @@ hr.brd_gris_3 {
 }
 
 @media (max-width: 992px) {
+
+	header {
+		height: 6rem;
+	}
 
 	.btn_big {
 		padding: 1.2rem 1.3rem 1.2rem 1.2rem;
@@ -1276,7 +1307,7 @@ hr.brd_gris_3 {
 	}
 
 	aside {
-		height: 20vh;
+		height: 30vh;
 		flex-direction: row !important;
 
 		.menu {
@@ -1314,6 +1345,10 @@ hr.brd_gris_3 {
 
 	.tres_puntos {
 		white-space: inherit;
+	}
+
+	.vh_full {
+		height: 100vh!important;
 	}
 
 }
@@ -1356,7 +1391,7 @@ hr.brd_gris_3 {
 
 		.texto {
 			white-space: normal;
-			width: 74%;
+			width: 85%;
 		}
 
 		.arrow {
@@ -1375,6 +1410,10 @@ hr.brd_gris_3 {
 		&.btn_download {
 			@include Clicked($azul_3, $blanco, 0.833vw, $azul_2, 5%, $azul_2, 5%);
 		}
+	}
+
+	.vh_full {
+		height: 100vh!important;
 	}
 }
 
@@ -1414,6 +1453,17 @@ hr.brd_gris_3 {
 
 	.tres_puntos {
 		white-space: inherit;
+	}
+
+	.width_text_six {
+		width: 100%;
+	}
+
+	.scroll_mobile {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 10rem;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -1461,6 +1511,28 @@ hr.brd_gris_3 {
 	.tres_puntos {
 		white-space: inherit;
 	}
+
+	.width_text_six {
+		width: 100%;
+	}
+
+	.vh_full {
+		height: 100vh!important;
+	}
+
+	.scroll_mobile {
+		scroll-behavior: smooth;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 32vw;
+	}
+
+	.scroll_mobile {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 13rem;
+		margin-bottom: 1rem;
+	}
 }
 
 @media only screen and (min-width: 577px) and (max-width: 767px) {
@@ -1507,6 +1579,10 @@ hr.brd_gris_3 {
 			height: 1.2rem;
 		}
 
+		label {
+			line-height: normal;
+		}
+
 		button {
 			&.btn_form {
 				width: 16rem;
@@ -1522,6 +1598,10 @@ hr.brd_gris_3 {
 
 	.tres_puntos {
 		white-space: inherit;
+	}
+
+	.width_text_six {
+		width: 100%;
 	}
 }
 
@@ -1554,7 +1634,7 @@ hr.brd_gris_3 {
 		input[type="password"],
 		select {
 			font-size: 0.8rem;
-			// padding: 0.8rem;
+			padding: 0.8rem;
 
 			&::placeholder {
 				font-size: 0.8rem;
@@ -1577,6 +1657,10 @@ hr.brd_gris_3 {
 		[type="checkbox"] {
 			width: 1.2rem;
 			height: 1.2rem;
+		}
+
+		label {
+			line-height: normal;
 		}
 
 		button {
@@ -1675,5 +1759,16 @@ hr.brd_gris_3 {
 
 	.tres_puntos {
 		white-space: inherit;
+	}
+
+	.width_text_six {
+		width: 100%;
+	}
+
+	.scroll_mobile {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		max-height: 13rem;
+		margin-bottom: 1rem;
 	}
 }

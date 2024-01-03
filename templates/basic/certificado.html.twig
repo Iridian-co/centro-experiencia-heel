@@ -1,15 +1,27 @@
 {% extends 'base.html.twig' %}
-
+{% set certificado = true %}
 {% block body %}
 	
-<div class="container-fluid">
-	<div class="row">
-		<!-- Encuestas disponibles -->
-		<div class="col-12">
-			{{ include('componentes/vitacoraHorizontal.html.twig',{title:'Encuestas disponibles', data:true}) }}
+{% if certificado == true %}
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Encuestas disponibles -->
+			<div class="col-11">
+				{{ include('componentes/vitacoraHorizontal.html.twig',{title:'Encuestas disponibles', data:true}) }}
+			</div>
 		</div>
 	</div>
-</div>
+{% else %}
+	<div class="vh_max d-flex align-items-center">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					{{ include('componentes/noDisponibles.html.twig',{title:'Encuestas disponibles', data:true}) }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
 
 
 {% endblock %}

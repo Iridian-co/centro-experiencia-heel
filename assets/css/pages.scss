@@ -67,7 +67,7 @@
 }
 
 .dropdown_sesion {
-	@include dropdown(10%, auto, auto, -100%, auto);
+	@include dropdown(80%, auto, auto, -100%, auto);
 }
 
 .dropdown_agenda {
@@ -114,7 +114,8 @@
 	@include borderRadius(5px);
 	border: none;
 	margin: 0 0.5vw;
-	padding: .5vw 2vw;
+	padding: .3vw 1vw;
+	height: min-content;
 
 	// opacity: .5;
 	&:focus,
@@ -129,7 +130,8 @@
 .fc .fc-next-button {
 	color: $azul_2;
 	background: $blanco;
-	padding: .5em;
+	padding: .0.6vw;
+	height: inherit;
 	@include borderRadius(10px);
 	box-shadow: 0px 4px 4px 0px #2B4C6017;
 
@@ -180,13 +182,16 @@
 		@include borderRadius(10px);
 		box-shadow: 0px 4px 4px 0px #2B4C6017;
 		// line-height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&:after {
 			content: "";
 			display: inline-block;
-			width: 1vw;
-			height: 1vw;
-			margin-left: 1.5rem;
+			width: 0.8vw;
+			height: 0.9vw;
+			margin-left: 2.5rem;
 			background-image: url("../../public/img/icon/calendary.svg");
 			background-size: cover;
 		}
@@ -204,7 +209,8 @@
 	@include borderRadius(5px);
 	@extend .fz_p;
 	@extend .fw_700;
-	padding: .5vw 2vw;
+	padding: .3vw 2vw;
+	height: min-content;
 }
 
 .fc-icon-chevron-left::before,
@@ -214,7 +220,10 @@
 }
 
 .fc .fc-button .fc-icon {
-	display: inline;
+	// display: inline;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 //day calendar
@@ -533,7 +542,7 @@
 	}
 
 	.dropdown_event {
-		@include dropdown(50%, 50%, 45%, -50%, -50%);
+		@include dropdown(50%, 50%, 90%, -50%, -50%);
 	}
 }
 

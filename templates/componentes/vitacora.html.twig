@@ -1,7 +1,8 @@
 {% set repit = 0 %}
+{% set active = false %}
 <div class="brd_rds_20 bg_gradient_azul_2 bx_shdw_1 py-4 mb-4">
 	<!-- Titulo -->
-	<div class="d-sm-flex justify-content-between px-3 px-xl-4 pb-3">
+	<div class="d-sm-flex justify-content-between px-3 px-xl-4 pb-1">
 		<h2 class="fz_h2 fw_600 color_azul_1 letter_spacing mt-1 mb-3 my-sm-auto text-center">{{ title }}</h2>
 		<div class="d-flex justify-content-between bx_shdw_3 bg_blanco brd_rds_10 p-2 my-0">
 			<h3 class="fz_h3 fw_700 color_azul_1 ms-2 my-0">Octubre</h3>
@@ -10,14 +11,14 @@
 			<img class="icon_clock ms-4 me-2" src="img/icon/calendary.svg" alt="clock"/>
 		</div>
 	</div>
-	<div class="px-2">
-		<hr class="brd_gris_3 my-3">
-		<div class="px-2 scroll_style">
+	<div class="px-1 px-lg-4">
+		<hr class="brd_gris_3 mt-2 mb-4">
+		<div class="px-1 scroll_style">
 			<!-- Contexto -->
 			{% for repit in 1..5 %}
 				<div class="base">
-					<h3 class="fz_h3 fw_700 color_verde_2 ps-1 my-3">Viernes,24 de Octubre</h3>
-					<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 bx_shdw_3 mb-3 d-flex justify-content-between w-100">
+					<h3 class="fz_h3 fw_700 color_verde_2 ps-1 my-3">Viernes,24 de Oct</h3>
+					<div class="box_notificacion bg_gradient_azul_2 brd_rds_5 bx_shdw_3 mb-3 d-flex justify-content-between w-100 {% if active %} active {% endif %}">
 						<hr class="linea_vertical lv_secondary">
 						<div class="pe-3 py-2 w-100">
 							<p class="fz_p fw_700 color_azul_1 ps-3 my-2">Bases de BrSM  - Técnicas de aplicación - Patología OM. Médicos de ...</p>

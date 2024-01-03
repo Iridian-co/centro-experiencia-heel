@@ -15,53 +15,57 @@
 		{{ encore_entry_link_tags('app') }}
 	</head>
 	<body>
-		<div class="bg_gradient_home">
+		{% if not only_login %}
+		<div class="bg_gradient_home vh_full">
 			<main>
-				<div class="container-fluid">
-					<div class="row">
-						<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0 py_lx_5">
-							<div class="col-12 col-md-3 col-lg-2">
-								<header class="d-flex justify-content-around justify-content-md-center align-items-center">
-									<div class="my-auto4">
-										<div class="logo">
-											<img class="w-100" src="img/Logo_Heel.png" alt="user"/>
+					<div class="container-fluid">
+						<div class="row">
+							<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0 py_lx_5">
+								<div class="col-12 col-md-3 col-lg-2">
+									<header class="d-flex justify-content-around justify-content-md-center align-items-center">
+										<div class="my-auto">
+											<div class="logo">
+												<img class="w-100" src="img/Logo_Heel.png" alt="user"/>
+											</div>
 										</div>
-									</div>
-									<button id="navicon" class="brd_gris_3 brd_rds_10 c_pntr my-0 p-2">
-										<span class="color_azul_1 fz_h2">&#9776;</span>
-									</button>
-								</header>
-							</div>
-							<div class="col-12 col-md-9 col-lg-10">
-								<div class="px-4 px-md-5">
-									{{ include('componentes/Header.html.twig') }}
+										<button id="navicon" class="brd_gris_3 brd_rds_10 c_pntr my-0 p-2">
+											<span class="color_azul_1 fz_h2">&#9776;</span>
+										</button>
+									</header>
 								</div>
-							</div>
-						</nav>
-					</div>
-				</div>
-
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-12 col-xl-2 pe-0 d-md-block shown" id="siteNav">
-							<nav>
-								{{ include('componentes/SideBar.html.twig',{activeParam}) }}
+								<div class="col-12 col-md-9 col-lg-10">
+									<div class="px-4 px-md-5">
+										{{ include('componentes/Header.html.twig') }}
+									</div>
+								</div>
 							</nav>
 						</div>
-						<!-- Content -->
-						<div role="main" class="col-md-12 col-xl-10 ml-sm-auto_yayo px-md-4">
-							<article class="wpContent">
-								<div class="wrapper bg_blanco brd_rds_20 bx_shdw_2">
-									<div class="general-scroll">
-										{% block body %}{% endblock %}
+					</div>
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12 col-xl-2 pe-0 d-md-block shown" id="siteNav">
+								<nav>
+									{{ include('componentes/SideBar.html.twig',{activeParam}) }}
+								</nav>
+							</div>
+							<!-- Content -->
+							<div role="main" class="col-md-12 col-xl-10 ml-sm-aut px-md-2">
+								<article class="wpContent pt-lg-0">
+									<div class="wrapper bg_blanco brd_rds_20 bx_shdw_2 w-100">
+										<div class="general-scroll">
+											{% endif %}
+												{% block body %}{% endblock %}
+											{% if not only_login %}
+										</div>
 									</div>
-								</div>
-							</article>
+								</article>
+							</div>
 						</div>
 					</div>
-				</div>
 			</main>
 		</div>
+		{% endif %}
 		{{ encore_entry_script_tags('app') }}
 		{% block javascripts %}{% endblock %}
 	</body>
