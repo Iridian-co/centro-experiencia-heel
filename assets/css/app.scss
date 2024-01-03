@@ -1579,6 +1579,10 @@ hr.brd_gris_3 {
 			height: 1.2rem;
 		}
 
+		label {
+			line-height: normal;
+		}
+
 		button {
 			&.btn_form {
 				width: 16rem;
@@ -1630,7 +1634,7 @@ hr.brd_gris_3 {
 		input[type="password"],
 		select {
 			font-size: 0.8rem;
-			// padding: 0.8rem;
+			padding: 0.8rem;
 
 			&::placeholder {
 				font-size: 0.8rem;
@@ -1653,6 +1657,10 @@ hr.brd_gris_3 {
 		[type="checkbox"] {
 			width: 1.2rem;
 			height: 1.2rem;
+		}
+
+		label {
+			line-height: normal;
 		}
 
 		button {
